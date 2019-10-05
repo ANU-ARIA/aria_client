@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Aria_user.cs" />
+    <Compile Include="CMES_Com.cs" />
     <Compile Include="Fail_prod.cs">
       <SubType>Form</SubType>
     </Compile>

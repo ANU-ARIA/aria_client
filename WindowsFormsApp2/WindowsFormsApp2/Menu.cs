@@ -10,13 +10,13 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp2
 {
-    public partial class Menu : Form
+    public partial class fmMainMenu : Form
     {
-        public Menu()
+        public fmMainMenu()
         {
-            Login login = new Login();
-            login.ShowDialog();
-
+/*            Login log_in = new Login();
+            log_in.ShowDialog();
+*/
             InitializeComponent();
         }
 
@@ -53,7 +53,6 @@ namespace WindowsFormsApp2
         {
             User_set M1 = new User_set();
             M1.Show();
-
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -77,6 +76,10 @@ namespace WindowsFormsApp2
         private void Menu_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void FmMainMenu_Shown(object sender, EventArgs e)
+        {
         }
     }
 }

@@ -13,6 +13,7 @@ using System.Threading;
 using MySql.Data.Common;
 using MySql.Data.MySqlClient;
 using System.Collections;
+using MESComm;
 
 namespace WindowsFormsApp2
 {
@@ -39,6 +40,9 @@ namespace WindowsFormsApp2
         /// <param name="e"></param>
         private void Button1_Click(object sender, EventArgs e)
         {
+            // DRY (Don't Repeat Your-Self)
+
+            // send request log_in
             string bindIp = "220.69.249.226";   // 클라이언트(?) IP 지정
             string serverIp = "220.69.249.226"; // 서버 IP 지정
             const int serverPort = 8037;        // 임의 서버 포트 지정
@@ -66,6 +70,7 @@ namespace WindowsFormsApp2
              IPAddress.Loopback - 127.0.0.1, 또는 localhost로 알려진 루프백 주소입니다.
              이 주소는 자기 자신만 사용하고 연결할 수 있습니다.
             ----------------------------------------------------------------------- */
+            message = "{{#!!," + textBox1.Text + "," + textBox2.Text + ",#}}";
             IPEndPoint clientAddress = new IPEndPoint(IPAddress.Parse(bindIp), Login.abc);
             Login.abc++;
 
@@ -94,17 +99,21 @@ namespace WindowsFormsApp2
 
             // Write() --> 지정된 byte 배열범위에서 NetworkStream 작성
             stream.Write(data, 0, data.Length);
+
+            // receive request_log_in
             data = new byte[256];
             string responseData = "";
 
             // Read() --> NetworkStream으로 부터 데이터를 읽고, byte 배열에 저장
             int bytes = stream.Read(data, 0, data.Length); //
+            responseData = Encoding.Default.GetString(data, 0, bytes);           
 
-            // btye[] --> String으로 변환
-            responseData = Encoding.Default.GetString(data, 0, bytes);
+            CLogInReqResponse result = new CLogInReqResponse(responseData);
+
+            // log-in process
             try
             {
-                if (responseData == "정답입니다!")
+                if (result.sResult == "OK")
                 {
 
                     this.Visible = false;
@@ -112,6 +121,11 @@ namespace WindowsFormsApp2
                     //Form3 form3 = new Form3();
                     //form3.Close();
                     m.ShowDialog();
+                }
+                else
+                {
+                    string sErr = result.sNakReason;
+                    MessageBox.Show(sErr);
                 }
             }
             catch (System.IndexOutOfRangeException j)

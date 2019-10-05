@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApp2
 {
-    partial class Menu
+    partial class fmMainMenu
     {
         /// <summary>
         /// Required designer variable.
@@ -237,7 +237,7 @@
             this.button9.Text = "button9";
             this.button9.UseVisualStyleBackColor = true;
             // 
-            // menu
+            // fmMainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -261,9 +261,10 @@
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button1);
-            this.Name = "menu";
+            this.Name = "fmMainMenu";
             this.Text = "menu";
             this.Load += new System.EventHandler(this.Menu_Load);
+            this.Shown += new System.EventHandler(this.FmMainMenu_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
