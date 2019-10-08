@@ -21,5 +21,25 @@ namespace WindowsFormsApp2
         {
 
         }
+
+        private void Insert_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Delete_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Update_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Search_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

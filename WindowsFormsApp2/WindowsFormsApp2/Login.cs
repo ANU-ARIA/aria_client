@@ -19,13 +19,12 @@ namespace WindowsFormsApp2
 {
     public partial class Login : Form
     {
-        public static int abc = Convert.ToInt32(2043);
+        public static int abc = Convert.ToInt32(3222);
         public Login()
         {
             InitializeComponent();
-            pictureBox1.Hide();
-            pictureBox2.Hide();
-            label4.Text = "zzzzz";
+            x_imge.Hide();
+            x2_imge.Hide();
         }
 
         private void Form3_Load(object sender, EventArgs e)
@@ -38,23 +37,23 @@ namespace WindowsFormsApp2
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void Button1_Click(object sender, EventArgs e)
+        private void login_button_Click(object sender, EventArgs e)
         {
             // DRY (Don't Repeat Your-Self)
 
             // send request log_in
-            string bindIp = "220.69.249.226";   // 클라이언트(?) IP 지정
+            string bindIp = "220.69.249.232";   // 클라이언트(?) IP 지정
             string serverIp = "220.69.249.226"; // 서버 IP 지정
             const int serverPort = 8037;        // 임의 서버 포트 지정
 
             // 디자인에서 Text에 들어갈 문자를 담을 변수
             
-            string us_id = textBox1.Text;
-            string us_pw = textBox2.Text;
+            string us_id = user_id_text.Text;
+            string us_pw = pw_text.Text;
 
             // Aria 프로토콜 지정 => {{#!!, ... , ,#}}
             string message;
-            message = "{{#!!," + textBox1.Text + "," + textBox2.Text + ",#}}";
+            message = "{{#!!," + user_id_text.Text + "," + pw_text.Text + ",#}}";
 
 
             /* -------------------------- IPEndPoint Class --------------------------
@@ -70,7 +69,7 @@ namespace WindowsFormsApp2
              IPAddress.Loopback - 127.0.0.1, 또는 localhost로 알려진 루프백 주소입니다.
              이 주소는 자기 자신만 사용하고 연결할 수 있습니다.
             ----------------------------------------------------------------------- */
-            message = "{{#!!," + textBox1.Text + "," + textBox2.Text + ",#}}";
+            message = "{{#!!," + user_id_text.Text + "," + pw_text.Text + ",#}}";
             IPEndPoint clientAddress = new IPEndPoint(IPAddress.Parse(bindIp), Login.abc);
             Login.abc++;
 
@@ -113,14 +112,13 @@ namespace WindowsFormsApp2
             // log-in process
             try
             {
-                if (result.sResult == "OK")
+                if (responseData == "정답입니다!") //result.sResult == "OK"
                 {
-
                     this.Visible = false;
-                    Menu m = new Menu();
+                    fmMainMenu menu = new fmMainMenu();
                     //Form3 form3 = new Form3();
                     //form3.Close();
-                    m.ShowDialog();
+                    menu.ShowDialog();
                 }
                 else
                 {

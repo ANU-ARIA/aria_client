@@ -16,5 +16,20 @@ namespace WindowsFormsApp2
         {
             InitializeComponent();
         }
+
+        private void search_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CheckBox3_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Line_box_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

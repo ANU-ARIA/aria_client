@@ -30,21 +30,15 @@
         {
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.model_temp_text = new System.Windows.Forms.TextBox();
+            this.models_box = new System.Windows.Forms.RichTextBox();
+            this.search = new System.Windows.Forms.Button();
+            this.update = new System.Windows.Forms.Button();
+            this.delete = new System.Windows.Forms.Button();
+            this.insert = new System.Windows.Forms.Button();
+            this.model_name_text = new System.Windows.Forms.TextBox();
+            this.model_humidity_text = new System.Windows.Forms.TextBox();
+            this.model_id_text = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -69,128 +63,82 @@
             this.label9.TabIndex = 40;
             this.label9.Text = "수정과 삭제는 모델 id 입력 후 버튼 클릭.";
             // 
-            // label8
+            // model_temp_text
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(558, 248);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(67, 15);
-            this.label8.TabIndex = 39;
-            this.label8.Text = "최고온도";
+            this.model_temp_text.Location = new System.Drawing.Point(276, 238);
+            this.model_temp_text.Name = "model_temp_text";
+            this.model_temp_text.Size = new System.Drawing.Size(172, 25);
+            this.model_temp_text.TabIndex = 37;
             // 
-            // label7
+            // models_box
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(273, 248);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(67, 15);
-            this.label7.TabIndex = 38;
-            this.label7.Text = "최소온도";
+            this.models_box.Location = new System.Drawing.Point(962, 170);
+            this.models_box.Name = "models_box";
+            this.models_box.Size = new System.Drawing.Size(311, 263);
+            this.models_box.TabIndex = 36;
+            this.models_box.Text = "";
+            this.models_box.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             // 
-            // textBox6
+            // search
             // 
-            this.textBox6.Location = new System.Drawing.Point(631, 238);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(172, 25);
-            this.textBox6.TabIndex = 37;
+            this.search.Location = new System.Drawing.Point(728, 524);
+            this.search.Name = "search";
+            this.search.Size = new System.Drawing.Size(75, 23);
+            this.search.TabIndex = 35;
+            this.search.Text = "검색";
+            this.search.UseVisualStyleBackColor = true;
+            this.search.Click += new System.EventHandler(this.Search_Click);
             // 
-            // richTextBox1
+            // update
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(962, 170);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(311, 263);
-            this.richTextBox1.TabIndex = 36;
-            this.richTextBox1.Text = "";
-            this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
+            this.update.Location = new System.Drawing.Point(531, 524);
+            this.update.Name = "update";
+            this.update.Size = new System.Drawing.Size(75, 23);
+            this.update.TabIndex = 34;
+            this.update.Text = "변경";
+            this.update.UseVisualStyleBackColor = true;
+            this.update.Click += new System.EventHandler(this.Update_Click);
             // 
-            // button4
+            // delete
             // 
-            this.button4.Location = new System.Drawing.Point(728, 524);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 35;
-            this.button4.Text = "검색";
-            this.button4.UseVisualStyleBackColor = true;
+            this.delete.Location = new System.Drawing.Point(350, 524);
+            this.delete.Name = "delete";
+            this.delete.Size = new System.Drawing.Size(75, 23);
+            this.delete.TabIndex = 33;
+            this.delete.Text = "삭제";
+            this.delete.UseVisualStyleBackColor = true;
+            this.delete.Click += new System.EventHandler(this.Delete_Click);
             // 
-            // button3
+            // insert
             // 
-            this.button3.Location = new System.Drawing.Point(531, 524);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 34;
-            this.button3.Text = "변경";
-            this.button3.UseVisualStyleBackColor = true;
+            this.insert.Location = new System.Drawing.Point(177, 524);
+            this.insert.Name = "insert";
+            this.insert.Size = new System.Drawing.Size(75, 23);
+            this.insert.TabIndex = 32;
+            this.insert.Text = "생성";
+            this.insert.UseVisualStyleBackColor = true;
+            this.insert.Click += new System.EventHandler(this.Insert_Click);
             // 
-            // button2
+            // model_name_text
             // 
-            this.button2.Location = new System.Drawing.Point(350, 524);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 33;
-            this.button2.Text = "삭제";
-            this.button2.UseVisualStyleBackColor = true;
+            this.model_name_text.Location = new System.Drawing.Point(276, 370);
+            this.model_name_text.Name = "model_name_text";
+            this.model_name_text.Size = new System.Drawing.Size(172, 25);
+            this.model_name_text.TabIndex = 31;
             // 
-            // button1
+            // model_humidity_text
             // 
-            this.button1.Location = new System.Drawing.Point(177, 524);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 32;
-            this.button1.Text = "생성";
-            this.button1.UseVisualStyleBackColor = true;
+            this.model_humidity_text.Location = new System.Drawing.Point(276, 306);
+            this.model_humidity_text.Name = "model_humidity_text";
+            this.model_humidity_text.Size = new System.Drawing.Size(172, 25);
+            this.model_humidity_text.TabIndex = 30;
             // 
-            // textBox5
+            // model_id_text
             // 
-            this.textBox5.Location = new System.Drawing.Point(276, 370);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(172, 25);
-            this.textBox5.TabIndex = 31;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(631, 306);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(172, 25);
-            this.textBox4.TabIndex = 30;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(350, 306);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(172, 25);
-            this.textBox3.TabIndex = 29;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(350, 238);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(172, 25);
-            this.textBox2.TabIndex = 28;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(276, 170);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(172, 25);
-            this.textBox1.TabIndex = 27;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(558, 316);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(67, 15);
-            this.label6.TabIndex = 26;
-            this.label6.Text = "최고습도";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(273, 316);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(67, 15);
-            this.label5.TabIndex = 25;
-            this.label5.Text = "최소습도";
+            this.model_id_text.Location = new System.Drawing.Point(276, 170);
+            this.model_id_text.Name = "model_id_text";
+            this.model_id_text.Size = new System.Drawing.Size(172, 25);
+            this.model_id_text.TabIndex = 27;
             // 
             // label4
             // 
@@ -228,33 +176,27 @@
             this.label1.TabIndex = 21;
             this.label1.Text = "모델 id";
             // 
-            // m2
+            // Model_set
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1367, 690);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.model_temp_text);
+            this.Controls.Add(this.models_box);
+            this.Controls.Add(this.search);
+            this.Controls.Add(this.update);
+            this.Controls.Add(this.delete);
+            this.Controls.Add(this.insert);
+            this.Controls.Add(this.model_name_text);
+            this.Controls.Add(this.model_humidity_text);
+            this.Controls.Add(this.model_id_text);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "m2";
+            this.Name = "Model_set";
             this.Text = "m2";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -265,21 +207,15 @@
 
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox model_temp_text;
+        private System.Windows.Forms.RichTextBox models_box;
+        private System.Windows.Forms.Button search;
+        private System.Windows.Forms.Button update;
+        private System.Windows.Forms.Button delete;
+        private System.Windows.Forms.Button insert;
+        private System.Windows.Forms.TextBox model_name_text;
+        private System.Windows.Forms.TextBox model_humidity_text;
+        private System.Windows.Forms.TextBox model_id_text;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;

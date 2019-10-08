@@ -24,12 +24,14 @@ namespace WindowsFormsApp2
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        // 삽입
+        private void insert_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        // 검색 
+        private void search_Click(object sender, EventArgs e)
         {
             MySqlConnection conn;
             string strconn = "Server=192.168.111.226;Database=Aria;Uid=root;Pwd=1234;";
@@ -55,7 +57,19 @@ namespace WindowsFormsApp2
                     aria_user_data.first_name + "\t" + aria_user_data.last_name + "\n");
                 user_all.Add(aria_user_data);
             }
-            richTextBox1.Text = "아이디\tpw\t레벨\t\t이메일\t\t성\t이름\n" + gg.ToString();
+            users_box.Text = "아이디\tpw\t레벨\t\t이메일\t\t성\t이름\n" + gg.ToString();
+        }
+
+        // 삭제
+        private void Delete_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        // 수정
+        private void Update_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

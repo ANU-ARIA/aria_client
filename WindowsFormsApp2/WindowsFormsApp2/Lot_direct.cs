@@ -32,7 +32,17 @@ namespace WindowsFormsApp2
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void insert_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void GroupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Line_text_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

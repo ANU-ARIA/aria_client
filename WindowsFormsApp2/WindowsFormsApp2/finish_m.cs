@@ -62,5 +62,10 @@ namespace WindowsFormsApp2
             DataGridView2.Columns[4].DisplayIndex = 4;
             DataGridView2.Columns[5].DisplayIndex = 5;
         }
+
+        private void Insert_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
