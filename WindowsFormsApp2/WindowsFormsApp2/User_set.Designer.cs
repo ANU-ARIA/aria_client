@@ -43,9 +43,10 @@
             this.email_text = new System.Windows.Forms.TextBox();
             this.first_text = new System.Windows.Forms.TextBox();
             this.last_text = new System.Windows.Forms.TextBox();
-            this.level_text = new System.Windows.Forms.ComboBox();
             this.users_box = new System.Windows.Forms.RichTextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.level_btn1 = new System.Windows.Forms.RadioButton();
+            this.level_btn2 = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // insert
@@ -192,15 +193,6 @@
             this.last_text.Size = new System.Drawing.Size(176, 25);
             this.last_text.TabIndex = 15;
             // 
-            // level_text
-            // 
-            this.level_text.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.level_text.FormattingEnabled = true;
-            this.level_text.Location = new System.Drawing.Point(310, 189);
-            this.level_text.Name = "level_text";
-            this.level_text.Size = new System.Drawing.Size(176, 23);
-            this.level_text.TabIndex = 16;
-            // 
             // users_box
             // 
             this.users_box.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -220,14 +212,37 @@
             this.label7.TabIndex = 18;
             this.label7.Text = "현재 회원목록";
             // 
+            // level_btn1
+            // 
+            this.level_btn1.AutoSize = true;
+            this.level_btn1.Location = new System.Drawing.Point(319, 197);
+            this.level_btn1.Name = "level_btn1";
+            this.level_btn1.Size = new System.Drawing.Size(73, 19);
+            this.level_btn1.TabIndex = 19;
+            this.level_btn1.TabStop = true;
+            this.level_btn1.Text = "관리자";
+            this.level_btn1.UseVisualStyleBackColor = true;
+            // 
+            // level_btn2
+            // 
+            this.level_btn2.AutoSize = true;
+            this.level_btn2.Location = new System.Drawing.Point(398, 197);
+            this.level_btn2.Name = "level_btn2";
+            this.level_btn2.Size = new System.Drawing.Size(73, 19);
+            this.level_btn2.TabIndex = 19;
+            this.level_btn2.TabStop = true;
+            this.level_btn2.Text = "사용자";
+            this.level_btn2.UseVisualStyleBackColor = true;
+            // 
             // User_set
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1328, 711);
+            this.Controls.Add(this.level_btn2);
+            this.Controls.Add(this.level_btn1);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.users_box);
-            this.Controls.Add(this.level_text);
             this.Controls.Add(this.last_text);
             this.Controls.Add(this.first_text);
             this.Controls.Add(this.email_text);
@@ -268,8 +283,9 @@
         private System.Windows.Forms.TextBox email_text;
         private System.Windows.Forms.TextBox first_text;
         private System.Windows.Forms.TextBox last_text;
-        private System.Windows.Forms.ComboBox level_text;
         private System.Windows.Forms.RichTextBox users_box;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.RadioButton level_btn1;
+        private System.Windows.Forms.RadioButton level_btn2;
     }
 }
