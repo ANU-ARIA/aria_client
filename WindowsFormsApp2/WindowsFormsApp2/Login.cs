@@ -27,6 +27,7 @@ namespace WindowsFormsApp2
             x2_imge.Hide();
         }
 
+
         private void Form3_Load(object sender, EventArgs e)
         {
 
@@ -55,7 +56,6 @@ namespace WindowsFormsApp2
             string message;
             message = "{{#!!," + user_id_text.Text + "," + pw_text.Text + ",#}}";
 
-
             /* -------------------------- IPEndPoint Class --------------------------
              Represents a network endpoint as an IP address and a port number
              IPEndPoint 클래스의 생성자엔 총 두 개의 매개변수가 필요합니다.
@@ -72,7 +72,6 @@ namespace WindowsFormsApp2
             message = "{{#!!," + user_id_text.Text + "," + pw_text.Text + ",#}}";
             IPEndPoint clientAddress = new IPEndPoint(IPAddress.Parse(bindIp), Login.abc);
             Login.abc++;
-
 
             /* -------------------------- IPAddress Class --------------------------
              IP 주소 제공하는 클래스
@@ -157,10 +156,12 @@ namespace WindowsFormsApp2
 
         }
 
+
         private void Panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
+
 
         private void Label3_Click(object sender, EventArgs e)
         {
