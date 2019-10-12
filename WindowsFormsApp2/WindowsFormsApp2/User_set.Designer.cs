@@ -47,12 +47,16 @@
             this.label7 = new System.Windows.Forms.Label();
             this.level_btn1 = new System.Windows.Forms.RadioButton();
             this.level_btn2 = new System.Windows.Forms.RadioButton();
+            this.user_view = new System.Windows.Forms.DataGridView();
+            this.levet_text = new System.Windows.Forms.TextBox();
+            this.id_sc_text = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.user_view)).BeginInit();
             this.SuspendLayout();
             // 
             // insert
             // 
             this.insert.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.insert.Location = new System.Drawing.Point(235, 483);
+            this.insert.Location = new System.Drawing.Point(287, 524);
             this.insert.Name = "insert";
             this.insert.Size = new System.Drawing.Size(75, 23);
             this.insert.TabIndex = 0;
@@ -63,7 +67,7 @@
             // delete
             // 
             this.delete.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.delete.Location = new System.Drawing.Point(375, 483);
+            this.delete.Location = new System.Drawing.Point(427, 524);
             this.delete.Name = "delete";
             this.delete.Size = new System.Drawing.Size(75, 23);
             this.delete.TabIndex = 1;
@@ -74,7 +78,7 @@
             // update
             // 
             this.update.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.update.Location = new System.Drawing.Point(528, 483);
+            this.update.Location = new System.Drawing.Point(580, 524);
             this.update.Name = "update";
             this.update.Size = new System.Drawing.Size(75, 23);
             this.update.TabIndex = 2;
@@ -85,7 +89,7 @@
             // search
             // 
             this.search.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.search.Location = new System.Drawing.Point(687, 483);
+            this.search.Location = new System.Drawing.Point(1346, 486);
             this.search.Name = "search";
             this.search.Size = new System.Drawing.Size(75, 23);
             this.search.TabIndex = 3;
@@ -97,7 +101,7 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(232, 78);
+            this.label1.Location = new System.Drawing.Point(284, 119);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(52, 15);
             this.label1.TabIndex = 4;
@@ -107,7 +111,7 @@
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(232, 136);
+            this.label2.Location = new System.Drawing.Point(284, 177);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(67, 15);
             this.label2.TabIndex = 5;
@@ -116,7 +120,7 @@
             // id_text
             // 
             this.id_text.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.id_text.Location = new System.Drawing.Point(310, 68);
+            this.id_text.Location = new System.Drawing.Point(362, 109);
             this.id_text.Name = "id_text";
             this.id_text.Size = new System.Drawing.Size(176, 25);
             this.id_text.TabIndex = 6;
@@ -124,7 +128,7 @@
             // pw_text
             // 
             this.pw_text.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pw_text.Location = new System.Drawing.Point(310, 126);
+            this.pw_text.Location = new System.Drawing.Point(362, 167);
             this.pw_text.Name = "pw_text";
             this.pw_text.Size = new System.Drawing.Size(176, 25);
             this.pw_text.TabIndex = 7;
@@ -133,7 +137,7 @@
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(232, 197);
+            this.label3.Location = new System.Drawing.Point(284, 238);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(37, 15);
             this.label3.TabIndex = 8;
@@ -143,7 +147,7 @@
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(232, 264);
+            this.label4.Location = new System.Drawing.Point(284, 305);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(48, 15);
             this.label4.TabIndex = 9;
@@ -153,7 +157,7 @@
             // 
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(232, 325);
+            this.label5.Location = new System.Drawing.Point(284, 366);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(73, 15);
             this.label5.TabIndex = 10;
@@ -163,7 +167,7 @@
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(232, 385);
+            this.label6.Location = new System.Drawing.Point(284, 426);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(73, 15);
             this.label6.TabIndex = 11;
@@ -172,7 +176,7 @@
             // email_text
             // 
             this.email_text.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.email_text.Location = new System.Drawing.Point(310, 254);
+            this.email_text.Location = new System.Drawing.Point(362, 295);
             this.email_text.Name = "email_text";
             this.email_text.Size = new System.Drawing.Size(176, 25);
             this.email_text.TabIndex = 13;
@@ -180,7 +184,7 @@
             // first_text
             // 
             this.first_text.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.first_text.Location = new System.Drawing.Point(310, 315);
+            this.first_text.Location = new System.Drawing.Point(362, 356);
             this.first_text.Name = "first_text";
             this.first_text.Size = new System.Drawing.Size(176, 25);
             this.first_text.TabIndex = 14;
@@ -188,7 +192,7 @@
             // last_text
             // 
             this.last_text.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.last_text.Location = new System.Drawing.Point(310, 375);
+            this.last_text.Location = new System.Drawing.Point(362, 416);
             this.last_text.Name = "last_text";
             this.last_text.Size = new System.Drawing.Size(176, 25);
             this.last_text.TabIndex = 15;
@@ -196,9 +200,9 @@
             // users_box
             // 
             this.users_box.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.users_box.Location = new System.Drawing.Point(649, 68);
+            this.users_box.Location = new System.Drawing.Point(596, 109);
             this.users_box.Name = "users_box";
-            this.users_box.Size = new System.Drawing.Size(451, 351);
+            this.users_box.Size = new System.Drawing.Size(300, 371);
             this.users_box.TabIndex = 17;
             this.users_box.Text = "";
             // 
@@ -206,7 +210,7 @@
             // 
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(821, 33);
+            this.label7.Location = new System.Drawing.Point(679, 76);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(102, 15);
             this.label7.TabIndex = 18;
@@ -214,8 +218,9 @@
             // 
             // level_btn1
             // 
+            this.level_btn1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.level_btn1.AutoSize = true;
-            this.level_btn1.Location = new System.Drawing.Point(319, 197);
+            this.level_btn1.Location = new System.Drawing.Point(369, 237);
             this.level_btn1.Name = "level_btn1";
             this.level_btn1.Size = new System.Drawing.Size(73, 19);
             this.level_btn1.TabIndex = 19;
@@ -225,8 +230,9 @@
             // 
             // level_btn2
             // 
+            this.level_btn2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.level_btn2.AutoSize = true;
-            this.level_btn2.Location = new System.Drawing.Point(398, 197);
+            this.level_btn2.Location = new System.Drawing.Point(448, 237);
             this.level_btn2.Name = "level_btn2";
             this.level_btn2.Size = new System.Drawing.Size(73, 19);
             this.level_btn2.TabIndex = 19;
@@ -234,11 +240,40 @@
             this.level_btn2.Text = "사용자";
             this.level_btn2.UseVisualStyleBackColor = true;
             // 
+            // user_view
+            // 
+            this.user_view.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.user_view.Location = new System.Drawing.Point(902, 109);
+            this.user_view.Name = "user_view";
+            this.user_view.RowHeadersWidth = 51;
+            this.user_view.RowTemplate.Height = 27;
+            this.user_view.Size = new System.Drawing.Size(519, 371);
+            this.user_view.TabIndex = 20;
+            this.user_view.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.User_view_CellClick);
+            this.user_view.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.User_view_CellContentClick);
+            // 
+            // levet_text
+            // 
+            this.levet_text.Location = new System.Drawing.Point(527, 235);
+            this.levet_text.Name = "levet_text";
+            this.levet_text.Size = new System.Drawing.Size(52, 25);
+            this.levet_text.TabIndex = 21;
+            // 
+            // id_sc_text
+            // 
+            this.id_sc_text.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.id_sc_text.Location = new System.Drawing.Point(1164, 484);
+            this.id_sc_text.Name = "id_sc_text";
+            this.id_sc_text.Size = new System.Drawing.Size(176, 25);
+            this.id_sc_text.TabIndex = 6;
+            // 
             // User_set
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1328, 711);
+            this.ClientSize = new System.Drawing.Size(1433, 792);
+            this.Controls.Add(this.levet_text);
+            this.Controls.Add(this.user_view);
             this.Controls.Add(this.level_btn2);
             this.Controls.Add(this.level_btn1);
             this.Controls.Add(this.label7);
@@ -251,6 +286,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.pw_text);
+            this.Controls.Add(this.id_sc_text);
             this.Controls.Add(this.id_text);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -261,6 +297,7 @@
             this.Name = "User_set";
             this.Text = "m1";
             this.Load += new System.EventHandler(this.m1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.user_view)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -287,5 +324,8 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.RadioButton level_btn1;
         private System.Windows.Forms.RadioButton level_btn2;
+        private System.Windows.Forms.DataGridView user_view;
+        private System.Windows.Forms.TextBox levet_text;
+        private System.Windows.Forms.TextBox id_sc_text;
     }
 }

@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.model_temp_text = new System.Windows.Forms.TextBox();
@@ -43,12 +46,15 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.model_view = new System.Windows.Forms.DataGridView();
+            this.model_id_sch_text = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.model_view)).BeginInit();
             this.SuspendLayout();
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(1023, 137);
+            this.label10.Location = new System.Drawing.Point(1023, 17);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(67, 15);
             this.label10.TabIndex = 41;
@@ -72,7 +78,7 @@
             // 
             // models_box
             // 
-            this.models_box.Location = new System.Drawing.Point(899, 170);
+            this.models_box.Location = new System.Drawing.Point(899, 50);
             this.models_box.Name = "models_box";
             this.models_box.Size = new System.Drawing.Size(311, 263);
             this.models_box.TabIndex = 36;
@@ -81,7 +87,7 @@
             // 
             // search
             // 
-            this.search.Location = new System.Drawing.Point(728, 524);
+            this.search.Location = new System.Drawing.Point(1265, 553);
             this.search.Name = "search";
             this.search.Size = new System.Drawing.Size(75, 23);
             this.search.TabIndex = 35;
@@ -91,7 +97,7 @@
             // 
             // update
             // 
-            this.update.Location = new System.Drawing.Point(531, 524);
+            this.update.Location = new System.Drawing.Point(538, 441);
             this.update.Name = "update";
             this.update.Size = new System.Drawing.Size(75, 23);
             this.update.TabIndex = 34;
@@ -101,7 +107,7 @@
             // 
             // delete
             // 
-            this.delete.Location = new System.Drawing.Point(350, 524);
+            this.delete.Location = new System.Drawing.Point(350, 441);
             this.delete.Name = "delete";
             this.delete.Size = new System.Drawing.Size(75, 23);
             this.delete.TabIndex = 33;
@@ -111,7 +117,7 @@
             // 
             // insert
             // 
-            this.insert.Location = new System.Drawing.Point(177, 524);
+            this.insert.Location = new System.Drawing.Point(177, 441);
             this.insert.Name = "insert";
             this.insert.Size = new System.Drawing.Size(75, 23);
             this.insert.TabIndex = 32;
@@ -176,11 +182,55 @@
             this.label1.TabIndex = 21;
             this.label1.Text = "모델 id";
             // 
+            // model_view
+            // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.model_view.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.model_view.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.model_view.DefaultCellStyle = dataGridViewCellStyle2;
+            this.model_view.Location = new System.Drawing.Point(899, 339);
+            this.model_view.Name = "model_view";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.model_view.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.model_view.RowHeadersWidth = 51;
+            this.model_view.RowTemplate.Height = 27;
+            this.model_view.Size = new System.Drawing.Size(441, 208);
+            this.model_view.TabIndex = 42;
+            this.model_view.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Model_view_CellClick);
+            this.model_view.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
+            // 
+            // model_id_sch_text
+            // 
+            this.model_id_sch_text.Location = new System.Drawing.Point(1087, 551);
+            this.model_id_sch_text.Name = "model_id_sch_text";
+            this.model_id_sch_text.Size = new System.Drawing.Size(172, 25);
+            this.model_id_sch_text.TabIndex = 27;
+            // 
             // Model_set
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1367, 690);
+            this.Controls.Add(this.model_view);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.model_temp_text);
@@ -191,6 +241,7 @@
             this.Controls.Add(this.insert);
             this.Controls.Add(this.model_name_text);
             this.Controls.Add(this.model_humidity_text);
+            this.Controls.Add(this.model_id_sch_text);
             this.Controls.Add(this.model_id_text);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -198,6 +249,8 @@
             this.Controls.Add(this.label1);
             this.Name = "Model_set";
             this.Text = "m2";
+            this.Load += new System.EventHandler(this.Model_set_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.model_view)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -220,5 +273,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView model_view;
+        private System.Windows.Forms.TextBox model_id_sch_text;
     }
 }

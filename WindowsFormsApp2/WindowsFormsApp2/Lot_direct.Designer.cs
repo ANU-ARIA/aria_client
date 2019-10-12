@@ -61,6 +61,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.line_text = new System.Windows.Forms.ComboBox();
             this.lots_list = new System.Windows.Forms.DataGridView();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.add_insert = new System.Windows.Forms.Button();
+            this.add_delete = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.humid_margin_text)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.temp_margin_text)).BeginInit();
@@ -72,6 +75,8 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.humid_margin_text);
+            this.groupBox1.Controls.Add(this.add_delete);
+            this.groupBox1.Controls.Add(this.add_insert);
             this.groupBox1.Controls.Add(this.insert);
             this.groupBox1.Controls.Add(this.label22);
             this.groupBox1.Controls.Add(this.label6);
@@ -84,17 +89,11 @@
             this.groupBox1.Controls.Add(this.model_name_text);
             this.groupBox1.Controls.Add(this.lot_id_text);
             this.groupBox1.Controls.Add(this.prod_count_text);
-            this.groupBox1.Controls.Add(this.label14);
-            this.groupBox1.Controls.Add(this.label15);
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.label12);
-            this.groupBox1.Controls.Add(this.label18);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label17);
-            this.groupBox1.Controls.Add(this.line_temp);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.line_humid);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label19);
@@ -102,9 +101,9 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.line_text);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(10, 77);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(600, 577);
+            this.groupBox1.Size = new System.Drawing.Size(600, 682);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "작업 지시";
@@ -121,7 +120,7 @@
             // 
             this.insert.Location = new System.Drawing.Point(24, 499);
             this.insert.Name = "insert";
-            this.insert.Size = new System.Drawing.Size(176, 53);
+            this.insert.Size = new System.Drawing.Size(150, 46);
             this.insert.TabIndex = 0;
             this.insert.Text = "작업 지시";
             this.insert.UseVisualStyleBackColor = true;
@@ -141,7 +140,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("굴림", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label6.Location = new System.Drawing.Point(329, 192);
+            this.label6.Location = new System.Drawing.Point(397, 511);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(130, 24);
             this.label6.TabIndex = 6;
@@ -151,7 +150,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("굴림", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label5.Location = new System.Drawing.Point(489, 192);
+            this.label5.Location = new System.Drawing.Point(557, 511);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(23, 24);
             this.label5.TabIndex = 4;
@@ -226,7 +225,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("굴림", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label14.Location = new System.Drawing.Point(350, 528);
+            this.label14.Location = new System.Drawing.Point(1389, 9);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(130, 24);
             this.label14.TabIndex = 14;
@@ -236,7 +235,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("굴림", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label15.Location = new System.Drawing.Point(350, 474);
+            this.label15.Location = new System.Drawing.Point(1224, 9);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(130, 24);
             this.label15.TabIndex = 15;
@@ -246,7 +245,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("굴림", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label11.Location = new System.Drawing.Point(294, 142);
+            this.label11.Location = new System.Drawing.Point(362, 461);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(186, 24);
             this.label11.TabIndex = 11;
@@ -266,7 +265,7 @@
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("굴림", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label18.Location = new System.Drawing.Point(20, 30);
+            this.label18.Location = new System.Drawing.Point(1019, 9);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(123, 24);
             this.label18.TabIndex = 6;
@@ -276,7 +275,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("굴림", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label9.Location = new System.Drawing.Point(329, 304);
+            this.label9.Location = new System.Drawing.Point(397, 623);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(130, 24);
             this.label9.TabIndex = 6;
@@ -286,7 +285,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("굴림", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label7.Location = new System.Drawing.Point(329, 250);
+            this.label7.Location = new System.Drawing.Point(397, 569);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(130, 24);
             this.label7.TabIndex = 6;
@@ -296,7 +295,7 @@
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("굴림", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label17.Location = new System.Drawing.Point(486, 142);
+            this.label17.Location = new System.Drawing.Point(554, 461);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(23, 24);
             this.label17.TabIndex = 4;
@@ -307,7 +306,7 @@
             // 
             this.line_temp.AutoSize = true;
             this.line_temp.Font = new System.Drawing.Font("굴림", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.line_temp.Location = new System.Drawing.Point(486, 474);
+            this.line_temp.Location = new System.Drawing.Point(1360, 9);
             this.line_temp.Name = "line_temp";
             this.line_temp.Size = new System.Drawing.Size(23, 24);
             this.line_temp.TabIndex = 4;
@@ -318,7 +317,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("굴림", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label4.Location = new System.Drawing.Point(180, 30);
+            this.label4.Location = new System.Drawing.Point(1148, 9);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(23, 24);
             this.label4.TabIndex = 4;
@@ -329,7 +328,7 @@
             // 
             this.line_humid.AutoSize = true;
             this.line_humid.Font = new System.Drawing.Font("굴림", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.line_humid.Location = new System.Drawing.Point(486, 528);
+            this.line_humid.Location = new System.Drawing.Point(1525, 9);
             this.line_humid.Name = "line_humid";
             this.line_humid.Size = new System.Drawing.Size(23, 24);
             this.line_humid.TabIndex = 4;
@@ -340,7 +339,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("굴림", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label10.Location = new System.Drawing.Point(489, 304);
+            this.label10.Location = new System.Drawing.Point(557, 623);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(23, 24);
             this.label10.TabIndex = 4;
@@ -351,7 +350,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("굴림", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label8.Location = new System.Drawing.Point(489, 250);
+            this.label8.Location = new System.Drawing.Point(557, 569);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(23, 24);
             this.label8.TabIndex = 4;
@@ -411,20 +410,55 @@
             // lots_list
             // 
             this.lots_list.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.lots_list.Location = new System.Drawing.Point(637, 31);
+            this.lots_list.Location = new System.Drawing.Point(1203, 77);
             this.lots_list.Name = "lots_list";
             this.lots_list.RowHeadersWidth = 51;
             this.lots_list.RowTemplate.Height = 27;
-            this.lots_list.Size = new System.Drawing.Size(547, 547);
+            this.lots_list.Size = new System.Drawing.Size(339, 682);
             this.lots_list.TabIndex = 2;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(616, 77);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(581, 682);
+            this.textBox1.TabIndex = 3;
+            // 
+            // add_insert
+            // 
+            this.add_insert.Location = new System.Drawing.Point(24, 560);
+            this.add_insert.Name = "add_insert";
+            this.add_insert.Size = new System.Drawing.Size(150, 46);
+            this.add_insert.TabIndex = 0;
+            this.add_insert.Text = "예약 지시";
+            this.add_insert.UseVisualStyleBackColor = true;
+            this.add_insert.Click += new System.EventHandler(this.insert_Click);
+            // 
+            // add_delete
+            // 
+            this.add_delete.Location = new System.Drawing.Point(184, 560);
+            this.add_delete.Name = "add_delete";
+            this.add_delete.Size = new System.Drawing.Size(150, 46);
+            this.add_delete.TabIndex = 0;
+            this.add_delete.Text = "예약 삭제";
+            this.add_delete.UseVisualStyleBackColor = true;
+            this.add_delete.Click += new System.EventHandler(this.insert_Click);
             // 
             // Lot_direct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1217, 606);
+            this.ClientSize = new System.Drawing.Size(1556, 771);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.lots_list);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.label18);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.line_humid);
+            this.Controls.Add(this.line_temp);
+            this.Controls.Add(this.label14);
             this.Name = "Lot_direct";
             this.Text = "Model";
             this.groupBox1.ResumeLayout(false);
@@ -435,6 +469,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.prod_count_text)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lots_list)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -473,5 +508,8 @@
         private System.Windows.Forms.NumericUpDown temp_margin_text;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.DataGridView lots_list;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button add_delete;
+        private System.Windows.Forms.Button add_insert;
     }
 }
