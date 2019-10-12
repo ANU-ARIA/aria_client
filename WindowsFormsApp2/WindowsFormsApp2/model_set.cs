@@ -17,29 +17,28 @@ namespace WindowsFormsApp2
 {
     public partial class Model_set : Form
     {
-        string bindIp = "220.69.249.232";
-        string serverIp = "220.69.249.232";
-        const int serverPort = 4000;
+        string               m_sBindIp = "220.69.249.232";
+        string               m_sServerIp = "220.69.249.232";
+        const int            m_nServerPort = 4000;
+        private List<Model>  m_listReceivedModel;
+        DataTable            m_dtModel = new DataTable();
 
         int bb = Convert.ToInt32(700);
-        private List<Model> addr;
-        DataTable table = new DataTable();
 
         public Model_set()
         {
             InitializeComponent();
 
-            addr = new List<Model>();
+            m_listReceivedModel = new List<Model>();
 
             //DataTable table = new DataTable();
 
-            table.Columns.Add("모델 id", typeof(int));
-            table.Columns.Add("적정 온도", typeof(int));
-            table.Columns.Add("적정 습도", typeof(int));
-            table.Columns.Add("모델 명", typeof(string));
+            m_dtModel.Columns.Add("모델 id", typeof(int));
+            m_dtModel.Columns.Add("적정 온도", typeof(int));
+            m_dtModel.Columns.Add("적정 습도", typeof(int));
+            m_dtModel.Columns.Add("모델 명", typeof(string));
 
-            model_view.DataSource = table;
-
+            DataGridView_Model.DataSource = m_dtModel;
         }
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)
@@ -54,37 +53,43 @@ namespace WindowsFormsApp2
 
             try
             {
-                // 텍스트 데이터
-                int md_id = Int32.Parse(model_id_text.Text);
-                float md_temp = Int32.Parse(model_temp_text.Text);
-                float md_hum = Int32.Parse(model_humidity_text.Text);
-                string md_name = model_name_text.Text;
+                // 텍스트 데이터 (컨트롤로 부터 데이터를 가져옴.)
+                int md_id = Int32.Parse(txtbox_model_id.Text);
+                float md_temp = Int32.Parse(txtbox_model_temp.Text);
+                float md_hum = Int32.Parse(txtbox_model_humidity.Text);
+                string md_name = txtbox_model_name.Text;
 
                 // 데이터를 하나의 메세지로 묶는다.
+                // MES Server에 전달할 메세지를 만든다.
                 string message;
 
                 message = "{{#@!," + md_id + "," + md_temp + "," + md_hum + "," + md_name + ",#}}";
 
-                IPEndPoint clientAddress = new IPEndPoint(IPAddress.Parse(bindIp), bb);
-                IPEndPoint serverAddress = new IPEndPoint(IPAddress.Parse(serverIp), serverPort);
+                // MES Server와 통신을 연결 한다.
+                IPEndPoint clientAddress = new IPEndPoint(IPAddress.Parse(m_sBindIp), bb);
+                IPEndPoint serverAddress = new IPEndPoint(IPAddress.Parse(m_sServerIp), m_nServerPort);
 
                 bb++;
 
                 TcpClient client = new TcpClient(clientAddress);
                 client.Connect(serverAddress);
+
+                // MES Server 메세지를 송신 한다.
                 byte[] data = System.Text.Encoding.Default.GetBytes(message);
                 NetworkStream stream = client.GetStream();
                 stream.Write(data, 0, data.Length);
 
+                // MES Server로 부터 수신된 데이터를 읽는다.
                 data = new byte[256];
                 string responseData = "";
 
                 int bytes = stream.Read(data, 0, data.Length);
                 responseData = Encoding.Default.GetString(data, 0, bytes);
 
+                // MES Server로 부터 수신된 메세지를 해석한다.
                 if (responseData == "insert 받았습니다~") //result.sResult == "OK"
                 {
-                    models_box.Text = responseData;
+                    rtxtbox_models.Text = responseData;
                     MessageBox.Show("생성 되었습니다.");
                 }
                 else
@@ -92,7 +97,7 @@ namespace WindowsFormsApp2
                     MessageBox.Show("생성에 실패했습니다.");
                 }
 
-                TJcl();
+                ShowModelInfoToGridCtrl();
 
                 stream.Close();
                 client.Close();
@@ -100,7 +105,7 @@ namespace WindowsFormsApp2
             catch
             {
                 MessageBox.Show("값을 입력해주세요.");
-                TJcl();
+                ShowModelInfoToGridCtrl();
             }
 
             
@@ -118,18 +123,18 @@ namespace WindowsFormsApp2
             {
 
                 // 텍스트 데이터
-                int md_id = Int32.Parse(model_id_text.Text);
-                float md_temp = Int32.Parse(model_temp_text.Text);
-                float md_hum = Int32.Parse(model_humidity_text.Text);
-                string md_name = model_name_text.Text;
+                int md_id = Int32.Parse(txtbox_model_id.Text);
+                float md_temp = Int32.Parse(txtbox_model_temp.Text);
+                float md_hum = Int32.Parse(txtbox_model_humidity.Text);
+                string md_name = txtbox_model_name.Text;
 
                 // 데이터를 하나의 메세지로 묶는다.
                 string message;
 
                 message = "{{#@@," + md_id + "," + md_temp + "," + md_hum + "," + md_name + ",#}}";
 
-                IPEndPoint clientAddress = new IPEndPoint(IPAddress.Parse(bindIp), bb);
-                IPEndPoint serverAddress = new IPEndPoint(IPAddress.Parse(serverIp), serverPort);
+                IPEndPoint clientAddress = new IPEndPoint(IPAddress.Parse(m_sBindIp), bb);
+                IPEndPoint serverAddress = new IPEndPoint(IPAddress.Parse(m_sServerIp), m_nServerPort);
 
                 bb++;
 
@@ -147,7 +152,7 @@ namespace WindowsFormsApp2
 
                 if (responseData == "delete 받았습니다~") //result.sResult == "OK"
                 {
-                    models_box.Text = responseData;
+                    rtxtbox_models.Text = responseData;
                     MessageBox.Show("삭제 되었습니다.");
                 }
                 else
@@ -155,7 +160,7 @@ namespace WindowsFormsApp2
                     MessageBox.Show("삭제에 실패했습니다.");
                 }
 
-                TJcl();
+                ShowModelInfoToGridCtrl();
                 // 객체 종료
                 stream.Close();
                 client.Close();
@@ -165,7 +170,7 @@ namespace WindowsFormsApp2
             catch
             {
                 MessageBox.Show("값을 입력해주세요.");
-                TJcl();
+                ShowModelInfoToGridCtrl();
             }
         }
 
@@ -177,10 +182,10 @@ namespace WindowsFormsApp2
             {
 
                 // 텍스트 데이터
-                int md_id = Int32.Parse(model_id_text.Text);
-                float md_temp = Int32.Parse(model_temp_text.Text);
-                float md_hum = Int32.Parse(model_humidity_text.Text);
-                string md_name = model_name_text.Text;
+                int md_id = Int32.Parse(txtbox_model_id.Text);
+                float md_temp = Int32.Parse(txtbox_model_temp.Text);
+                float md_hum = Int32.Parse(txtbox_model_humidity.Text);
+                string md_name = txtbox_model_name.Text;
 
 
                 // 데이터를 하나의 메세지로 묶는다.
@@ -188,8 +193,8 @@ namespace WindowsFormsApp2
 
                 message = "{{#@#," + md_id + "," + md_temp + "," + md_hum + "," + md_name + ",#}}";
 
-                IPEndPoint clientAddress = new IPEndPoint(IPAddress.Parse(bindIp), bb);
-                IPEndPoint serverAddress = new IPEndPoint(IPAddress.Parse(serverIp), serverPort);
+                IPEndPoint clientAddress = new IPEndPoint(IPAddress.Parse(m_sBindIp), bb);
+                IPEndPoint serverAddress = new IPEndPoint(IPAddress.Parse(m_sServerIp), m_nServerPort);
 
                 bb++;
 
@@ -209,14 +214,14 @@ namespace WindowsFormsApp2
 
                 if (responseData == "update 받았습니다~") //result.sResult == "OK"
                 {
-                    models_box.Text = responseData;
+                    rtxtbox_models.Text = responseData;
                     MessageBox.Show("수정 되었습니다.");
                 }
                 else
                 {
                     MessageBox.Show("수정에 실패했습니다.");
                 }
-                TJcl();
+                ShowModelInfoToGridCtrl();
 
                 // 객체 종료
                 stream.Close();
@@ -226,7 +231,7 @@ namespace WindowsFormsApp2
             catch
             {
                 MessageBox.Show("값을 입력해주세요.");
-                TJcl();
+                ShowModelInfoToGridCtrl();
 
             }
         }
@@ -235,47 +240,47 @@ namespace WindowsFormsApp2
         // 검색
         private void Search_Click(object sender, EventArgs e)
         {
-            table.Clear();
-            addr.Clear();
+            m_dtModel.Clear();
+            m_listReceivedModel.Clear();
 
             // 텍스트 데이터
             try
             {
-                int md_id = Int32.Parse(model_id_sch_text.Text);
+                int md_id = Int32.Parse(txtbox_model_id_sch.Text);
 
-                    string message;
+                string message;
 
-                    message = "{{#@%," + md_id + ",#}}";
+                message = "{{#@%," + md_id + ",#}}";
 
-                    IPEndPoint clientAddress = new IPEndPoint(IPAddress.Parse(bindIp), bb);
-                    IPEndPoint serverAddress = new IPEndPoint(IPAddress.Parse(serverIp), serverPort);
+                IPEndPoint clientAddress = new IPEndPoint(IPAddress.Parse(m_sBindIp), bb);
+                IPEndPoint serverAddress = new IPEndPoint(IPAddress.Parse(m_sServerIp), m_nServerPort);
 
-                    bb++;
+                bb++;
 
-                    TcpClient client = new TcpClient(clientAddress);
-                    client.Connect(serverAddress);
-                    byte[] data = System.Text.Encoding.Default.GetBytes(message);
-                    NetworkStream stream = client.GetStream();
-                    stream.Write(data, 0, data.Length);
+                TcpClient client = new TcpClient(clientAddress);
+                client.Connect(serverAddress);
+                byte[] data = System.Text.Encoding.Default.GetBytes(message);
+                NetworkStream stream = client.GetStream();
+                stream.Write(data, 0, data.Length);
 
-                    data = new byte[256];
-                    string responseData = "";
+                data = new byte[256];
+                string responseData = "";
 
-                    int bytes = stream.Read(data, 0, data.Length);
-                    responseData = Encoding.Default.GetString(data, 0, bytes);
+                int bytes = stream.Read(data, 0, data.Length);
+                responseData = Encoding.Default.GetString(data, 0, bytes);
 
                 if (responseData == "없음")
                 {
                     MessageBox.Show("검색된 값이 없습니다.");
 
-                    TJcl();
+                    ShowModelInfoToGridCtrl();
 
                     stream.Close();
                     client.Close();
                 }
                 else
                 {
-                    models_box.Text = responseData;
+                    rtxtbox_models.Text = responseData;
 
                     MessageBox.Show("검색 되었습니다.");
 
@@ -291,9 +296,9 @@ namespace WindowsFormsApp2
                         md.humid_margin = Int32.Parse(arr[i * 4 + 2]);
                         md.model_name = arr[i * 4 + 3];
 
-                        if (table.Rows.Count < arr.Length / 4)
+                        if (m_dtModel.Rows.Count < arr.Length / 4)
                         {
-                            table.Rows.Add(arr[i * 4], arr[i * 4 + 1], arr[i * 4 + 2], arr[i * 4 + 3]);
+                            m_dtModel.Rows.Add(arr[i * 4], arr[i * 4 + 1], arr[i * 4 + 2], arr[i * 4 + 3]);
                         }
 
                     }
@@ -310,7 +315,7 @@ namespace WindowsFormsApp2
             {
                 MessageBox.Show("총 검색.");
 
-                TJcl();
+                ShowModelInfoToGridCtrl();
             }
 
         }
@@ -327,86 +332,35 @@ namespace WindowsFormsApp2
         private void Model_view_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             //currentIndex = e.RowIndex; // 현재 인덱스를 필드에 보관
-            DataGridViewCell dgvc = model_view.Rows[e.RowIndex].Cells[0];
+            DataGridViewCell dgvc = DataGridView_Model.Rows[e.RowIndex].Cells[0];
             currentIndex = Convert.ToInt32(dgvc.Value.ToString()) - 1;
             if (currentIndex != -1)
             {
-                model_id_text.Text = model_view.Rows[e.RowIndex].Cells[0].Value.ToString();
-                model_temp_text.Text = model_view.Rows[e.RowIndex].Cells[1].Value.ToString();
-                model_humidity_text.Text = model_view.Rows[e.RowIndex].Cells[2].Value.ToString();
-                model_name_text.Text = model_view.Rows[e.RowIndex].Cells[3].Value.ToString();
+                txtbox_model_id.Text = DataGridView_Model.Rows[e.RowIndex].Cells[0].Value.ToString();
+                txtbox_model_temp.Text = DataGridView_Model.Rows[e.RowIndex].Cells[1].Value.ToString();
+                txtbox_model_humidity.Text = DataGridView_Model.Rows[e.RowIndex].Cells[2].Value.ToString();
+                txtbox_model_name.Text = DataGridView_Model.Rows[e.RowIndex].Cells[3].Value.ToString();
 
             }
         }
 
         private void Model_set_Load(object sender, EventArgs e)
         {
-            TJcl();
+            ShowModelInfoToGridCtrl();
         }
 
         // 그리뷰에 띄우는 함수
-        public void TJcl()
+        public void ShowModelInfoToGridCtrl()
         {
-            table.Clear();
-            addr.Clear();
+            // clear model_info table ctrl
+            m_dtModel.Clear();
+            m_listReceivedModel.Clear();
 
-            // 텍스트 데이터
-            //int md_id = Int32.Parse(model_id_text.Text);
-            //float md_temp = Int32.Parse(model_temp_text.Text);
-            //float md_hum = Int32.Parse(model_humidity_text.Text);
-            //string md_name = model_name_text.Text;
+            ServerComm server_comm = new ServerComm(true);
 
-            // 데이터를 하나의 메세지로 묶는다.
+            server_comm.Connect(m_sServerIp, m_nServerPort);
 
-            string message;
-
-            //if ( md_id != null)
-            //{
-            //    message = "{{#@$,"+ md_id + ",#}}";
-            //}
-            //else if( md_id == null)
-            //{
-            //    message = "{{#@$,,#}}";
-            //}
-
-            message = "{{#@$,,#}}";
-
-            IPEndPoint clientAddress = new IPEndPoint(IPAddress.Parse(bindIp), bb);
-            IPEndPoint serverAddress = new IPEndPoint(IPAddress.Parse(serverIp), serverPort);
-
-            bb++;
-
-            TcpClient client = new TcpClient(clientAddress);
-            client.Connect(serverAddress);
-            byte[] data = System.Text.Encoding.Default.GetBytes(message);
-            NetworkStream stream = client.GetStream();
-            stream.Write(data, 0, data.Length);
-
-            data = new byte[256];
-            string responseData = "";
-
-            int bytes = stream.Read(data, 0, data.Length);
-            responseData = Encoding.Default.GetString(data, 0, bytes);
-
-            models_box.Text = responseData;
-
-            string[] arr = responseData.Trim().Split(',');
-
-            for (int i = 0; i < arr.Length / 4; i++)
-            {
-                Model md = new Model();
-
-                md.model_id = Int32.Parse(arr[i * 4]);
-                md.temp_margin = Int32.Parse(arr[i * 4 + 1]);
-                md.humid_margin = Int32.Parse(arr[i * 4 + 2]);
-                md.model_name = arr[i * 4 + 3];
-
-                if (table.Rows.Count < arr.Length / 4)
-                {
-                    table.Rows.Add(arr[i * 4], arr[i * 4 + 1], arr[i * 4 + 2], arr[i * 4 + 3]);
-                }
-
-            }
+            server_comm.req_model_list(ref m_listReceivedModel);      
 
             foreach (Control ctl in this.Controls)
             {
@@ -416,10 +370,7 @@ namespace WindowsFormsApp2
                 }
             }
 
-
-            // 객체 종료
-            stream.Close();
-            client.Close();
+            server_comm.Close();
         }
     }
 }

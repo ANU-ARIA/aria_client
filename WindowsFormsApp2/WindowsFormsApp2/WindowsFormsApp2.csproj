@@ -72,6 +72,7 @@
     <Compile Include="Line_set.Designer.cs">
       <DependentUpon>Line_set.cs</DependentUpon>
     </Compile>
+    <Compile Include="MES Server Comm\ServerComm.cs" />
     <Compile Include="test\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
