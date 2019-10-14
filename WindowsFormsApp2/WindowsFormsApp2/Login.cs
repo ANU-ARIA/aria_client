@@ -23,8 +23,8 @@ namespace WindowsFormsApp2
         public Login()
         {
             InitializeComponent();
-            x_imge.Hide();
-            x2_imge.Hide();
+            picbox_id_fail.Hide();
+            picbox_pw_fail.Hide();
         }
 
 
@@ -49,12 +49,12 @@ namespace WindowsFormsApp2
 
             // 디자인에서 Text에 들어갈 문자를 담을 변수
             
-            string us_id = user_id_text.Text;
-            string us_pw = pw_text.Text;
+            string us_id = txtbox_user_id.Text;
+            string us_pw = txtbox_pw.Text;
 
             // Aria 프로토콜 지정 => {{#!!, ... , ,#}}
             string message;
-            message = "{{#!!," + user_id_text.Text + "," + pw_text.Text + ",#}}";
+            message = "{{#!!," + txtbox_user_id.Text + "," + txtbox_pw.Text + ",#}}";
 
             /* -------------------------- IPEndPoint Class --------------------------
              Represents a network endpoint as an IP address and a port number
@@ -69,7 +69,7 @@ namespace WindowsFormsApp2
              IPAddress.Loopback - 127.0.0.1, 또는 localhost로 알려진 루프백 주소입니다.
              이 주소는 자기 자신만 사용하고 연결할 수 있습니다.
             ----------------------------------------------------------------------- */
-            message = "{{#!!," + user_id_text.Text + "," + pw_text.Text + ",#}}";
+            message = "{{#!!," + txtbox_user_id.Text + "," + txtbox_pw.Text + ",#}}";
             IPEndPoint clientAddress = new IPEndPoint(IPAddress.Parse(bindIp), Login.abc);
             Login.abc++;
 

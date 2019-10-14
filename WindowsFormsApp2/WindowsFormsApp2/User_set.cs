@@ -11,413 +11,243 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net;
 using System.Net.Sockets;
-
+using MESComm;
 
 namespace WindowsFormsApp2
 {
 
     public partial class User_set : Form
     {
-        string bindIp = "220.69.249.232";
-        string serverIp = "220.69.249.232";
-        const int serverPort = 4000;
-        int bb = Convert.ToInt32(1000);
+        string                   u_sMessage = "";
+        string                   u_sServerIp = "220.69.249.232";
+        const int                u_nServerPort = 4000;
+        private List<Aria_user>  u_listReceivedUser;
+        DataTable                u_dtUser = new DataTable();
+        ServerComm               server_comm = new ServerComm(true);
+        Aria_user                us = new Aria_user();
 
-        int cost = -1;
+        // radiobox 값
+        int                      u_intCost = -1;
 
-        private List<Aria_user> addr;
-        DataTable table = new DataTable();
-
-        Aria_user Us = new Aria_user();
-
-
+        //txtbox clear
+        public void Txtboxuser_clear()
+        {
+            txtbox_user_id.Clear();
+            txtbox_user_pw.Clear();
+            txtbox_email.Clear();
+            txtbox_first_name.Clear();
+            txtbox_last_text.Clear();
+        }
 
         public User_set()
         {
             InitializeComponent();
 
-            addr = new List<Aria_user>();
+            u_listReceivedUser = new List<Aria_user>();
 
-            table.Columns.Add("아이디", typeof(string));
-            table.Columns.Add("비밀번호", typeof(string));
-            table.Columns.Add("권한", typeof(int));
-            table.Columns.Add("e-mail", typeof(string));
-            table.Columns.Add("성", typeof(string));
-            table.Columns.Add("이름", typeof(string));
+            u_dtUser.Columns.Add("아이디", typeof(string));
+            u_dtUser.Columns.Add("비밀번호", typeof(string));
+            u_dtUser.Columns.Add("권한", typeof(int));
+            u_dtUser.Columns.Add("e-mail", typeof(string));
+            u_dtUser.Columns.Add("성", typeof(string));
+            u_dtUser.Columns.Add("이름", typeof(string));
 
-            user_view.DataSource = table;
+            DataGridView_user_view.DataSource = u_dtUser;
 
         }
 
-        public void re_set()
-        {
-            table.Clear();
-            addr.Clear();
-        }
-
-        public void tcp_ip()
-        {
-        }
 
         private void m1_Load(object sender, EventArgs e)
         {
-            TJcl();
+            ShowUserInfoToGridCtrl();
         }
 
         // 삽입
-        private void insert_Click(object sender, EventArgs e)
+        private void btn_insert_Click(object sender, EventArgs e)
         {
-            re_set();
-
             try
             {
+                u_dtUser.Clear();
+                u_listReceivedUser.Clear();
 
-                if (level_btn1.Checked == true) cost = 0;
-                else if (level_btn2.Checked == true) cost = 1;
+                if (rbtn_level_0.Checked == true)       u_intCost = 0;
+                else if (rbtn_lever_1.Checked == true)  u_intCost = 1;
 
-                if (cost == -1)
+                if (u_intCost == -1)
                 {
                     MessageBox.Show("관리자, 사용자를 선택해주세요");
                     return;
                 }
 
-
                 // 텍스트 데이터
-                Us.user_id = id_text.Text;
-                Us.pass_word = pw_text.Text;
-                Us.level = cost;
-                Us.e_mail = email_text.Text;
-                Us.first_name = first_text.Text;
-                Us.last_name = last_text.Text;
-
+                us.user_id     = txtbox_user_id.Text;
+                us.pass_word   = txtbox_user_pw.Text;
+                us.level       = u_intCost;
+                us.e_mail      = txtbox_email.Text;
+                us.first_name  = txtbox_first_name.Text;
+                us.last_name   = txtbox_last_text.Text;
 
                 // 데이터를 하나의 메세지로 묶는다.
-                string message;
+                u_sMessage = "{{#!!," + us.user_id + "," + us.pass_word + "," + us.level + "," + us.e_mail + "," + us.first_name +
+                "," + us.last_name + ",#}}";
 
-                message = "{{#!!," + Us.user_id + "," + Us.pass_word + "," + Us.level + "," + Us.e_mail + "," + Us.first_name +
-                "," + Us.last_name + ",#}}";
+                server_comm.Connect(u_sServerIp, u_nServerPort);
 
+                server_comm.req_user_list(ref u_listReceivedUser, u_sMessage);
 
-                IPEndPoint clientAddress = new IPEndPoint(IPAddress.Parse(bindIp), bb);
-                IPEndPoint serverAddress = new IPEndPoint(IPAddress.Parse(serverIp), serverPort);
+                server_comm.Close();
 
-                bb++;
-
-                TcpClient client = new TcpClient(clientAddress);
-                client.Connect(serverAddress);
-                byte[] data = System.Text.Encoding.Default.GetBytes(message);
-                NetworkStream stream = client.GetStream();
-                stream.Write(data, 0, data.Length);
-
-                data = new byte[256];
-                string responseData = "";
-
-                int bytes = stream.Read(data, 0, data.Length);
-                responseData = Encoding.Default.GetString(data, 0, bytes);
-
-                if (responseData == "insert 받았습니다~") //result.sResult == "OK"
-                {
-                    users_box.Text = responseData;
-                    MessageBox.Show("생성 되었습니다.");
-                }
-                else
-                {
-                    MessageBox.Show("생성에 실패했습니다.");
-                }
-                TJcl();
-
-                // 객체 종료
-                stream.Close();
-                client.Close();
+                MessageBox.Show("값이 입력되었습니다.");
 
             }
             catch
             {
                 MessageBox.Show("값을 입력해주세요.");
-                TJcl();
-
             }
-
+            ShowUserInfoToGridCtrl();
         }
 
-        
         // 삭제
         private void Delete_Click(object sender, EventArgs e)
         {
-            re_set();
-
-            if (level_btn1.Checked == true) cost = 0;
-            else if (level_btn2.Checked == true) cost = 1;
-
-            // 텍스트 데이터
-            Us.user_id = id_text.Text;
-            Us.pass_word = pw_text.Text;
-            Us.level = cost;
-            Us.e_mail = email_text.Text;
-            Us.first_name = first_text.Text;
-            Us.last_name = last_text.Text;
-
-
-            // 데이터를 하나의 메세지로 묶는다.
-            string message;
-
-            message = "{{#!@," + Us.user_id + "," + Us.pass_word + "," + Us.level + "," + Us.e_mail + "," + Us.first_name +
-                "," + Us.last_name + ",#}}";
-
-            IPEndPoint clientAddress = new IPEndPoint(IPAddress.Parse(bindIp), bb);
-            IPEndPoint serverAddress = new IPEndPoint(IPAddress.Parse(serverIp), serverPort);
-
-            bb++;
-
-            TcpClient client = new TcpClient(clientAddress);
-            client.Connect(serverAddress);
-            byte[] data = System.Text.Encoding.Default.GetBytes(message);
-            NetworkStream stream = client.GetStream();
-            stream.Write(data, 0, data.Length);
-
-            data = new byte[256];
-            string responseData = "";
-
-            int bytes = stream.Read(data, 0, data.Length);
-            responseData = Encoding.Default.GetString(data, 0, bytes);
-
-            if (responseData == "delete 받았습니다~") //result.sResult == "OK"
+            try
             {
-                users_box.Text = responseData;
-                MessageBox.Show("삭제 되었습니다.");
-            }
-            else
-            {
-                MessageBox.Show("삭제에 실패했습니다.");
-            }
-            TJcl();
+                u_dtUser.Clear();
+                u_listReceivedUser.Clear();
 
-            // 객체 종료
-            stream.Close();
-            client.Close();
+                if (rbtn_level_0.Checked == true)       u_intCost = 0;
+                else if (rbtn_lever_1.Checked == true)  u_intCost = 1;
+
+                // 텍스트 데이터
+                us.user_id     = txtbox_user_id.Text;
+                us.pass_word   = txtbox_user_pw.Text;
+                us.level       = u_intCost;
+                us.e_mail      = txtbox_email.Text;
+                us.first_name  = txtbox_first_name.Text;
+                us.last_name   = txtbox_last_text.Text;
+
+
+                // 데이터를 하나의 메세지로 묶는다.
+                u_sMessage = "{{#!@," + us.user_id + "," + us.pass_word + "," + us.level + "," + us.e_mail + "," + us.first_name +
+                    "," + us.last_name + ",#}}";
+
+                server_comm.Connect(u_sServerIp, u_nServerPort);
+
+                server_comm.req_user_list(ref u_listReceivedUser, u_sMessage);
+
+                server_comm.Close();
+
+                MessageBox.Show("값이 삭제되었습니다.");
+
+            }
+            catch
+            {
+                MessageBox.Show("값을 입력해주세요.");
+            }
+            ShowUserInfoToGridCtrl();
+
         }
 
         // 수정
         private void Update_Click(object sender, EventArgs e)
         {
-            re_set();
-
-            if (level_btn1.Checked == true) cost = 0;
-            else if (level_btn2.Checked == true) cost = 1;
-
-            if (cost == -1)
+            try
             {
-                MessageBox.Show("관리자, 사용자를 선택해주세요");
-                return;
+                u_dtUser.Clear();
+                u_listReceivedUser.Clear();
+
+                if (rbtn_level_0.Checked == true)       u_intCost = 0;
+                else if (rbtn_lever_1.Checked == true)  u_intCost = 1;
+
+                if (u_intCost == -1)
+                {
+                    MessageBox.Show("관리자, 사용자를 선택해주세요");
+                    return;
+                }
+
+                // 텍스트 데이터
+                us.user_id     = txtbox_user_id.Text;
+                us.pass_word   = txtbox_user_pw.Text;
+                us.level       = u_intCost;
+                us.e_mail      = txtbox_email.Text;
+                us.first_name  = txtbox_first_name.Text;
+                us.last_name   = txtbox_last_text.Text;
+
+
+                // 데이터를 하나의 메세지로 묶는다.
+                u_sMessage = "{{#!#," + us.user_id + "," + us.pass_word + "," + us.level + "," + us.e_mail + "," + us.first_name +
+                    "," + us.last_name + ",#}}";
+
+                server_comm.Connect(u_sServerIp, u_nServerPort);
+
+                server_comm.req_user_list(ref u_listReceivedUser, u_sMessage);
+
+                server_comm.Close();
+
+                MessageBox.Show("값이 수정되었습니다.");
             }
-
-            // 텍스트 데이터
-            Us.user_id = id_text.Text;
-            Us.pass_word = pw_text.Text;
-            Us.level = cost;
-            Us.e_mail = email_text.Text;
-            Us.first_name = first_text.Text;
-            Us.last_name = last_text.Text;
-
-
-            // 데이터를 하나의 메세지로 묶는다.
-            string message;
-
-            message = "{{#!#," + Us.user_id + "," + Us.pass_word + "," + Us.level + "," + Us.e_mail + "," + Us.first_name +
-                "," + Us.last_name + ",#}}";
-
-            IPEndPoint clientAddress = new IPEndPoint(IPAddress.Parse(bindIp), bb);
-            IPEndPoint serverAddress = new IPEndPoint(IPAddress.Parse(serverIp), serverPort);
-
-            bb++;
-
-            TcpClient client = new TcpClient(clientAddress);
-            client.Connect(serverAddress);
-            byte[] data = System.Text.Encoding.Default.GetBytes(message);
-            NetworkStream stream = client.GetStream();
-            stream.Write(data, 0, data.Length);
-
-            data = new byte[256];
-            string responseData = "";
-
-            int bytes = stream.Read(data, 0, data.Length);
-            responseData = Encoding.Default.GetString(data, 0, bytes);
-
-            if (responseData == "update 받았습니다~") //result.sResult == "OK"
+            catch
             {
-                users_box.Text = responseData;
-                MessageBox.Show("수정 되었습니다.");
+                MessageBox.Show("값을 입력해주세요.");
             }
-            else
-            {
-                MessageBox.Show("수정에 실패했습니다.");
-
-            }
-            TJcl();
-
-            // 객체 종료
-            stream.Close();
-            client.Close();
+        ShowUserInfoToGridCtrl();
         }
 
         // 검색 %
         private void search_Click(object sender, EventArgs e)
         {
-            re_set();
-
             // 텍스트 데이터
             try
             {
+                u_dtUser.Clear();
+                u_listReceivedUser.Clear();
 
-                Us.user_id = id_sc_text.Text;
+                us.user_id = txtbox_id_sc.Text;
                 // 데이터를 하나의 메세지로 묶는다.
-                string message;
+                u_sMessage = "{{#!%," + us.user_id + ",#}}";
 
-                message = "{{#!%," + Us.user_id + ",#}}";
+                server_comm.Connect(u_sServerIp, u_nServerPort);
 
-                IPEndPoint clientAddress = new IPEndPoint(IPAddress.Parse(bindIp), bb);
-                IPEndPoint serverAddress = new IPEndPoint(IPAddress.Parse(serverIp), serverPort);
+                server_comm.req_user_list(ref u_listReceivedUser, u_sMessage);
 
-                bb++;
+                server_comm.Close();
 
-                TcpClient client = new TcpClient(clientAddress);
-                client.Connect(serverAddress);
-                byte[] data = System.Text.Encoding.Default.GetBytes(message);
-                NetworkStream stream = client.GetStream();
-                stream.Write(data, 0, data.Length);
-
-                data = new byte[256];
-                string responseData = "";
-
-                int bytes = stream.Read(data, 0, data.Length);
-                responseData = Encoding.Default.GetString(data, 0, bytes);
-
-                if (responseData == "없음") //result.sResult == "OK"
-                {
-                    MessageBox.Show("검색된 값이 없습니다.");
-                    TJcl();
-                    stream.Close();
-                    client.Close();
-
-                }
-                else
-                {
-                    MessageBox.Show("검색 되었습니다.");
-
-                    users_box.Text = responseData;
-
-                    string[] arr = responseData.Trim().Split(',');
-
-                    for (int i = 0; i < arr.Length / 6; i++)
-                    {
-                        Aria_user md = new Aria_user();
-
-                        md.user_id = arr[i * 6];
-                        md.pass_word = arr[i * 6 + 1];
-                        md.level = Int32.Parse(arr[i * 6 + 2]);
-                        md.e_mail = arr[i * 6 + 3];
-                        md.first_name = arr[i * 6 + 4];
-                        md.last_name = arr[i * 6 + 5];
-
-                        if (table.Rows.Count < arr.Length / 6)
-                        {
-                            table.Rows.Add(arr[i * 6], arr[i * 6 + 1], arr[i * 6 + 2], arr[i * 6 + 3], arr[i * 6 + 4], arr[i * 6 + 5]);
-                        }
-
-                    }
-                    // 객체 종료
-                    stream.Close();
-                    client.Close();
-                }
-
+                MessageBox.Show("값이 검색되었습니다.");
             }
-            catch (Exception h)
+            catch
             {
                 MessageBox.Show("총 검색.");
 
-                TJcl();
             }
+            ShowUserInfoToGridCtrl();
 
         }
 
 
-        public void TJcl()
+        public void ShowUserInfoToGridCtrl()
         {
-            re_set();
+            u_dtUser.Clear();
+            u_listReceivedUser.Clear();
 
-            string message;
+            u_sMessage = "{{#!$,,#}}";
 
-            message = "{{#!$,,#}}";
+            server_comm.Connect(u_sServerIp, u_nServerPort);
 
-            IPEndPoint clientAddress = new IPEndPoint(IPAddress.Parse(bindIp), bb);
-            IPEndPoint serverAddress = new IPEndPoint(IPAddress.Parse(serverIp), serverPort);
+            server_comm.req_user_list(ref u_listReceivedUser, u_sMessage);
 
-            bb++;
+            server_comm.Close();
 
-            TcpClient client = new TcpClient(clientAddress);
-            client.Connect(serverAddress);
-            byte[] data = System.Text.Encoding.Default.GetBytes(message);
-            NetworkStream stream = client.GetStream();
-            stream.Write(data, 0, data.Length);
-
-            data = new byte[256];
-            string responseData = "";
-
-            int bytes = stream.Read(data, 0, data.Length);
-            responseData = Encoding.Default.GetString(data, 0, bytes);
-
-            users_box.Text = responseData;
-
-            string[] arr = responseData.Trim().Split(',');
-
-            for (int i = 0; i < arr.Length / 6; i++)
-            {
-                Aria_user md = new Aria_user();
-
-                md.user_id = arr[i * 6];
-                md.pass_word = arr[i * 6 + 1];
-                md.level = Int32.Parse(arr[i * 6 + 2]);
-                md.e_mail = arr[i * 6 + 3];
-                md.first_name = arr[i * 6 + 4];
-                md.last_name = arr[i * 6 + 5];
-
-                if (table.Rows.Count < arr.Length / 6)
-                {
-                    table.Rows.Add(arr[i * 6], arr[i * 6 + 1], arr[i * 6 + 2], arr[i *  6+ 3], arr[i * 6 + 4], arr[i * 6 + 5]);
-                }
-
-            }
-            foreach (Control ctl in this.Controls)
-            {
-                if (typeof(System.Windows.Forms.TextBox) == ctl.GetType())
-                {
-                    ctl.Text = null;
-                }
-            }
-
-            // 객체 종료
-            stream.Close();
-            client.Close();
+            Txtboxuser_clear();
 
         }
-
-        private int currentIndex = -1;
 
         private void User_view_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            ////currentIndex = e.RowIndex; // 현재 인덱스를 필드에 보관
-            //DataGridViewCell dgvc = user_view.Rows[e.RowIndex].Cells[0];
-            //currentIndex = Convert.ToInt32(dgvc.Value.ToString()) - 1;
-            //if (currentIndex != -1)
-            //{
-            //    id_text.Text = user_view.Rows[e.RowIndex].Cells[0].Value.ToString();
-            //    pw_text.Text = user_view.Rows[e.RowIndex].Cells[1].Value.ToString();
-            //    levet_text.Text = user_view.Rows[e.RowIndex].Cells[2].Value.ToString();
-            //    email_text.Text = user_view.Rows[e.RowIndex].Cells[3].Value.ToString();
-            //    first_text.Text = user_view.Rows[e.RowIndex].Cells[4].Value.ToString();
-            //    last_text.Text = user_view.Rows[e.RowIndex].Cells[5].Value.ToString();
-
-            //}
+            txtbox_user_id.Text     = this.DataGridView_user_view.CurrentRow.Cells[0].Value.ToString();
+            txtbox_user_pw.Text     = this.DataGridView_user_view.CurrentRow.Cells[1].Value.ToString();
+            txtbox_email.Text       = this.DataGridView_user_view.CurrentRow.Cells[3].Value.ToString();
+            txtbox_first_name.Text  = this.DataGridView_user_view.CurrentRow.Cells[4].Value.ToString();
+            txtbox_last_text.Text   = this.DataGridView_user_view.CurrentRow.Cells[5].Value.ToString();
         }
 
         private void User_view_CellContentClick(object sender, DataGridViewCellEventArgs e)

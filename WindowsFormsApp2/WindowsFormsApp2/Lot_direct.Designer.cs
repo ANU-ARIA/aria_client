@@ -29,78 +29,78 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.humid_margin_text = new System.Windows.Forms.NumericUpDown();
-            this.insert = new System.Windows.Forms.Button();
+            this.numbox_humid_margin = new System.Windows.Forms.NumericUpDown();
+            this.btn_add_delete = new System.Windows.Forms.Button();
+            this.btn_add_insert = new System.Windows.Forms.Button();
+            this.btn_insert = new System.Windows.Forms.Button();
             this.label22 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.temp_margin_text = new System.Windows.Forms.NumericUpDown();
+            this.txtbox_model_id = new System.Windows.Forms.Label();
+            this.numbox_temp_margin = new System.Windows.Forms.NumericUpDown();
             this.label21 = new System.Windows.Forms.Label();
-            this.prod_fail_text = new System.Windows.Forms.NumericUpDown();
+            this.numbox_prod_fail = new System.Windows.Forms.NumericUpDown();
             this.label20 = new System.Windows.Forms.Label();
-            this.model_color_text = new System.Windows.Forms.ComboBox();
-            this.model_name_text = new System.Windows.Forms.ComboBox();
-            this.lot_id_text = new System.Windows.Forms.TextBox();
-            this.prod_count_text = new System.Windows.Forms.NumericUpDown();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
+            this.combox_model_color = new System.Windows.Forms.ComboBox();
+            this.combox_model_name = new System.Windows.Forms.ComboBox();
+            this.txtbox_lot_id = new System.Windows.Forms.TextBox();
+            this.numbox_prod_count = new System.Windows.Forms.NumericUpDown();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.line_temp = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.line_humid = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.txtbox_pd_speed = new System.Windows.Forms.Label();
+            this.txtbox_model_humid = new System.Windows.Forms.Label();
+            this.txtbox_model_temp = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.line_text = new System.Windows.Forms.ComboBox();
+            this.combox_line_id = new System.Windows.Forms.ComboBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.line_temp = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.line_humid = new System.Windows.Forms.Label();
             this.lots_list = new System.Windows.Forms.DataGridView();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.add_insert = new System.Windows.Forms.Button();
-            this.add_delete = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.humid_margin_text)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.temp_margin_text)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.prod_fail_text)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.prod_count_text)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numbox_humid_margin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numbox_temp_margin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numbox_prod_fail)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numbox_prod_count)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lots_list)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.humid_margin_text);
-            this.groupBox1.Controls.Add(this.add_delete);
-            this.groupBox1.Controls.Add(this.add_insert);
-            this.groupBox1.Controls.Add(this.insert);
+            this.groupBox1.Controls.Add(this.numbox_humid_margin);
+            this.groupBox1.Controls.Add(this.btn_add_delete);
+            this.groupBox1.Controls.Add(this.btn_add_insert);
+            this.groupBox1.Controls.Add(this.btn_insert);
             this.groupBox1.Controls.Add(this.label22);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.temp_margin_text);
+            this.groupBox1.Controls.Add(this.txtbox_model_id);
+            this.groupBox1.Controls.Add(this.numbox_temp_margin);
             this.groupBox1.Controls.Add(this.label21);
-            this.groupBox1.Controls.Add(this.prod_fail_text);
+            this.groupBox1.Controls.Add(this.numbox_prod_fail);
             this.groupBox1.Controls.Add(this.label20);
-            this.groupBox1.Controls.Add(this.model_color_text);
-            this.groupBox1.Controls.Add(this.model_name_text);
-            this.groupBox1.Controls.Add(this.lot_id_text);
-            this.groupBox1.Controls.Add(this.prod_count_text);
+            this.groupBox1.Controls.Add(this.combox_model_color);
+            this.groupBox1.Controls.Add(this.combox_model_name);
+            this.groupBox1.Controls.Add(this.txtbox_lot_id);
+            this.groupBox1.Controls.Add(this.numbox_prod_count);
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.label17);
-            this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.txtbox_pd_speed);
+            this.groupBox1.Controls.Add(this.txtbox_model_humid);
+            this.groupBox1.Controls.Add(this.txtbox_model_temp);
             this.groupBox1.Controls.Add(this.label19);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.line_text);
+            this.groupBox1.Controls.Add(this.combox_line_id);
             this.groupBox1.Location = new System.Drawing.Point(10, 77);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(600, 682);
@@ -109,22 +109,42 @@
             this.groupBox1.Text = "작업 지시";
             this.groupBox1.Enter += new System.EventHandler(this.GroupBox1_Enter);
             // 
-            // humid_margin_text
+            // numbox_humid_margin
             // 
-            this.humid_margin_text.Location = new System.Drawing.Point(184, 435);
-            this.humid_margin_text.Name = "humid_margin_text";
-            this.humid_margin_text.Size = new System.Drawing.Size(120, 25);
-            this.humid_margin_text.TabIndex = 22;
+            this.numbox_humid_margin.Location = new System.Drawing.Point(184, 435);
+            this.numbox_humid_margin.Name = "numbox_humid_margin";
+            this.numbox_humid_margin.Size = new System.Drawing.Size(120, 25);
+            this.numbox_humid_margin.TabIndex = 22;
             // 
-            // insert
+            // btn_add_delete
             // 
-            this.insert.Location = new System.Drawing.Point(24, 499);
-            this.insert.Name = "insert";
-            this.insert.Size = new System.Drawing.Size(150, 46);
-            this.insert.TabIndex = 0;
-            this.insert.Text = "작업 지시";
-            this.insert.UseVisualStyleBackColor = true;
-            this.insert.Click += new System.EventHandler(this.insert_Click);
+            this.btn_add_delete.Location = new System.Drawing.Point(184, 560);
+            this.btn_add_delete.Name = "btn_add_delete";
+            this.btn_add_delete.Size = new System.Drawing.Size(150, 46);
+            this.btn_add_delete.TabIndex = 0;
+            this.btn_add_delete.Text = "예약 삭제";
+            this.btn_add_delete.UseVisualStyleBackColor = true;
+            this.btn_add_delete.Click += new System.EventHandler(this.insert_Click);
+            // 
+            // btn_add_insert
+            // 
+            this.btn_add_insert.Location = new System.Drawing.Point(24, 560);
+            this.btn_add_insert.Name = "btn_add_insert";
+            this.btn_add_insert.Size = new System.Drawing.Size(150, 46);
+            this.btn_add_insert.TabIndex = 0;
+            this.btn_add_insert.Text = "예약 지시";
+            this.btn_add_insert.UseVisualStyleBackColor = true;
+            this.btn_add_insert.Click += new System.EventHandler(this.insert_Click);
+            // 
+            // btn_insert
+            // 
+            this.btn_insert.Location = new System.Drawing.Point(24, 499);
+            this.btn_insert.Name = "btn_insert";
+            this.btn_insert.Size = new System.Drawing.Size(150, 46);
+            this.btn_insert.TabIndex = 0;
+            this.btn_insert.Text = "작업 지시";
+            this.btn_insert.UseVisualStyleBackColor = true;
+            this.btn_insert.Click += new System.EventHandler(this.insert_Click);
             // 
             // label22
             // 
@@ -146,23 +166,23 @@
             this.label6.TabIndex = 6;
             this.label6.Text = "제품 코드 :";
             // 
-            // label5
+            // txtbox_model_id
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("굴림", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label5.Location = new System.Drawing.Point(557, 511);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(23, 24);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "-";
-            this.label5.Click += new System.EventHandler(this.Label4_Click);
+            this.txtbox_model_id.AutoSize = true;
+            this.txtbox_model_id.Font = new System.Drawing.Font("굴림", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtbox_model_id.Location = new System.Drawing.Point(557, 511);
+            this.txtbox_model_id.Name = "txtbox_model_id";
+            this.txtbox_model_id.Size = new System.Drawing.Size(23, 24);
+            this.txtbox_model_id.TabIndex = 4;
+            this.txtbox_model_id.Text = "-";
+            this.txtbox_model_id.Click += new System.EventHandler(this.Label4_Click);
             // 
-            // temp_margin_text
+            // numbox_temp_margin
             // 
-            this.temp_margin_text.Location = new System.Drawing.Point(184, 375);
-            this.temp_margin_text.Name = "temp_margin_text";
-            this.temp_margin_text.Size = new System.Drawing.Size(120, 25);
-            this.temp_margin_text.TabIndex = 20;
+            this.numbox_temp_margin.Location = new System.Drawing.Point(184, 375);
+            this.numbox_temp_margin.Name = "numbox_temp_margin";
+            this.numbox_temp_margin.Size = new System.Drawing.Size(120, 25);
+            this.numbox_temp_margin.TabIndex = 20;
             // 
             // label21
             // 
@@ -174,12 +194,12 @@
             this.label21.TabIndex = 21;
             this.label21.Text = "온도 margin :";
             // 
-            // prod_fail_text
+            // numbox_prod_fail
             // 
-            this.prod_fail_text.Location = new System.Drawing.Point(184, 314);
-            this.prod_fail_text.Name = "prod_fail_text";
-            this.prod_fail_text.Size = new System.Drawing.Size(120, 25);
-            this.prod_fail_text.TabIndex = 18;
+            this.numbox_prod_fail.Location = new System.Drawing.Point(184, 314);
+            this.numbox_prod_fail.Name = "numbox_prod_fail";
+            this.numbox_prod_fail.Size = new System.Drawing.Size(120, 25);
+            this.numbox_prod_fail.TabIndex = 18;
             // 
             // label20
             // 
@@ -191,55 +211,35 @@
             this.label20.TabIndex = 19;
             this.label20.Text = "불량율 제한 :";
             // 
-            // model_color_text
+            // combox_model_color
             // 
-            this.model_color_text.FormattingEnabled = true;
-            this.model_color_text.Location = new System.Drawing.Point(156, 212);
-            this.model_color_text.Name = "model_color_text";
-            this.model_color_text.Size = new System.Drawing.Size(121, 23);
-            this.model_color_text.TabIndex = 17;
+            this.combox_model_color.FormattingEnabled = true;
+            this.combox_model_color.Location = new System.Drawing.Point(156, 212);
+            this.combox_model_color.Name = "combox_model_color";
+            this.combox_model_color.Size = new System.Drawing.Size(121, 23);
+            this.combox_model_color.TabIndex = 17;
             // 
-            // model_name_text
+            // combox_model_name
             // 
-            this.model_name_text.FormattingEnabled = true;
-            this.model_name_text.Location = new System.Drawing.Point(124, 142);
-            this.model_name_text.Name = "model_name_text";
-            this.model_name_text.Size = new System.Drawing.Size(121, 23);
-            this.model_name_text.TabIndex = 17;
+            this.combox_model_name.FormattingEnabled = true;
+            this.combox_model_name.Location = new System.Drawing.Point(124, 142);
+            this.combox_model_name.Name = "combox_model_name";
+            this.combox_model_name.Size = new System.Drawing.Size(121, 23);
+            this.combox_model_name.TabIndex = 17;
             // 
-            // lot_id_text
+            // txtbox_lot_id
             // 
-            this.lot_id_text.Location = new System.Drawing.Point(374, 81);
-            this.lot_id_text.Name = "lot_id_text";
-            this.lot_id_text.Size = new System.Drawing.Size(135, 25);
-            this.lot_id_text.TabIndex = 16;
+            this.txtbox_lot_id.Location = new System.Drawing.Point(374, 81);
+            this.txtbox_lot_id.Name = "txtbox_lot_id";
+            this.txtbox_lot_id.Size = new System.Drawing.Size(135, 25);
+            this.txtbox_lot_id.TabIndex = 16;
             // 
-            // prod_count_text
+            // numbox_prod_count
             // 
-            this.prod_count_text.Location = new System.Drawing.Point(125, 262);
-            this.prod_count_text.Name = "prod_count_text";
-            this.prod_count_text.Size = new System.Drawing.Size(120, 25);
-            this.prod_count_text.TabIndex = 2;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("굴림", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label14.Location = new System.Drawing.Point(1389, 9);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(130, 24);
-            this.label14.TabIndex = 14;
-            this.label14.Text = "공장 습도 :";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("굴림", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label15.Location = new System.Drawing.Point(1224, 9);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(130, 24);
-            this.label15.TabIndex = 15;
-            this.label15.Text = "공장 온도 :";
+            this.numbox_prod_count.Location = new System.Drawing.Point(125, 262);
+            this.numbox_prod_count.Name = "numbox_prod_count";
+            this.numbox_prod_count.Size = new System.Drawing.Size(120, 25);
+            this.numbox_prod_count.TabIndex = 2;
             // 
             // label11
             // 
@@ -261,16 +261,6 @@
             this.label12.TabIndex = 8;
             this.label12.Text = "수 량 :";
             // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("굴림", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label18.Location = new System.Drawing.Point(1019, 9);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(123, 24);
-            this.label18.TabIndex = 6;
-            this.label18.Text = "관리자 id :";
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -291,71 +281,38 @@
             this.label7.TabIndex = 6;
             this.label7.Text = "적정 온도 :";
             // 
-            // label17
+            // txtbox_pd_speed
             // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("굴림", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label17.Location = new System.Drawing.Point(554, 461);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(23, 24);
-            this.label17.TabIndex = 4;
-            this.label17.Text = "-";
-            this.label17.Click += new System.EventHandler(this.Label4_Click);
+            this.txtbox_pd_speed.AutoSize = true;
+            this.txtbox_pd_speed.Font = new System.Drawing.Font("굴림", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtbox_pd_speed.Location = new System.Drawing.Point(554, 461);
+            this.txtbox_pd_speed.Name = "txtbox_pd_speed";
+            this.txtbox_pd_speed.Size = new System.Drawing.Size(23, 24);
+            this.txtbox_pd_speed.TabIndex = 4;
+            this.txtbox_pd_speed.Text = "-";
+            this.txtbox_pd_speed.Click += new System.EventHandler(this.Label4_Click);
             // 
-            // line_temp
+            // txtbox_model_humid
             // 
-            this.line_temp.AutoSize = true;
-            this.line_temp.Font = new System.Drawing.Font("굴림", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.line_temp.Location = new System.Drawing.Point(1360, 9);
-            this.line_temp.Name = "line_temp";
-            this.line_temp.Size = new System.Drawing.Size(23, 24);
-            this.line_temp.TabIndex = 4;
-            this.line_temp.Text = "-";
-            this.line_temp.Click += new System.EventHandler(this.Label4_Click);
+            this.txtbox_model_humid.AutoSize = true;
+            this.txtbox_model_humid.Font = new System.Drawing.Font("굴림", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtbox_model_humid.Location = new System.Drawing.Point(557, 623);
+            this.txtbox_model_humid.Name = "txtbox_model_humid";
+            this.txtbox_model_humid.Size = new System.Drawing.Size(23, 24);
+            this.txtbox_model_humid.TabIndex = 4;
+            this.txtbox_model_humid.Text = "-";
+            this.txtbox_model_humid.Click += new System.EventHandler(this.Label4_Click);
             // 
-            // label4
+            // txtbox_model_temp
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("굴림", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label4.Location = new System.Drawing.Point(1148, 9);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(23, 24);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "-";
-            this.label4.Click += new System.EventHandler(this.Label4_Click);
-            // 
-            // line_humid
-            // 
-            this.line_humid.AutoSize = true;
-            this.line_humid.Font = new System.Drawing.Font("굴림", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.line_humid.Location = new System.Drawing.Point(1525, 9);
-            this.line_humid.Name = "line_humid";
-            this.line_humid.Size = new System.Drawing.Size(23, 24);
-            this.line_humid.TabIndex = 4;
-            this.line_humid.Text = "-";
-            this.line_humid.Click += new System.EventHandler(this.Label4_Click);
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("굴림", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label10.Location = new System.Drawing.Point(557, 623);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(23, 24);
-            this.label10.TabIndex = 4;
-            this.label10.Text = "-";
-            this.label10.Click += new System.EventHandler(this.Label4_Click);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("굴림", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label8.Location = new System.Drawing.Point(557, 569);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(23, 24);
-            this.label8.TabIndex = 4;
-            this.label8.Text = "-";
-            this.label8.Click += new System.EventHandler(this.Label4_Click);
+            this.txtbox_model_temp.AutoSize = true;
+            this.txtbox_model_temp.Font = new System.Drawing.Font("굴림", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtbox_model_temp.Location = new System.Drawing.Point(557, 569);
+            this.txtbox_model_temp.Name = "txtbox_model_temp";
+            this.txtbox_model_temp.Size = new System.Drawing.Size(23, 24);
+            this.txtbox_model_temp.TabIndex = 4;
+            this.txtbox_model_temp.Text = "-";
+            this.txtbox_model_temp.Click += new System.EventHandler(this.Label4_Click);
             // 
             // label19
             // 
@@ -398,14 +355,77 @@
             this.label1.Text = "라인 :";
             this.label1.Click += new System.EventHandler(this.Label1_Click);
             // 
-            // line_text
+            // combox_line_id
             // 
-            this.line_text.FormattingEnabled = true;
-            this.line_text.Location = new System.Drawing.Point(100, 81);
-            this.line_text.Name = "line_text";
-            this.line_text.Size = new System.Drawing.Size(121, 23);
-            this.line_text.TabIndex = 2;
-            this.line_text.SelectedIndexChanged += new System.EventHandler(this.Line_text_SelectedIndexChanged);
+            this.combox_line_id.FormattingEnabled = true;
+            this.combox_line_id.Location = new System.Drawing.Point(100, 81);
+            this.combox_line_id.Name = "combox_line_id";
+            this.combox_line_id.Size = new System.Drawing.Size(121, 23);
+            this.combox_line_id.TabIndex = 2;
+            this.combox_line_id.SelectedIndexChanged += new System.EventHandler(this.Line_text_SelectedIndexChanged);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("굴림", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label14.Location = new System.Drawing.Point(1389, 9);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(130, 24);
+            this.label14.TabIndex = 14;
+            this.label14.Text = "공장 습도 :";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("굴림", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label15.Location = new System.Drawing.Point(1224, 9);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(130, 24);
+            this.label15.TabIndex = 15;
+            this.label15.Text = "공장 온도 :";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("굴림", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label18.Location = new System.Drawing.Point(1019, 9);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(123, 24);
+            this.label18.TabIndex = 6;
+            this.label18.Text = "관리자 id :";
+            // 
+            // line_temp
+            // 
+            this.line_temp.AutoSize = true;
+            this.line_temp.Font = new System.Drawing.Font("굴림", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.line_temp.Location = new System.Drawing.Point(1360, 9);
+            this.line_temp.Name = "line_temp";
+            this.line_temp.Size = new System.Drawing.Size(23, 24);
+            this.line_temp.TabIndex = 4;
+            this.line_temp.Text = "-";
+            this.line_temp.Click += new System.EventHandler(this.Label4_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("굴림", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label4.Location = new System.Drawing.Point(1148, 9);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(23, 24);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "-";
+            this.label4.Click += new System.EventHandler(this.Label4_Click);
+            // 
+            // line_humid
+            // 
+            this.line_humid.AutoSize = true;
+            this.line_humid.Font = new System.Drawing.Font("굴림", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.line_humid.Location = new System.Drawing.Point(1525, 9);
+            this.line_humid.Name = "line_humid";
+            this.line_humid.Size = new System.Drawing.Size(23, 24);
+            this.line_humid.TabIndex = 4;
+            this.line_humid.Text = "-";
+            this.line_humid.Click += new System.EventHandler(this.Label4_Click);
             // 
             // lots_list
             // 
@@ -425,26 +445,6 @@
             this.textBox1.Size = new System.Drawing.Size(581, 682);
             this.textBox1.TabIndex = 3;
             // 
-            // add_insert
-            // 
-            this.add_insert.Location = new System.Drawing.Point(24, 560);
-            this.add_insert.Name = "add_insert";
-            this.add_insert.Size = new System.Drawing.Size(150, 46);
-            this.add_insert.TabIndex = 0;
-            this.add_insert.Text = "예약 지시";
-            this.add_insert.UseVisualStyleBackColor = true;
-            this.add_insert.Click += new System.EventHandler(this.insert_Click);
-            // 
-            // add_delete
-            // 
-            this.add_delete.Location = new System.Drawing.Point(184, 560);
-            this.add_delete.Name = "add_delete";
-            this.add_delete.Size = new System.Drawing.Size(150, 46);
-            this.add_delete.TabIndex = 0;
-            this.add_delete.Text = "예약 삭제";
-            this.add_delete.UseVisualStyleBackColor = true;
-            this.add_delete.Click += new System.EventHandler(this.insert_Click);
-            // 
             // Lot_direct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -463,10 +463,10 @@
             this.Text = "Model";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.humid_margin_text)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.temp_margin_text)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.prod_fail_text)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.prod_count_text)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numbox_humid_margin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numbox_temp_margin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numbox_prod_fail)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numbox_prod_count)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lots_list)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -476,7 +476,7 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox line_text;
+        private System.Windows.Forms.ComboBox combox_line_id;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label9;
@@ -487,29 +487,29 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Button insert;
-        private System.Windows.Forms.NumericUpDown prod_count_text;
-        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Button btn_insert;
+        private System.Windows.Forms.NumericUpDown numbox_prod_count;
+        private System.Windows.Forms.Label txtbox_pd_speed;
         private System.Windows.Forms.Label line_temp;
         private System.Windows.Forms.Label line_humid;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox model_name_text;
-        private System.Windows.Forms.TextBox lot_id_text;
+        private System.Windows.Forms.Label txtbox_model_humid;
+        private System.Windows.Forms.Label txtbox_model_temp;
+        private System.Windows.Forms.Label txtbox_model_id;
+        private System.Windows.Forms.ComboBox combox_model_name;
+        private System.Windows.Forms.TextBox txtbox_lot_id;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.NumericUpDown prod_fail_text;
+        private System.Windows.Forms.NumericUpDown numbox_prod_fail;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.ComboBox model_color_text;
+        private System.Windows.Forms.ComboBox combox_model_color;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.NumericUpDown humid_margin_text;
+        private System.Windows.Forms.NumericUpDown numbox_humid_margin;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.NumericUpDown temp_margin_text;
+        private System.Windows.Forms.NumericUpDown numbox_temp_margin;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.DataGridView lots_list;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button add_delete;
-        private System.Windows.Forms.Button add_insert;
+        private System.Windows.Forms.Button btn_add_delete;
+        private System.Windows.Forms.Button btn_add_insert;
     }
 }

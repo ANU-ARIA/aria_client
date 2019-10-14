@@ -17,7 +17,7 @@ namespace WindowsFormsApp2
             InitializeComponent();
         }
 
-        private void search_Click(object sender, EventArgs e)
+        private void btn_search_Click(object sender, EventArgs e)
         {
 
         }
@@ -28,6 +28,11 @@ namespace WindowsFormsApp2
         }
 
         private void Line_box_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Lot_list_Load(object sender, EventArgs e)
         {
 
         }

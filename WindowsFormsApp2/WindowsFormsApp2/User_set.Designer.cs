@@ -28,74 +28,74 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.insert = new System.Windows.Forms.Button();
-            this.delete = new System.Windows.Forms.Button();
-            this.update = new System.Windows.Forms.Button();
-            this.search = new System.Windows.Forms.Button();
+            this.btn_Insert = new System.Windows.Forms.Button();
+            this.btn_Delete = new System.Windows.Forms.Button();
+            this.btn_Update = new System.Windows.Forms.Button();
+            this.btn_Search = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.id_text = new System.Windows.Forms.TextBox();
-            this.pw_text = new System.Windows.Forms.TextBox();
+            this.txtbox_user_id = new System.Windows.Forms.TextBox();
+            this.txtbox_user_pw = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.email_text = new System.Windows.Forms.TextBox();
-            this.first_text = new System.Windows.Forms.TextBox();
-            this.last_text = new System.Windows.Forms.TextBox();
-            this.users_box = new System.Windows.Forms.RichTextBox();
+            this.txtbox_email = new System.Windows.Forms.TextBox();
+            this.txtbox_first_name = new System.Windows.Forms.TextBox();
+            this.txtbox_last_text = new System.Windows.Forms.TextBox();
+            this.rtxtbox_users = new System.Windows.Forms.RichTextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.level_btn1 = new System.Windows.Forms.RadioButton();
-            this.level_btn2 = new System.Windows.Forms.RadioButton();
-            this.user_view = new System.Windows.Forms.DataGridView();
+            this.rbtn_level_0 = new System.Windows.Forms.RadioButton();
+            this.rbtn_lever_1 = new System.Windows.Forms.RadioButton();
+            this.DataGridView_user_view = new System.Windows.Forms.DataGridView();
             this.levet_text = new System.Windows.Forms.TextBox();
-            this.id_sc_text = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.user_view)).BeginInit();
+            this.txtbox_id_sc = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridView_user_view)).BeginInit();
             this.SuspendLayout();
             // 
-            // insert
+            // btn_Insert
             // 
-            this.insert.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.insert.Location = new System.Drawing.Point(287, 524);
-            this.insert.Name = "insert";
-            this.insert.Size = new System.Drawing.Size(75, 23);
-            this.insert.TabIndex = 0;
-            this.insert.Text = "생성";
-            this.insert.UseVisualStyleBackColor = true;
-            this.insert.Click += new System.EventHandler(this.insert_Click);
+            this.btn_Insert.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn_Insert.Location = new System.Drawing.Point(287, 524);
+            this.btn_Insert.Name = "btn_Insert";
+            this.btn_Insert.Size = new System.Drawing.Size(75, 23);
+            this.btn_Insert.TabIndex = 0;
+            this.btn_Insert.Text = "생성";
+            this.btn_Insert.UseVisualStyleBackColor = true;
+            this.btn_Insert.Click += new System.EventHandler(this.btn_insert_Click);
             // 
-            // delete
+            // btn_Delete
             // 
-            this.delete.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.delete.Location = new System.Drawing.Point(427, 524);
-            this.delete.Name = "delete";
-            this.delete.Size = new System.Drawing.Size(75, 23);
-            this.delete.TabIndex = 1;
-            this.delete.Text = "삭제";
-            this.delete.UseVisualStyleBackColor = true;
-            this.delete.Click += new System.EventHandler(this.Delete_Click);
+            this.btn_Delete.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn_Delete.Location = new System.Drawing.Point(427, 524);
+            this.btn_Delete.Name = "btn_Delete";
+            this.btn_Delete.Size = new System.Drawing.Size(75, 23);
+            this.btn_Delete.TabIndex = 1;
+            this.btn_Delete.Text = "삭제";
+            this.btn_Delete.UseVisualStyleBackColor = true;
+            this.btn_Delete.Click += new System.EventHandler(this.Delete_Click);
             // 
-            // update
+            // btn_Update
             // 
-            this.update.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.update.Location = new System.Drawing.Point(580, 524);
-            this.update.Name = "update";
-            this.update.Size = new System.Drawing.Size(75, 23);
-            this.update.TabIndex = 2;
-            this.update.Text = "변경";
-            this.update.UseVisualStyleBackColor = true;
-            this.update.Click += new System.EventHandler(this.Update_Click);
+            this.btn_Update.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn_Update.Location = new System.Drawing.Point(580, 524);
+            this.btn_Update.Name = "btn_Update";
+            this.btn_Update.Size = new System.Drawing.Size(75, 23);
+            this.btn_Update.TabIndex = 2;
+            this.btn_Update.Text = "변경";
+            this.btn_Update.UseVisualStyleBackColor = true;
+            this.btn_Update.Click += new System.EventHandler(this.Update_Click);
             // 
-            // search
+            // btn_Search
             // 
-            this.search.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.search.Location = new System.Drawing.Point(1346, 486);
-            this.search.Name = "search";
-            this.search.Size = new System.Drawing.Size(75, 23);
-            this.search.TabIndex = 3;
-            this.search.Text = "검색";
-            this.search.UseVisualStyleBackColor = true;
-            this.search.Click += new System.EventHandler(this.search_Click);
+            this.btn_Search.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn_Search.Location = new System.Drawing.Point(1346, 486);
+            this.btn_Search.Name = "btn_Search";
+            this.btn_Search.Size = new System.Drawing.Size(75, 23);
+            this.btn_Search.TabIndex = 3;
+            this.btn_Search.Text = "검색";
+            this.btn_Search.UseVisualStyleBackColor = true;
+            this.btn_Search.Click += new System.EventHandler(this.search_Click);
             // 
             // label1
             // 
@@ -117,21 +117,21 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "비밀번호";
             // 
-            // id_text
+            // txtbox_user_id
             // 
-            this.id_text.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.id_text.Location = new System.Drawing.Point(362, 109);
-            this.id_text.Name = "id_text";
-            this.id_text.Size = new System.Drawing.Size(176, 25);
-            this.id_text.TabIndex = 6;
+            this.txtbox_user_id.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtbox_user_id.Location = new System.Drawing.Point(362, 109);
+            this.txtbox_user_id.Name = "txtbox_user_id";
+            this.txtbox_user_id.Size = new System.Drawing.Size(176, 25);
+            this.txtbox_user_id.TabIndex = 6;
             // 
-            // pw_text
+            // txtbox_user_pw
             // 
-            this.pw_text.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pw_text.Location = new System.Drawing.Point(362, 167);
-            this.pw_text.Name = "pw_text";
-            this.pw_text.Size = new System.Drawing.Size(176, 25);
-            this.pw_text.TabIndex = 7;
+            this.txtbox_user_pw.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtbox_user_pw.Location = new System.Drawing.Point(362, 167);
+            this.txtbox_user_pw.Name = "txtbox_user_pw";
+            this.txtbox_user_pw.Size = new System.Drawing.Size(176, 25);
+            this.txtbox_user_pw.TabIndex = 7;
             // 
             // label3
             // 
@@ -173,38 +173,38 @@
             this.label6.TabIndex = 11;
             this.label6.Text = "last_name";
             // 
-            // email_text
+            // txtbox_email
             // 
-            this.email_text.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.email_text.Location = new System.Drawing.Point(362, 295);
-            this.email_text.Name = "email_text";
-            this.email_text.Size = new System.Drawing.Size(176, 25);
-            this.email_text.TabIndex = 13;
+            this.txtbox_email.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtbox_email.Location = new System.Drawing.Point(362, 295);
+            this.txtbox_email.Name = "txtbox_email";
+            this.txtbox_email.Size = new System.Drawing.Size(176, 25);
+            this.txtbox_email.TabIndex = 13;
             // 
-            // first_text
+            // txtbox_first_name
             // 
-            this.first_text.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.first_text.Location = new System.Drawing.Point(362, 356);
-            this.first_text.Name = "first_text";
-            this.first_text.Size = new System.Drawing.Size(176, 25);
-            this.first_text.TabIndex = 14;
+            this.txtbox_first_name.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtbox_first_name.Location = new System.Drawing.Point(362, 356);
+            this.txtbox_first_name.Name = "txtbox_first_name";
+            this.txtbox_first_name.Size = new System.Drawing.Size(176, 25);
+            this.txtbox_first_name.TabIndex = 14;
             // 
-            // last_text
+            // txtbox_last_text
             // 
-            this.last_text.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.last_text.Location = new System.Drawing.Point(362, 416);
-            this.last_text.Name = "last_text";
-            this.last_text.Size = new System.Drawing.Size(176, 25);
-            this.last_text.TabIndex = 15;
+            this.txtbox_last_text.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtbox_last_text.Location = new System.Drawing.Point(362, 416);
+            this.txtbox_last_text.Name = "txtbox_last_text";
+            this.txtbox_last_text.Size = new System.Drawing.Size(176, 25);
+            this.txtbox_last_text.TabIndex = 15;
             // 
-            // users_box
+            // rtxtbox_users
             // 
-            this.users_box.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.users_box.Location = new System.Drawing.Point(596, 109);
-            this.users_box.Name = "users_box";
-            this.users_box.Size = new System.Drawing.Size(300, 371);
-            this.users_box.TabIndex = 17;
-            this.users_box.Text = "";
+            this.rtxtbox_users.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.rtxtbox_users.Location = new System.Drawing.Point(596, 109);
+            this.rtxtbox_users.Name = "rtxtbox_users";
+            this.rtxtbox_users.Size = new System.Drawing.Size(300, 371);
+            this.rtxtbox_users.TabIndex = 17;
+            this.rtxtbox_users.Text = "";
             // 
             // label7
             // 
@@ -216,41 +216,41 @@
             this.label7.TabIndex = 18;
             this.label7.Text = "현재 회원목록";
             // 
-            // level_btn1
+            // rbtn_level_0
             // 
-            this.level_btn1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.level_btn1.AutoSize = true;
-            this.level_btn1.Location = new System.Drawing.Point(369, 237);
-            this.level_btn1.Name = "level_btn1";
-            this.level_btn1.Size = new System.Drawing.Size(73, 19);
-            this.level_btn1.TabIndex = 19;
-            this.level_btn1.TabStop = true;
-            this.level_btn1.Text = "관리자";
-            this.level_btn1.UseVisualStyleBackColor = true;
+            this.rbtn_level_0.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.rbtn_level_0.AutoSize = true;
+            this.rbtn_level_0.Location = new System.Drawing.Point(369, 237);
+            this.rbtn_level_0.Name = "rbtn_level_0";
+            this.rbtn_level_0.Size = new System.Drawing.Size(73, 19);
+            this.rbtn_level_0.TabIndex = 19;
+            this.rbtn_level_0.TabStop = true;
+            this.rbtn_level_0.Text = "관리자";
+            this.rbtn_level_0.UseVisualStyleBackColor = true;
             // 
-            // level_btn2
+            // rbtn_lever_1
             // 
-            this.level_btn2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.level_btn2.AutoSize = true;
-            this.level_btn2.Location = new System.Drawing.Point(448, 237);
-            this.level_btn2.Name = "level_btn2";
-            this.level_btn2.Size = new System.Drawing.Size(73, 19);
-            this.level_btn2.TabIndex = 19;
-            this.level_btn2.TabStop = true;
-            this.level_btn2.Text = "사용자";
-            this.level_btn2.UseVisualStyleBackColor = true;
+            this.rbtn_lever_1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.rbtn_lever_1.AutoSize = true;
+            this.rbtn_lever_1.Location = new System.Drawing.Point(448, 237);
+            this.rbtn_lever_1.Name = "rbtn_lever_1";
+            this.rbtn_lever_1.Size = new System.Drawing.Size(73, 19);
+            this.rbtn_lever_1.TabIndex = 19;
+            this.rbtn_lever_1.TabStop = true;
+            this.rbtn_lever_1.Text = "사용자";
+            this.rbtn_lever_1.UseVisualStyleBackColor = true;
             // 
-            // user_view
+            // DataGridView_user_view
             // 
-            this.user_view.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.user_view.Location = new System.Drawing.Point(902, 109);
-            this.user_view.Name = "user_view";
-            this.user_view.RowHeadersWidth = 51;
-            this.user_view.RowTemplate.Height = 27;
-            this.user_view.Size = new System.Drawing.Size(519, 371);
-            this.user_view.TabIndex = 20;
-            this.user_view.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.User_view_CellClick);
-            this.user_view.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.User_view_CellContentClick);
+            this.DataGridView_user_view.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DataGridView_user_view.Location = new System.Drawing.Point(902, 109);
+            this.DataGridView_user_view.Name = "DataGridView_user_view";
+            this.DataGridView_user_view.RowHeadersWidth = 51;
+            this.DataGridView_user_view.RowTemplate.Height = 27;
+            this.DataGridView_user_view.Size = new System.Drawing.Size(519, 371);
+            this.DataGridView_user_view.TabIndex = 20;
+            this.DataGridView_user_view.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.User_view_CellClick);
+            this.DataGridView_user_view.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.User_view_CellContentClick);
             // 
             // levet_text
             // 
@@ -259,13 +259,13 @@
             this.levet_text.Size = new System.Drawing.Size(52, 25);
             this.levet_text.TabIndex = 21;
             // 
-            // id_sc_text
+            // txtbox_id_sc
             // 
-            this.id_sc_text.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.id_sc_text.Location = new System.Drawing.Point(1164, 484);
-            this.id_sc_text.Name = "id_sc_text";
-            this.id_sc_text.Size = new System.Drawing.Size(176, 25);
-            this.id_sc_text.TabIndex = 6;
+            this.txtbox_id_sc.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtbox_id_sc.Location = new System.Drawing.Point(1164, 484);
+            this.txtbox_id_sc.Name = "txtbox_id_sc";
+            this.txtbox_id_sc.Size = new System.Drawing.Size(176, 25);
+            this.txtbox_id_sc.TabIndex = 6;
             // 
             // User_set
             // 
@@ -273,31 +273,31 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1433, 792);
             this.Controls.Add(this.levet_text);
-            this.Controls.Add(this.user_view);
-            this.Controls.Add(this.level_btn2);
-            this.Controls.Add(this.level_btn1);
+            this.Controls.Add(this.DataGridView_user_view);
+            this.Controls.Add(this.rbtn_lever_1);
+            this.Controls.Add(this.rbtn_level_0);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.users_box);
-            this.Controls.Add(this.last_text);
-            this.Controls.Add(this.first_text);
-            this.Controls.Add(this.email_text);
+            this.Controls.Add(this.rtxtbox_users);
+            this.Controls.Add(this.txtbox_last_text);
+            this.Controls.Add(this.txtbox_first_name);
+            this.Controls.Add(this.txtbox_email);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.pw_text);
-            this.Controls.Add(this.id_sc_text);
-            this.Controls.Add(this.id_text);
+            this.Controls.Add(this.txtbox_user_pw);
+            this.Controls.Add(this.txtbox_id_sc);
+            this.Controls.Add(this.txtbox_user_id);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.search);
-            this.Controls.Add(this.update);
-            this.Controls.Add(this.delete);
-            this.Controls.Add(this.insert);
+            this.Controls.Add(this.btn_Search);
+            this.Controls.Add(this.btn_Update);
+            this.Controls.Add(this.btn_Delete);
+            this.Controls.Add(this.btn_Insert);
             this.Name = "User_set";
             this.Text = "m1";
             this.Load += new System.EventHandler(this.m1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.user_view)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridView_user_view)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -305,27 +305,27 @@
 
         #endregion
 
-        private System.Windows.Forms.Button insert;
-        private System.Windows.Forms.Button delete;
-        private System.Windows.Forms.Button update;
-        private System.Windows.Forms.Button search;
+        private System.Windows.Forms.Button btn_Insert;
+        private System.Windows.Forms.Button btn_Delete;
+        private System.Windows.Forms.Button btn_Update;
+        private System.Windows.Forms.Button btn_Search;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox id_text;
-        private System.Windows.Forms.TextBox pw_text;
+        private System.Windows.Forms.TextBox txtbox_user_id;
+        private System.Windows.Forms.TextBox txtbox_user_pw;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox email_text;
-        private System.Windows.Forms.TextBox first_text;
-        private System.Windows.Forms.TextBox last_text;
-        private System.Windows.Forms.RichTextBox users_box;
+        private System.Windows.Forms.TextBox txtbox_email;
+        private System.Windows.Forms.TextBox txtbox_first_name;
+        private System.Windows.Forms.TextBox txtbox_last_text;
+        private System.Windows.Forms.RichTextBox rtxtbox_users;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.RadioButton level_btn1;
-        private System.Windows.Forms.RadioButton level_btn2;
-        private System.Windows.Forms.DataGridView user_view;
+        private System.Windows.Forms.RadioButton rbtn_level_0;
+        private System.Windows.Forms.RadioButton rbtn_lever_1;
+        private System.Windows.Forms.DataGridView DataGridView_user_view;
         private System.Windows.Forms.TextBox levet_text;
-        private System.Windows.Forms.TextBox id_sc_text;
+        private System.Windows.Forms.TextBox txtbox_id_sc;
     }
 }

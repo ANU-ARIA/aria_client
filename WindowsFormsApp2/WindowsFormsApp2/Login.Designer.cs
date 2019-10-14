@@ -30,19 +30,19 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.user_id_text = new System.Windows.Forms.TextBox();
-            this.pw_text = new System.Windows.Forms.TextBox();
-            this.login_button = new System.Windows.Forms.Button();
+            this.txtbox_user_id = new System.Windows.Forms.TextBox();
+            this.txtbox_pw = new System.Windows.Forms.TextBox();
+            this.btn_login = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.exit_button = new System.Windows.Forms.Button();
+            this.btn_exit = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.x_imge = new System.Windows.Forms.PictureBox();
-            this.x2_imge = new System.Windows.Forms.PictureBox();
+            this.picbox_id_fail = new System.Windows.Forms.PictureBox();
+            this.picbox_pw_fail = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.x_imge)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.x2_imge)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picbox_id_fail)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picbox_pw_fail)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -66,47 +66,47 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Password";
             // 
-            // user_id_text
+            // txtbox_user_id
             // 
-            this.user_id_text.BackColor = System.Drawing.SystemColors.Control;
-            this.user_id_text.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.user_id_text.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.user_id_text.Location = new System.Drawing.Point(105, 400);
-            this.user_id_text.Name = "user_id_text";
-            this.user_id_text.Size = new System.Drawing.Size(292, 23);
-            this.user_id_text.TabIndex = 2;
+            this.txtbox_user_id.BackColor = System.Drawing.SystemColors.Control;
+            this.txtbox_user_id.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtbox_user_id.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtbox_user_id.Location = new System.Drawing.Point(105, 400);
+            this.txtbox_user_id.Name = "txtbox_user_id";
+            this.txtbox_user_id.Size = new System.Drawing.Size(292, 23);
+            this.txtbox_user_id.TabIndex = 2;
             // 
-            // pw_text
+            // txtbox_pw
             // 
-            this.pw_text.BackColor = System.Drawing.SystemColors.Control;
-            this.pw_text.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.pw_text.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.pw_text.Location = new System.Drawing.Point(105, 482);
-            this.pw_text.Name = "pw_text";
-            this.pw_text.PasswordChar = '*';
-            this.pw_text.Size = new System.Drawing.Size(292, 23);
-            this.pw_text.TabIndex = 3;
+            this.txtbox_pw.BackColor = System.Drawing.SystemColors.Control;
+            this.txtbox_pw.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtbox_pw.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtbox_pw.Location = new System.Drawing.Point(105, 482);
+            this.txtbox_pw.Name = "txtbox_pw";
+            this.txtbox_pw.PasswordChar = '*';
+            this.txtbox_pw.Size = new System.Drawing.Size(292, 23);
+            this.txtbox_pw.TabIndex = 3;
             // 
-            // login_button
+            // btn_login
             // 
-            this.login_button.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.login_button.FlatAppearance.BorderSize = 0;
-            this.login_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.login_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.login_button.ForeColor = System.Drawing.Color.White;
-            this.login_button.Location = new System.Drawing.Point(166, 638);
-            this.login_button.Name = "login_button";
-            this.login_button.Size = new System.Drawing.Size(168, 38);
-            this.login_button.TabIndex = 4;
-            this.login_button.Text = "Login";
-            this.login_button.UseVisualStyleBackColor = false;
-            this.login_button.Click += new System.EventHandler(this.login_button_Click);
+            this.btn_login.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btn_login.FlatAppearance.BorderSize = 0;
+            this.btn_login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_login.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btn_login.ForeColor = System.Drawing.Color.White;
+            this.btn_login.Location = new System.Drawing.Point(166, 638);
+            this.btn_login.Name = "btn_login";
+            this.btn_login.Size = new System.Drawing.Size(168, 38);
+            this.btn_login.TabIndex = 4;
+            this.btn_login.Text = "Login";
+            this.btn_login.UseVisualStyleBackColor = false;
+            this.btn_login.Click += new System.EventHandler(this.login_button_Click);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.panel1.Controls.Add(this.exit_button);
+            this.panel1.Controls.Add(this.btn_exit);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Cursor = System.Windows.Forms.Cursors.Default;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -117,18 +117,18 @@
             this.panel1.TabIndex = 6;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel1_Paint);
             // 
-            // exit_button
+            // btn_exit
             // 
-            this.exit_button.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.exit_button.FlatAppearance.BorderSize = 0;
-            this.exit_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.exit_button.Image = global::WindowsFormsApp2.Properties.Resources.baseline_power_settings_new_black_18dp;
-            this.exit_button.Location = new System.Drawing.Point(457, 12);
-            this.exit_button.Name = "exit_button";
-            this.exit_button.Size = new System.Drawing.Size(31, 27);
-            this.exit_button.TabIndex = 1;
-            this.exit_button.UseVisualStyleBackColor = false;
-            this.exit_button.Click += new System.EventHandler(this.Button2_Click);
+            this.btn_exit.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btn_exit.FlatAppearance.BorderSize = 0;
+            this.btn_exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_exit.Image = global::WindowsFormsApp2.Properties.Resources.baseline_power_settings_new_black_18dp;
+            this.btn_exit.Location = new System.Drawing.Point(457, 12);
+            this.btn_exit.Name = "btn_exit";
+            this.btn_exit.Size = new System.Drawing.Size(31, 27);
+            this.btn_exit.TabIndex = 1;
+            this.btn_exit.UseVisualStyleBackColor = false;
+            this.btn_exit.Click += new System.EventHandler(this.Button2_Click);
             // 
             // label3
             // 
@@ -157,41 +157,41 @@
             this.panel3.Size = new System.Drawing.Size(315, 1);
             this.panel3.TabIndex = 7;
             // 
-            // x_imge
+            // picbox_id_fail
             // 
-            this.x_imge.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.x_imge.Image = global::WindowsFormsApp2.Properties.Resources.cancel;
-            this.x_imge.Location = new System.Drawing.Point(417, 393);
-            this.x_imge.Name = "x_imge";
-            this.x_imge.Size = new System.Drawing.Size(30, 30);
-            this.x_imge.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.x_imge.TabIndex = 8;
-            this.x_imge.TabStop = false;
+            this.picbox_id_fail.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.picbox_id_fail.Image = global::WindowsFormsApp2.Properties.Resources.cancel;
+            this.picbox_id_fail.Location = new System.Drawing.Point(417, 393);
+            this.picbox_id_fail.Name = "picbox_id_fail";
+            this.picbox_id_fail.Size = new System.Drawing.Size(30, 30);
+            this.picbox_id_fail.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picbox_id_fail.TabIndex = 8;
+            this.picbox_id_fail.TabStop = false;
             // 
-            // x2_imge
+            // picbox_pw_fail
             // 
-            this.x2_imge.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.x2_imge.Image = global::WindowsFormsApp2.Properties.Resources.cancel;
-            this.x2_imge.Location = new System.Drawing.Point(417, 475);
-            this.x2_imge.Name = "x2_imge";
-            this.x2_imge.Size = new System.Drawing.Size(30, 30);
-            this.x2_imge.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.x2_imge.TabIndex = 8;
-            this.x2_imge.TabStop = false;
+            this.picbox_pw_fail.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.picbox_pw_fail.Image = global::WindowsFormsApp2.Properties.Resources.cancel;
+            this.picbox_pw_fail.Location = new System.Drawing.Point(417, 475);
+            this.picbox_pw_fail.Name = "picbox_pw_fail";
+            this.picbox_pw_fail.Size = new System.Drawing.Size(30, 30);
+            this.picbox_pw_fail.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picbox_pw_fail.TabIndex = 8;
+            this.picbox_pw_fail.TabStop = false;
             // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(500, 800);
-            this.Controls.Add(this.x2_imge);
-            this.Controls.Add(this.x_imge);
+            this.Controls.Add(this.picbox_pw_fail);
+            this.Controls.Add(this.picbox_id_fail);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.login_button);
-            this.Controls.Add(this.pw_text);
-            this.Controls.Add(this.user_id_text);
+            this.Controls.Add(this.btn_login);
+            this.Controls.Add(this.txtbox_pw);
+            this.Controls.Add(this.txtbox_user_id);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -201,8 +201,8 @@
             this.Load += new System.EventHandler(this.Form3_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.x_imge)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.x2_imge)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picbox_id_fail)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picbox_pw_fail)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -212,15 +212,15 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox pw_text;
-        private System.Windows.Forms.Button login_button;
-        public System.Windows.Forms.TextBox user_id_text;
+        private System.Windows.Forms.TextBox txtbox_pw;
+        private System.Windows.Forms.Button btn_login;
+        public System.Windows.Forms.TextBox txtbox_user_id;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button exit_button;
-        private System.Windows.Forms.PictureBox x_imge;
-        private System.Windows.Forms.PictureBox x2_imge;
+        private System.Windows.Forms.Button btn_exit;
+        private System.Windows.Forms.PictureBox picbox_id_fail;
+        private System.Windows.Forms.PictureBox picbox_pw_fail;
     }
 }

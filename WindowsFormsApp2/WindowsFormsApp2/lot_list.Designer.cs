@@ -34,21 +34,21 @@
             this.oper_id_box = new System.Windows.Forms.CheckBox();
             this.model_name_box = new System.Windows.Forms.CheckBox();
             this.line_box = new System.Windows.Forms.CheckBox();
-            this.search = new System.Windows.Forms.Button();
+            this.btn_search = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.model_name_text = new System.Windows.Forms.ComboBox();
-            this.line_text = new System.Windows.Forms.ComboBox();
-            this.oper_id_text = new System.Windows.Forms.TextBox();
+            this.dateTime_end = new System.Windows.Forms.DateTimePicker();
+            this.dateTime_start = new System.Windows.Forms.DateTimePicker();
+            this.combox_model_name = new System.Windows.Forms.ComboBox();
+            this.combox_line_id = new System.Windows.Forms.ComboBox();
+            this.txtbox_oper_id = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGrid_line_view = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGrid_line_view)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -57,13 +57,13 @@
             this.groupBox1.Controls.Add(this.oper_id_box);
             this.groupBox1.Controls.Add(this.model_name_box);
             this.groupBox1.Controls.Add(this.line_box);
-            this.groupBox1.Controls.Add(this.search);
+            this.groupBox1.Controls.Add(this.btn_search);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.dateTimePicker2);
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
-            this.groupBox1.Controls.Add(this.model_name_text);
-            this.groupBox1.Controls.Add(this.line_text);
-            this.groupBox1.Controls.Add(this.oper_id_text);
+            this.groupBox1.Controls.Add(this.dateTime_end);
+            this.groupBox1.Controls.Add(this.dateTime_start);
+            this.groupBox1.Controls.Add(this.combox_model_name);
+            this.groupBox1.Controls.Add(this.combox_line_id);
+            this.groupBox1.Controls.Add(this.txtbox_oper_id);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
@@ -114,15 +114,15 @@
             this.line_box.UseVisualStyleBackColor = true;
             this.line_box.CheckedChanged += new System.EventHandler(this.Line_box_CheckedChanged);
             // 
-            // search
+            // btn_search
             // 
-            this.search.Location = new System.Drawing.Point(29, 318);
-            this.search.Name = "search";
-            this.search.Size = new System.Drawing.Size(539, 102);
-            this.search.TabIndex = 5;
-            this.search.Text = "검색";
-            this.search.UseVisualStyleBackColor = true;
-            this.search.Click += new System.EventHandler(this.search_Click);
+            this.btn_search.Location = new System.Drawing.Point(29, 318);
+            this.btn_search.Name = "btn_search";
+            this.btn_search.Size = new System.Drawing.Size(539, 102);
+            this.btn_search.TabIndex = 5;
+            this.btn_search.Text = "검색";
+            this.btn_search.UseVisualStyleBackColor = true;
+            this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
             // 
             // label7
             // 
@@ -134,42 +134,42 @@
             this.label7.TabIndex = 4;
             this.label7.Text = "~";
             // 
-            // dateTimePicker2
+            // dateTime_end
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(368, 224);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 25);
-            this.dateTimePicker2.TabIndex = 3;
+            this.dateTime_end.Location = new System.Drawing.Point(368, 224);
+            this.dateTime_end.Name = "dateTime_end";
+            this.dateTime_end.Size = new System.Drawing.Size(200, 25);
+            this.dateTime_end.TabIndex = 3;
             // 
-            // dateTimePicker1
+            // dateTime_start
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(127, 225);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 25);
-            this.dateTimePicker1.TabIndex = 3;
+            this.dateTime_start.Location = new System.Drawing.Point(127, 225);
+            this.dateTime_start.Name = "dateTime_start";
+            this.dateTime_start.Size = new System.Drawing.Size(200, 25);
+            this.dateTime_start.TabIndex = 3;
             // 
-            // model_name_text
+            // combox_model_name
             // 
-            this.model_name_text.FormattingEnabled = true;
-            this.model_name_text.Location = new System.Drawing.Point(159, 130);
-            this.model_name_text.Name = "model_name_text";
-            this.model_name_text.Size = new System.Drawing.Size(121, 23);
-            this.model_name_text.TabIndex = 2;
+            this.combox_model_name.FormattingEnabled = true;
+            this.combox_model_name.Location = new System.Drawing.Point(159, 130);
+            this.combox_model_name.Name = "combox_model_name";
+            this.combox_model_name.Size = new System.Drawing.Size(121, 23);
+            this.combox_model_name.TabIndex = 2;
             // 
-            // line_text
+            // combox_line_id
             // 
-            this.line_text.FormattingEnabled = true;
-            this.line_text.Location = new System.Drawing.Point(121, 79);
-            this.line_text.Name = "line_text";
-            this.line_text.Size = new System.Drawing.Size(121, 23);
-            this.line_text.TabIndex = 2;
+            this.combox_line_id.FormattingEnabled = true;
+            this.combox_line_id.Location = new System.Drawing.Point(121, 79);
+            this.combox_line_id.Name = "combox_line_id";
+            this.combox_line_id.Size = new System.Drawing.Size(121, 23);
+            this.combox_line_id.TabIndex = 2;
             // 
-            // oper_id_text
+            // txtbox_oper_id
             // 
-            this.oper_id_text.Location = new System.Drawing.Point(183, 184);
-            this.oper_id_text.Name = "oper_id_text";
-            this.oper_id_text.Size = new System.Drawing.Size(121, 25);
-            this.oper_id_text.TabIndex = 1;
+            this.txtbox_oper_id.Location = new System.Drawing.Point(183, 184);
+            this.txtbox_oper_id.Name = "txtbox_oper_id";
+            this.txtbox_oper_id.Size = new System.Drawing.Size(121, 25);
+            this.txtbox_oper_id.TabIndex = 1;
             // 
             // label6
             // 
@@ -211,15 +211,15 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Line";
             // 
-            // dataGridView1
+            // dataGrid_line_view
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(637, 21);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 27;
-            this.dataGridView1.Size = new System.Drawing.Size(512, 437);
-            this.dataGridView1.TabIndex = 1;
+            this.dataGrid_line_view.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGrid_line_view.Location = new System.Drawing.Point(637, 21);
+            this.dataGrid_line_view.Name = "dataGrid_line_view";
+            this.dataGrid_line_view.RowHeadersWidth = 51;
+            this.dataGrid_line_view.RowTemplate.Height = 27;
+            this.dataGrid_line_view.Size = new System.Drawing.Size(512, 437);
+            this.dataGrid_line_view.TabIndex = 1;
             // 
             // contextMenuStrip1
             // 
@@ -232,13 +232,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1161, 470);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGrid_line_view);
             this.Controls.Add(this.groupBox1);
             this.Name = "Lot_list";
             this.Text = "lot_list";
+            this.Load += new System.EventHandler(this.Lot_list_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGrid_line_view)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -246,16 +247,16 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGrid_line_view;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.Button search;
+        private System.Windows.Forms.Button btn_search;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.ComboBox model_name_text;
-        private System.Windows.Forms.ComboBox line_text;
-        private System.Windows.Forms.TextBox oper_id_text;
+        private System.Windows.Forms.DateTimePicker dateTime_end;
+        private System.Windows.Forms.DateTimePicker dateTime_start;
+        private System.Windows.Forms.ComboBox combox_model_name;
+        private System.Windows.Forms.ComboBox combox_line_id;
+        private System.Windows.Forms.TextBox txtbox_oper_id;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;

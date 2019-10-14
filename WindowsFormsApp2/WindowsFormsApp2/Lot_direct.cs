@@ -46,15 +46,15 @@ namespace WindowsFormsApp2
         {
 
             // 텍스트 데이터
-            string line = line_text.Text;
-            string lot = lot_id_text.Text;
-            string md_name = model_name_text.Text;
-            string md_color = model_color_text.Text;
-            string lot_id = lot_id_text.Text;
-            decimal pd_cnt = prod_count_text.Value;
-            decimal pd_fail = prod_fail_text.Value;
-            decimal temp_mag = temp_margin_text.Value;
-            decimal hum_mag = humid_margin_text.Value;
+            string line = combox_line_id.Text;
+            string lot = txtbox_lot_id.Text;
+            string md_name = combox_model_name.Text;
+            string md_color = combox_model_color.Text;
+            string lot_id = txtbox_lot_id.Text;
+            decimal pd_cnt = numbox_prod_count.Value;
+            decimal pd_fail = numbox_prod_fail.Value;
+            decimal temp_mag = numbox_temp_margin.Value;
+            decimal hum_mag = numbox_humid_margin.Value;
 
             // 데이터를 하나의 메세지로 묶는다.
             string message;

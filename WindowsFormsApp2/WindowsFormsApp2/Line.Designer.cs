@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.DataGridView = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -56,7 +56,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.line_humid = new System.Windows.Forms.Label();
-            this.line_temp = new System.Windows.Forms.Label();
+            this.txtbox_line_temp = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).BeginInit();
@@ -123,16 +123,16 @@
             // 
             // chart1
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chart1.Legends.Add(legend2);
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(804, 42);
             this.chart1.Name = "chart1";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chart1.Series.Add(series2);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
             this.chart1.Size = new System.Drawing.Size(617, 336);
             this.chart1.TabIndex = 10;
             this.chart1.Text = "chart1";
@@ -292,7 +292,7 @@
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.line_humid);
-            this.groupBox4.Controls.Add(this.line_temp);
+            this.groupBox4.Controls.Add(this.txtbox_line_temp);
             this.groupBox4.Controls.Add(this.label3);
             this.groupBox4.Controls.Add(this.label1);
             this.groupBox4.Location = new System.Drawing.Point(1176, 12);
@@ -314,16 +314,16 @@
             this.line_humid.Text = "-";
             this.line_humid.Click += new System.EventHandler(this.Label2_Click);
             // 
-            // line_temp
+            // txtbox_line_temp
             // 
-            this.line_temp.AutoSize = true;
-            this.line_temp.Font = new System.Drawing.Font("굴림", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.line_temp.Location = new System.Drawing.Point(152, 47);
-            this.line_temp.Name = "line_temp";
-            this.line_temp.Size = new System.Drawing.Size(23, 24);
-            this.line_temp.TabIndex = 1;
-            this.line_temp.Text = "-";
-            this.line_temp.Click += new System.EventHandler(this.Label2_Click);
+            this.txtbox_line_temp.AutoSize = true;
+            this.txtbox_line_temp.Font = new System.Drawing.Font("굴림", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtbox_line_temp.Location = new System.Drawing.Point(152, 47);
+            this.txtbox_line_temp.Name = "txtbox_line_temp";
+            this.txtbox_line_temp.Size = new System.Drawing.Size(23, 24);
+            this.txtbox_line_temp.TabIndex = 1;
+            this.txtbox_line_temp.Text = "-";
+            this.txtbox_line_temp.Click += new System.EventHandler(this.Label2_Click);
             // 
             // label3
             // 
@@ -374,7 +374,7 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label line_temp;
+        private System.Windows.Forms.Label txtbox_line_temp;
         private System.Windows.Forms.Label line_humid;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel1;

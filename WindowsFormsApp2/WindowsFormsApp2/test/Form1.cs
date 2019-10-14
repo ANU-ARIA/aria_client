@@ -22,7 +22,7 @@ namespace WindowsFormsApp2
         {
             InitializeComponent();
             frm3 = _form3;
-            User_id.Text = frm3.user_id_text.Text;
+            User_id.Text = frm3.txtbox_user_id.Text;
             Am1.Text = "";
             Am2.Text = "";
             timer1.Interval = 1000;
