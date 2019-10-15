@@ -31,21 +31,21 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            this.DataGridView = new System.Windows.Forms.DataGridView();
+            this.DataGrid_lots_list_view = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.prod_all_time = new System.Windows.Forms.TextBox();
-            this.prod_time = new System.Windows.Forms.TextBox();
-            this.prod_rem_count = new System.Windows.Forms.TextBox();
-            this.prod_com_count_text = new System.Windows.Forms.TextBox();
-            this.prod_fail = new System.Windows.Forms.TextBox();
-            this.prod_count_text = new System.Windows.Forms.TextBox();
-            this.prod_pass = new System.Windows.Forms.TextBox();
-            this.model_name_text = new System.Windows.Forms.TextBox();
+            this.txtbox_prod_all_time = new System.Windows.Forms.TextBox();
+            this.txtbox_prod_time = new System.Windows.Forms.TextBox();
+            this.txt_prod_rem_cnt = new System.Windows.Forms.TextBox();
+            this.txtbox_prod_com_cnt = new System.Windows.Forms.TextBox();
+            this.txtbox_prod_fail = new System.Windows.Forms.TextBox();
+            this.txtbox_prod_cnt = new System.Windows.Forms.TextBox();
+            this.txtbox_prod_pass = new System.Windows.Forms.TextBox();
+            this.txtbox_model_name = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label15 = new System.Windows.Forms.Label();
@@ -59,21 +59,21 @@
             this.txtbox_line_temp = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGrid_lots_list_view)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
-            // DataGridView
+            // DataGrid_lots_list_view
             // 
-            this.DataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DataGridView.Location = new System.Drawing.Point(12, 12);
-            this.DataGridView.Name = "DataGridView";
-            this.DataGridView.RowHeadersWidth = 51;
-            this.DataGridView.RowTemplate.Height = 27;
-            this.DataGridView.Size = new System.Drawing.Size(1158, 339);
-            this.DataGridView.TabIndex = 0;
+            this.DataGrid_lots_list_view.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DataGrid_lots_list_view.Location = new System.Drawing.Point(12, 12);
+            this.DataGrid_lots_list_view.Name = "DataGrid_lots_list_view";
+            this.DataGrid_lots_list_view.RowHeadersWidth = 51;
+            this.DataGrid_lots_list_view.RowTemplate.Height = 27;
+            this.DataGrid_lots_list_view.Size = new System.Drawing.Size(1158, 339);
+            this.DataGrid_lots_list_view.TabIndex = 0;
             // 
             // groupBox3
             // 
@@ -82,14 +82,14 @@
             this.groupBox3.Controls.Add(this.chart1);
             this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Controls.Add(this.label5);
-            this.groupBox3.Controls.Add(this.prod_all_time);
-            this.groupBox3.Controls.Add(this.prod_time);
-            this.groupBox3.Controls.Add(this.prod_rem_count);
-            this.groupBox3.Controls.Add(this.prod_com_count_text);
-            this.groupBox3.Controls.Add(this.prod_fail);
-            this.groupBox3.Controls.Add(this.prod_count_text);
-            this.groupBox3.Controls.Add(this.prod_pass);
-            this.groupBox3.Controls.Add(this.model_name_text);
+            this.groupBox3.Controls.Add(this.txtbox_prod_all_time);
+            this.groupBox3.Controls.Add(this.txtbox_prod_time);
+            this.groupBox3.Controls.Add(this.txt_prod_rem_cnt);
+            this.groupBox3.Controls.Add(this.txtbox_prod_com_cnt);
+            this.groupBox3.Controls.Add(this.txtbox_prod_fail);
+            this.groupBox3.Controls.Add(this.txtbox_prod_cnt);
+            this.groupBox3.Controls.Add(this.txtbox_prod_pass);
+            this.groupBox3.Controls.Add(this.txtbox_model_name);
             this.groupBox3.Controls.Add(this.panel2);
             this.groupBox3.Controls.Add(this.panel1);
             this.groupBox3.Controls.Add(this.label15);
@@ -157,61 +157,61 @@
             this.label5.TabIndex = 9;
             this.label5.Text = "정 상 :";
             // 
-            // prod_all_time
+            // txtbox_prod_all_time
             // 
-            this.prod_all_time.Location = new System.Drawing.Point(305, 364);
-            this.prod_all_time.Name = "prod_all_time";
-            this.prod_all_time.Size = new System.Drawing.Size(112, 25);
-            this.prod_all_time.TabIndex = 8;
+            this.txtbox_prod_all_time.Location = new System.Drawing.Point(305, 364);
+            this.txtbox_prod_all_time.Name = "txtbox_prod_all_time";
+            this.txtbox_prod_all_time.Size = new System.Drawing.Size(112, 25);
+            this.txtbox_prod_all_time.TabIndex = 8;
             // 
-            // prod_time
+            // txtbox_prod_time
             // 
-            this.prod_time.Location = new System.Drawing.Point(305, 234);
-            this.prod_time.Name = "prod_time";
-            this.prod_time.Size = new System.Drawing.Size(112, 25);
-            this.prod_time.TabIndex = 8;
+            this.txtbox_prod_time.Location = new System.Drawing.Point(305, 234);
+            this.txtbox_prod_time.Name = "txtbox_prod_time";
+            this.txtbox_prod_time.Size = new System.Drawing.Size(112, 25);
+            this.txtbox_prod_time.TabIndex = 8;
             // 
-            // prod_rem_count
+            // txt_prod_rem_cnt
             // 
-            this.prod_rem_count.Location = new System.Drawing.Point(607, 128);
-            this.prod_rem_count.Name = "prod_rem_count";
-            this.prod_rem_count.Size = new System.Drawing.Size(112, 25);
-            this.prod_rem_count.TabIndex = 8;
+            this.txt_prod_rem_cnt.Location = new System.Drawing.Point(607, 128);
+            this.txt_prod_rem_cnt.Name = "txt_prod_rem_cnt";
+            this.txt_prod_rem_cnt.Size = new System.Drawing.Size(112, 25);
+            this.txt_prod_rem_cnt.TabIndex = 8;
             // 
-            // prod_com_count_text
+            // txtbox_prod_com_cnt
             // 
-            this.prod_com_count_text.Location = new System.Drawing.Point(229, 128);
-            this.prod_com_count_text.Name = "prod_com_count_text";
-            this.prod_com_count_text.Size = new System.Drawing.Size(112, 25);
-            this.prod_com_count_text.TabIndex = 8;
+            this.txtbox_prod_com_cnt.Location = new System.Drawing.Point(229, 128);
+            this.txtbox_prod_com_cnt.Name = "txtbox_prod_com_cnt";
+            this.txtbox_prod_com_cnt.Size = new System.Drawing.Size(112, 25);
+            this.txtbox_prod_com_cnt.TabIndex = 8;
             // 
-            // prod_fail
+            // txtbox_prod_fail
             // 
-            this.prod_fail.Location = new System.Drawing.Point(949, 491);
-            this.prod_fail.Name = "prod_fail";
-            this.prod_fail.Size = new System.Drawing.Size(112, 25);
-            this.prod_fail.TabIndex = 8;
+            this.txtbox_prod_fail.Location = new System.Drawing.Point(949, 491);
+            this.txtbox_prod_fail.Name = "txtbox_prod_fail";
+            this.txtbox_prod_fail.Size = new System.Drawing.Size(112, 25);
+            this.txtbox_prod_fail.TabIndex = 8;
             // 
-            // prod_count_text
+            // txtbox_prod_cnt
             // 
-            this.prod_count_text.Location = new System.Drawing.Point(607, 73);
-            this.prod_count_text.Name = "prod_count_text";
-            this.prod_count_text.Size = new System.Drawing.Size(112, 25);
-            this.prod_count_text.TabIndex = 8;
+            this.txtbox_prod_cnt.Location = new System.Drawing.Point(607, 73);
+            this.txtbox_prod_cnt.Name = "txtbox_prod_cnt";
+            this.txtbox_prod_cnt.Size = new System.Drawing.Size(112, 25);
+            this.txtbox_prod_cnt.TabIndex = 8;
             // 
-            // prod_pass
+            // txtbox_prod_pass
             // 
-            this.prod_pass.Location = new System.Drawing.Point(949, 426);
-            this.prod_pass.Name = "prod_pass";
-            this.prod_pass.Size = new System.Drawing.Size(112, 25);
-            this.prod_pass.TabIndex = 8;
+            this.txtbox_prod_pass.Location = new System.Drawing.Point(949, 426);
+            this.txtbox_prod_pass.Name = "txtbox_prod_pass";
+            this.txtbox_prod_pass.Size = new System.Drawing.Size(112, 25);
+            this.txtbox_prod_pass.TabIndex = 8;
             // 
-            // model_name_text
+            // txtbox_model_name
             // 
-            this.model_name_text.Location = new System.Drawing.Point(229, 72);
-            this.model_name_text.Name = "model_name_text";
-            this.model_name_text.Size = new System.Drawing.Size(112, 25);
-            this.model_name_text.TabIndex = 8;
+            this.txtbox_model_name.Location = new System.Drawing.Point(229, 72);
+            this.txtbox_model_name.Name = "txtbox_model_name";
+            this.txtbox_model_name.Size = new System.Drawing.Size(112, 25);
+            this.txtbox_model_name.TabIndex = 8;
             // 
             // panel2
             // 
@@ -353,12 +353,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1467, 917);
             this.Controls.Add(this.groupBox4);
-            this.Controls.Add(this.DataGridView);
+            this.Controls.Add(this.DataGrid_lots_list_view);
             this.Controls.Add(this.groupBox3);
             this.Name = "Line";
             this.Text = "Line";
             this.Load += new System.EventHandler(this.Line_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGrid_lots_list_view)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
@@ -370,7 +370,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView DataGridView;
+        private System.Windows.Forms.DataGridView DataGrid_lots_list_view;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label label1;
@@ -387,14 +387,14 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox prod_all_time;
-        private System.Windows.Forms.TextBox prod_time;
-        private System.Windows.Forms.TextBox prod_rem_count;
-        private System.Windows.Forms.TextBox prod_com_count_text;
-        private System.Windows.Forms.TextBox prod_fail;
-        private System.Windows.Forms.TextBox prod_count_text;
-        private System.Windows.Forms.TextBox prod_pass;
-        private System.Windows.Forms.TextBox model_name_text;
+        private System.Windows.Forms.TextBox txtbox_prod_all_time;
+        private System.Windows.Forms.TextBox txtbox_prod_time;
+        private System.Windows.Forms.TextBox txt_prod_rem_cnt;
+        private System.Windows.Forms.TextBox txtbox_prod_com_cnt;
+        private System.Windows.Forms.TextBox txtbox_prod_fail;
+        private System.Windows.Forms.TextBox txtbox_prod_cnt;
+        private System.Windows.Forms.TextBox txtbox_prod_pass;
+        private System.Windows.Forms.TextBox txtbox_model_name;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel3;

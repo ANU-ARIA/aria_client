@@ -1,8 +1,6 @@
 C:\git_repo\sf_aria_project\aria_client\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csprojAssemblyReference.cache
 C:\git_repo\sf_aria_project\aria_client\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Fail_prod.resources
 C:\git_repo\sf_aria_project\aria_client\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Finish_m.resources
-C:\git_repo\sf_aria_project\aria_client\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Form1.resources
-C:\git_repo\sf_aria_project\aria_client\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Form2.resources
 C:\git_repo\sf_aria_project\aria_client\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Login.resources
 C:\git_repo\sf_aria_project\aria_client\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Lot_list.resources
 C:\git_repo\sf_aria_project\aria_client\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.User_set.resources

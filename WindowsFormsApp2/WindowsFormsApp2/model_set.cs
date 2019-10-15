@@ -173,7 +173,7 @@ namespace WindowsFormsApp2
         }
 
 
-        // 검색
+        // 부분 검색
         private void Search_Click(object sender, EventArgs e)
         {
             // 텍스트 데이터

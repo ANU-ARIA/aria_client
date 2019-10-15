@@ -48,7 +48,6 @@
             this.rbtn_level_0 = new System.Windows.Forms.RadioButton();
             this.rbtn_lever_1 = new System.Windows.Forms.RadioButton();
             this.DataGridView_user_view = new System.Windows.Forms.DataGridView();
-            this.levet_text = new System.Windows.Forms.TextBox();
             this.txtbox_id_sc = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView_user_view)).BeginInit();
             this.SuspendLayout();
@@ -73,7 +72,7 @@
             this.btn_Delete.TabIndex = 1;
             this.btn_Delete.Text = "삭제";
             this.btn_Delete.UseVisualStyleBackColor = true;
-            this.btn_Delete.Click += new System.EventHandler(this.Delete_Click);
+            this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
             // 
             // btn_Update
             // 
@@ -252,13 +251,6 @@
             this.DataGridView_user_view.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.User_view_CellClick);
             this.DataGridView_user_view.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.User_view_CellContentClick);
             // 
-            // levet_text
-            // 
-            this.levet_text.Location = new System.Drawing.Point(527, 235);
-            this.levet_text.Name = "levet_text";
-            this.levet_text.Size = new System.Drawing.Size(52, 25);
-            this.levet_text.TabIndex = 21;
-            // 
             // txtbox_id_sc
             // 
             this.txtbox_id_sc.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -272,7 +264,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1433, 792);
-            this.Controls.Add(this.levet_text);
             this.Controls.Add(this.DataGridView_user_view);
             this.Controls.Add(this.rbtn_lever_1);
             this.Controls.Add(this.rbtn_level_0);
@@ -325,7 +316,6 @@
         private System.Windows.Forms.RadioButton rbtn_level_0;
         private System.Windows.Forms.RadioButton rbtn_lever_1;
         private System.Windows.Forms.DataGridView DataGridView_user_view;
-        private System.Windows.Forms.TextBox levet_text;
         private System.Windows.Forms.TextBox txtbox_id_sc;
     }
 }

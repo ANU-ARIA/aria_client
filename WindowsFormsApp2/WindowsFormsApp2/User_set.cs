@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using System.Net;
 using System.Net.Sockets;
 using MESComm;
+using WindowsFormsApp2.User;
 
 namespace WindowsFormsApp2
 {
@@ -108,7 +109,7 @@ namespace WindowsFormsApp2
         }
 
         // 삭제
-        private void Delete_Click(object sender, EventArgs e)
+        private void btn_Delete_Click(object sender, EventArgs e)
         {
             try
             {

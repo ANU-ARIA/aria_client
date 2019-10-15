@@ -9,6 +9,7 @@ using Newtonsoft.Json;
 using MESComm;
 using System.Windows.Forms;
 using WindowsFormsApp2;
+using WindowsFormsApp2.Class_lot;
 
 namespace MESComm
 {
@@ -74,12 +75,12 @@ namespace MESComm
 
         public int req_user_log_in(string sId, string sPw)
         {
-            string sMsg="";
-            int nRet = Send(sMsg);
+            string sMsg  = "";
+            int nRet     = Send(sMsg);
             return nRet;
         }
 
-        // 모델 call_bye
+        // 모델 call_by
         public int req_model_list(ref List<Model> _list_model, string _message)
         {
             string message  = _message;
@@ -125,10 +126,10 @@ namespace MESComm
             return 0;
         }
 
-
-        // 유저 call-bye
         public int req_user_list(ref List<Aria_user> _list_user, string _message)
         {
+
+
             string message = _message;
             int nMsgId = 1;
             int nRet = Send(message);
@@ -161,12 +162,12 @@ namespace MESComm
             {
                 Aria_user us = new Aria_user();
 
-                us.user_id     = arr[i * 6];
-                us.pass_word   = arr[i * 6 + 1];
-                us.level       = Int32.Parse(arr[i * 6 + 2]);
-                us.e_mail      = arr[i * 6 + 3];
-                us.first_name  = arr[i * 6 + 4];
-                us.last_name   = arr[i * 6 + 5];
+                us.user_id = arr[i * 6];
+                us.pass_word = arr[i * 6 + 1];
+                us.level = Int32.Parse(arr[i * 6 + 2]);
+                us.e_mail = arr[i * 6 + 3];
+                us.first_name = arr[i * 6 + 4];
+                us.last_name = arr[i * 6 + 5];
 
                 _list_user.Add(us);
             }
@@ -174,6 +175,53 @@ namespace MESComm
             return 0;
         }
 
+
+        // 작업지시 call-by reference
+        public int req_lot_list(ref List<Aria_lot_line> _list_lot, string _message)
+        {
+            string message = _message;
+            int nMsgId = 1;
+            int nRet = Send(message);
+
+            // 메세지 수신
+            string responseData = "";
+            byte[] data = new byte[1280];
+            int bytes;
+            if (!m_bSimulate)
+            {
+                bytes = m_streamClient.Read(data, 0, data.Length);
+                responseData = Encoding.Default.GetString(data, 0, bytes);
+            }
+            else
+            {
+                responseData = "lot01,kim,작업중,초코빵,24,40,";
+            }
+            analyze_req_lot_list(responseData, ref _list_lot);
+
+            return nRet;
+        }
+
+        // 작업지시 responseData 리스트
+        private int analyze_req_lot_list(string _responseData, ref List<Aria_lot_line> _list_lot)
+        {
+            string[] arr = _responseData.Trim().Split(',');
+
+
+            for (int i = 0; i < arr.Length / 5; i++)
+            {
+                Aria_lot_line lot = new Aria_lot_line();
+
+                lot.lot_id = arr[i * 5];
+                lot.user_name = arr[i * 5 + 1];
+                lot.line_state = arr[i * 5 + 2];
+                lot.line_temp = arr[i * 5 + 3];
+                lot.line_humidity = arr[i * 5 + 4];
+
+                _list_lot.Add(lot);
+            }
+
+            return 0;
+        }
 
         private int Send(string _message)
         {
@@ -185,6 +233,7 @@ namespace MESComm
             {
                 m_streamClient.Write(data, 0, data.Length);
             }
+
             return nRet;
         }
 

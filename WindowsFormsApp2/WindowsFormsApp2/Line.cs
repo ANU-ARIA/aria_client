@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MESComm;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,16 +9,37 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
+using WindowsFormsApp2.Class_lot;
 
 namespace WindowsFormsApp2
 {
     public partial class Line : Form
     {
+        string                       ln_sMessage = "";
+        string                       ln_sServerIp = "220.69.249.232";
+        const int                    ln_nServerPort = 4000;
+        const int                    ln_nClientPort = 4000;
+        private List<Aria_lot_line>  ln_listReceivedLine;
+        DataTable                    ln_dtLine = new DataTable();
+        ServerComm                   server_comm = new ServerComm(true);
+
+
         public Line()
         {
             InitializeComponent();
-            SetupDataGridView();
-            PopulateDataGridView();
+
+            ln_listReceivedLine = new List<Aria_lot_line>();
+
+            ln_dtLine.Columns.Add("작업 지시 id", typeof(string));
+            ln_dtLine.Columns.Add("작업자 이름", typeof(string));
+            ln_dtLine.Columns.Add("작업 상태", typeof(string));
+            ln_dtLine.Columns.Add("제품 명", typeof(string));
+            ln_dtLine.Columns.Add("내부 온도", typeof(decimal));
+            ln_dtLine.Columns.Add("내부 습도", typeof(decimal));
+            ln_dtLine.Columns.Add("예약 현황", typeof(int));
+
+            DataGrid_lots_list_view.DataSource = ln_dtLine;
+
         }
 
         private void Line_Load(object sender, EventArgs e)
@@ -44,56 +66,6 @@ namespace WindowsFormsApp2
                 sfalse.Points.AddXY(k, x);
                 x += 1;
             }
-        }
-
-        private void SetupDataGridView()
-        {
-            this.Controls.Add(DataGridView);
-
-            // DataGridView의 컬럼 갯수를 n개로 설정합니다.
-            DataGridView.ColumnCount = 6;
-
-            // DataGridView에 컬럼을 추가합니다.
-            DataGridView.Columns[0].Name = "라인";
-            DataGridView.Columns[1].Name = "작업상태";
-            DataGridView.Columns[2].Name = "제품명";
-            DataGridView.Columns[3].Name = "작업률";
-            DataGridView.Columns[4].Name = "작업자 이름";
-            DataGridView.Columns[5].Name = "예약 현황";
-        }
-
-        /*
-         * PopulateDataGridView()
-         * DataGridView에 데이터를 삽입합니다.
-         */
-        private void PopulateDataGridView()
-        {
-            // DataGridView에 삽입할 데이터를 설정합니다.
-            string[] row0 = { "Line_1", "ON", "초코빵", "57%", "신수영", "" };
-            string[] row1 = { "Line_2", "OFF", "", "", "", "" };
-            string[] row2 = { "", "", "", "", "", "" };
-            string[] row3 = { "", "", "", "", "", "" };
-            string[] row4 = { "", "", "", "", "", "" };
-            string[] row5 = { "", "", "", "", "", "" };
-
-            // DataGridView에 한 줄씩 삽입합니다.
-            DataGridView.Rows.Add(row0);
-            DataGridView.Rows.Add(row1);
-            DataGridView.Rows.Add(row2);
-            DataGridView.Rows.Add(row3);
-            DataGridView.Rows.Add(row4);
-            DataGridView.Rows.Add(row5);
-
-
-            // DataGridView에 들어갈 컬럼의 순서를 지정합니다.
-            DataGridView.Columns[0].DisplayIndex = 0;
-            DataGridView.Columns[1].DisplayIndex = 1;
-            DataGridView.Columns[2].DisplayIndex = 2;
-            DataGridView.Columns[3].DisplayIndex = 3;
-            DataGridView.Columns[4].DisplayIndex = 4;
-            DataGridView.Columns[5].DisplayIndex = 5;
-
-            DataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         private void GroupBox4_Enter(object sender, EventArgs e)
