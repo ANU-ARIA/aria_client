@@ -43,10 +43,10 @@ namespace WindowsFormsApp2
 
             //DataTable table = new DataTable();
 
-            m_dtModel.Columns.Add("모델 id", typeof(int));
+            m_dtModel.Columns.Add("모델 id",   typeof(int));
             m_dtModel.Columns.Add("적정 온도", typeof(int));
             m_dtModel.Columns.Add("적정 습도", typeof(int));
-            m_dtModel.Columns.Add("모델 명", typeof(string));
+            m_dtModel.Columns.Add("모델 명",   typeof(string));
 
             DataGridView_Model.DataSource = m_dtModel;
         }

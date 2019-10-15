@@ -52,6 +52,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // user_set_button
@@ -76,7 +77,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(12, 723);
+            this.button4.Location = new System.Drawing.Point(12, 594);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(236, 67);
             this.button4.TabIndex = 0;
@@ -157,7 +158,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("굴림", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label4.Location = new System.Drawing.Point(269, 742);
+            this.label4.Location = new System.Drawing.Point(269, 613);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(1196, 24);
             this.label4.TabIndex = 1;
@@ -226,7 +227,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(12, 796);
+            this.button2.Location = new System.Drawing.Point(12, 667);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(236, 67);
             this.button2.TabIndex = 0;
@@ -235,7 +236,7 @@
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(1233, 802);
+            this.button9.Location = new System.Drawing.Point(1233, 673);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(75, 23);
             this.button9.TabIndex = 3;
@@ -287,6 +288,16 @@
             this.label15.TabIndex = 4;
             this.label15.Text = "관리자 id : ";
             // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("굴림", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label16.Location = new System.Drawing.Point(269, 686);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(874, 24);
+            this.label16.TabIndex = 1;
+            this.label16.Text = "프로덕트에서 내려온 값중에서 완료된 제품을 옮겨서 버튼으로 판매 및 재고관리";
+            // 
             // fmMainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -301,6 +312,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label6);
+            this.Controls.Add(this.label16);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -351,5 +363,6 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
     }
 }

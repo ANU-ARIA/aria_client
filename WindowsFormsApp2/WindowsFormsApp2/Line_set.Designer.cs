@@ -34,7 +34,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1253, 751);
+            this.ClientSize = new System.Drawing.Size(1325, 720);
             this.Name = "Line_set";
             this.Text = "Line_set";
             this.ResumeLayout(false);
