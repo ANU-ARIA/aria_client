@@ -31,9 +31,9 @@ namespace MESComm
 
     public class Model
     {
-        public int model_id { get; set; }
-        public int temp_margin { get; set; }
-        public int humid_margin { get; set; }
+        public string model_id { get; set; }
+        public float temp_margin { get; set; }
+        public float humid_margin { get; set; }
         public string model_name { get; set; }
     }
 }
