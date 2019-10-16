@@ -214,11 +214,11 @@
             // dataGrid_line_view
             // 
             this.dataGrid_line_view.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGrid_line_view.Location = new System.Drawing.Point(637, 21);
+            this.dataGrid_line_view.Location = new System.Drawing.Point(617, 12);
             this.dataGrid_line_view.Name = "dataGrid_line_view";
             this.dataGrid_line_view.RowHeadersWidth = 51;
             this.dataGrid_line_view.RowTemplate.Height = 27;
-            this.dataGrid_line_view.Size = new System.Drawing.Size(512, 437);
+            this.dataGrid_line_view.Size = new System.Drawing.Size(532, 446);
             this.dataGrid_line_view.TabIndex = 1;
             // 
             // contextMenuStrip1

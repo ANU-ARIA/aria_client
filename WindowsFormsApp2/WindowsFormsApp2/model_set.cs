@@ -12,6 +12,7 @@ using System.Net.Sockets;
 using Newtonsoft.Json;
 using MESComm;
 using System.IO;
+using WindowsFormsApp2.Class_Model;
 
 namespace WindowsFormsApp2
 {
@@ -21,7 +22,7 @@ namespace WindowsFormsApp2
         string               m_sServerIp = "220.69.249.232";
         const int            m_nServerPort = 4000;
         const int            m_nClientPort = 4000;
-        private List<Model>  m_listReceivedModel;
+        private List<Aria_model>  m_listReceivedModel;
         DataTable            m_dtModel = new DataTable();
         ServerComm           server_comm = new ServerComm(true);
 
@@ -39,7 +40,7 @@ namespace WindowsFormsApp2
         {
             InitializeComponent();
 
-            m_listReceivedModel = new List<Model>();
+            m_listReceivedModel = new List<Aria_model>();
 
             //DataTable table = new DataTable();
 
@@ -66,9 +67,9 @@ namespace WindowsFormsApp2
                 m_listReceivedModel.Clear();
 
                 // 텍스트 데이터 (컨트롤로 부터 데이터를 가져옴.)
-                int md_id       = Int32.Parse(txtbox_model_id.Text);
-                float md_temp   = Int32.Parse(txtbox_model_temp.Text);
-                float md_hum    = Int32.Parse(txtbox_model_humidity.Text);
+                string md_id    = txtbox_model_id.Text;
+                float md_temp   = float.Parse(txtbox_model_temp.Text);
+                float md_hum    = float.Parse(txtbox_model_humidity.Text);
                 string md_name  = txtbox_model_name.Text;
 
                 // 데이터를 하나의 메세지로 묶는다.
@@ -77,7 +78,7 @@ namespace WindowsFormsApp2
                 m_sMessage = "{{#@!," + md_id + "," + md_temp + "," + md_hum + "," + md_name + ",#}}";
 
                 server_comm.Connect(m_sServerIp, m_nServerPort);
-
+                // insert를 하는 함수가 추가적으로 필요하다. (req_model_add로 서버에 db추가 명령)
                 server_comm.req_model_list(ref m_listReceivedModel, m_sMessage);
 
                 server_comm.Close();
@@ -100,7 +101,7 @@ namespace WindowsFormsApp2
         // 삭제
         private void Delete_Click(object sender, EventArgs e)
         {
-
+            // id만 있어도 될듯, 수정과 insert
             try
             {
                 m_dtModel.Clear();

@@ -12,6 +12,12 @@ namespace WindowsFormsApp2
 {
     public partial class Fail_prod : Form
     {
+        string fail_sMessage = "";
+        string fail_sServerIp = "220.69.249.232";
+        const int fail_nServerPort = 4000;
+        const int fail_nCilentPort = 4000;
+        private List<>
+
 
         public Fail_prod()
         {
@@ -37,19 +43,19 @@ namespace WindowsFormsApp2
         }
         private void SetupDataGridView()
         {
-            this.Controls.Add(DataGridView);
+            this.Controls.Add(DataGrid_md_fail_View);
 
             // DataGridView의 컬럼 갯수를 5개로 설정합니다.
-            DataGridView.ColumnCount = 7;
+            DataGrid_md_fail_View.ColumnCount = 7;
 
             // DataGridView에 컬럼을 추가합니다.
-            DataGridView.Columns[0].Name = "No";
-            DataGridView.Columns[1].Name = "제품 고유번호";
-            DataGridView.Columns[2].Name = "모델명";
-            DataGridView.Columns[3].Name = "온도";
-            DataGridView.Columns[4].Name = "습도";
-            DataGridView.Columns[5].Name = "불량원인";
-            DataGridView.Columns[6].Name = "불량검출시간";
+            DataGrid_md_fail_View.Columns[0].Name = "No";
+            DataGrid_md_fail_View.Columns[1].Name = "제품 고유번호";
+            DataGrid_md_fail_View.Columns[2].Name = "모델명";
+            DataGrid_md_fail_View.Columns[3].Name = "온도";
+            DataGrid_md_fail_View.Columns[4].Name = "습도";
+            DataGrid_md_fail_View.Columns[5].Name = "불량원인";
+            DataGrid_md_fail_View.Columns[6].Name = "불량검출시간";
         }
 
         /*
@@ -66,20 +72,20 @@ namespace WindowsFormsApp2
             string[] row4 = { "5", "102_9", "메론빵", "15", "61", "부적절한습도", "18:56:26" };
 
             // DataGridView에 한 줄씩 삽입합니다.
-            DataGridView.Rows.Add(row0);
-            DataGridView.Rows.Add(row1);
-            DataGridView.Rows.Add(row2);
-            DataGridView.Rows.Add(row3);
-            DataGridView.Rows.Add(row4);
+            DataGrid_md_fail_View.Rows.Add(row0);
+            DataGrid_md_fail_View.Rows.Add(row1);
+            DataGrid_md_fail_View.Rows.Add(row2);
+            DataGrid_md_fail_View.Rows.Add(row3);
+            DataGrid_md_fail_View.Rows.Add(row4);
 
             // DataGridView에 들어갈 컬럼의 순서를 지정합니다.
-            DataGridView.Columns[0].DisplayIndex = 0;
-            DataGridView.Columns[1].DisplayIndex = 1;
-            DataGridView.Columns[2].DisplayIndex = 2;
-            DataGridView.Columns[3].DisplayIndex = 3;
-            DataGridView.Columns[4].DisplayIndex = 4;
-            DataGridView.Columns[5].DisplayIndex = 5;
-            DataGridView.Columns[6].DisplayIndex = 6;
+            DataGrid_md_fail_View.Columns[0].DisplayIndex = 0;
+            DataGrid_md_fail_View.Columns[1].DisplayIndex = 1;
+            DataGrid_md_fail_View.Columns[2].DisplayIndex = 2;
+            DataGrid_md_fail_View.Columns[3].DisplayIndex = 3;
+            DataGrid_md_fail_View.Columns[4].DisplayIndex = 4;
+            DataGrid_md_fail_View.Columns[5].DisplayIndex = 5;
+            DataGrid_md_fail_View.Columns[6].DisplayIndex = 6;
         }
 
         private void Button1_Click(object sender, EventArgs e)

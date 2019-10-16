@@ -56,6 +56,8 @@
     <Compile Include="Class_login\CMES_Com.cs" />
     <Compile Include="Class_lot\Aria_lot.cs" />
     <Compile Include="Class_lot\Aria_lot_line.cs" />
+    <Compile Include="Class_Model\Aria_model.cs" />
+    <Compile Include="Class_Model\Aria_model_fail.cs" />
     <Compile Include="Fail_prod.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,6 +69,12 @@
     </Compile>
     <Compile Include="Finish_m.Designer.cs">
       <DependentUpon>Finish_m.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Hw_list.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hw_list.Designer.cs">
+      <DependentUpon>Hw_list.cs</DependentUpon>
     </Compile>
     <Compile Include="Line_set.cs">
       <SubType>Form</SubType>
@@ -132,6 +140,9 @@
     <Compile Include="UserControl1.Designer.cs">
       <DependentUpon>UserControl1.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Hw_list.resx">
+      <DependentUpon>Hw_list.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Line_set.resx">
       <DependentUpon>Line_set.cs</DependentUpon>
     </EmbeddedResource>
@@ -192,8 +203,6 @@
   <ItemGroup>
     <None Include="Resources\cancel.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Model\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

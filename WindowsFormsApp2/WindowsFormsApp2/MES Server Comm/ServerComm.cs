@@ -10,6 +10,7 @@ using MESComm;
 using System.Windows.Forms;
 using WindowsFormsApp2;
 using WindowsFormsApp2.Class_lot;
+using WindowsFormsApp2.Class_Model;
 
 namespace MESComm
 {
@@ -81,7 +82,7 @@ namespace MESComm
         }
 
         // 모델 call_by
-        public int req_model_list(ref List<Model> _list_model, string _message)
+        public int req_model_list(ref List<Aria_model> _list_model, string _message)
         {
             string message  = _message;
             int nMsgId      = 1;
@@ -106,16 +107,16 @@ namespace MESComm
         }
     
         // 모델 responseData 리스트
-        private int analyze_req_model_list(string _responseData, ref List<Model> _list_model)
+        private int analyze_req_model_list(string _responseData, ref List<Aria_model> _list_model)
         {
             string[] arr = _responseData.Trim().Split(',');
 
 
             for (int i = 0; i < arr.Length / 4; i++)
             {
-                Model md = new Model();
+                Aria_model md = new Aria_model();
 
-                md.model_id      = Int32.Parse(arr[i * 4]);
+                md.model_id      = arr[i * 4];
                 md.temp_margin   = Int32.Parse(arr[i * 4 + 1]);
                 md.humid_margin  = Int32.Parse(arr[i * 4 + 2]);
                 md.model_name    = arr[i * 4 + 3];
