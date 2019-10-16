@@ -81,10 +81,48 @@ namespace MESComm
             return nRet;
         }
 
-        // 모델 call_by
-        public int req_model_list(ref List<Aria_model> _list_model, string _message)
+        public int req_model_insert(Model _md)
         {
-            string message  = _message;
+            // MES Server에 전달할 메세지를 만든다.
+            string message;
+            message = "{{#@@," + _md.model_id + "," + _md.temp_margin + "," + _md.humid_margin + "," + _md.model_name + ",#}}";
+
+            int nErr = Send(message);
+
+            // 메세지 수신
+            string responseData = "";
+            byte[] data = new byte[1280];
+            int bytes;
+            if (!m_bSimulate)
+            {
+                bytes = m_streamClient.Read(data, 0, data.Length);
+                responseData = Encoding.Default.GetString(data, 0, bytes);
+            }
+            else
+            {
+                responseData = "1,1,1,chokopi,";
+            }
+
+            int nAck=0;
+            string sReason = "";
+
+            analyze_req_model_insert(responseData, ref nAck, ref sReason);
+
+            return nErr;
+        }
+
+        public void analyze_req_model_insert(string responseData, ref int _nAck, ref string _sReason)
+        {
+            _nAck = 0;
+            _sReason = "거절 사유";
+        }
+
+        // 모델 call_by
+        public int req_model_list(ref List<Model> _list_model, string _message)        {
+
+            string message;
+            message  = "{{#@%," + _md_id + ",#}}";
+
             int nMsgId      = 1;
             int nRet        = Send(message);
 

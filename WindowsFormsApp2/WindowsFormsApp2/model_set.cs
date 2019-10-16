@@ -67,19 +67,16 @@ namespace WindowsFormsApp2
                 m_listReceivedModel.Clear();
 
                 // 텍스트 데이터 (컨트롤로 부터 데이터를 가져옴.)
-                string md_id    = txtbox_model_id.Text;
-                float md_temp   = float.Parse(txtbox_model_temp.Text);
-                float md_hum    = float.Parse(txtbox_model_humidity.Text);
-                string md_name  = txtbox_model_name.Text;
+                Model md = new Model();
+                md.model_id = txtbox_model_id.Text;
+                md.temp_margin = float.Parse(txtbox_model_temp.Text);
+                md.humid_margin = float.Parse(txtbox_model_humidity.Text);
+                md.model_name = txtbox_model_name.Text;
 
                 // 데이터를 하나의 메세지로 묶는다.
-                // MES Server에 전달할 메세지를 만든다.
-
-                m_sMessage = "{{#@!," + md_id + "," + md_temp + "," + md_hum + "," + md_name + ",#}}";
-
                 server_comm.Connect(m_sServerIp, m_nServerPort);
                 // insert를 하는 함수가 추가적으로 필요하다. (req_model_add로 서버에 db추가 명령)
-                server_comm.req_model_list(ref m_listReceivedModel, m_sMessage);
+                server_comm.req_model_insert(md);
 
                 server_comm.Close();
 
@@ -107,13 +104,16 @@ namespace WindowsFormsApp2
                 m_dtModel.Clear();
                 m_listReceivedModel.Clear();
                 // 텍스트 데이터
-                int md_id      =  Int32.Parse(txtbox_model_id.Text);
-                float md_temp  =  Int32.Parse(txtbox_model_temp.Text);
-                float md_hum   =  Int32.Parse(txtbox_model_humidity.Text);
-                string md_name =  txtbox_model_name.Text;
+
+                Model md = new Model();
+                md.model_id     = txtbox_model_id.Text;
+                md.temp_margin  = float.Parse(txtbox_model_temp.Text);
+                md.humid_margin = float.Parse(txtbox_model_humidity.Text);
+                md.model_name   = txtbox_model_name.Text;
+
 
                 // 데이터를 하나의 메세지로 묶는다.
-                m_sMessage = "{{#@@," + md_id + "," + md_temp + "," + md_hum + "," + md_name + ",#}}";
+                //m_sMessage = "{{#@@," + md_id + "," + md_temp + "," + md_hum + "," + md_name + ",#}}";
 
                 server_comm.Connect(m_sServerIp, m_nServerPort);
 
@@ -183,13 +183,11 @@ namespace WindowsFormsApp2
                 m_dtModel.Clear();
                 m_listReceivedModel.Clear();
 
-                int md_id = Int32.Parse(txtbox_model_id_sch.Text);
-
-                m_sMessage = "{{#@%," + md_id + ",#}}";
+                string md_id = txtbox_model_id_sch.Text;
 
                 server_comm.Connect(m_sServerIp, m_nServerPort);
 
-                server_comm.req_model_list(ref m_listReceivedModel, m_sMessage);
+                server_comm.req_model_list(ref m_listReceivedModel, md_id);
 
                 server_comm.Close();
 
