@@ -13,22 +13,25 @@ using System.Net;
 using System.Net.Sockets;
 using MESComm;
 using WindowsFormsApp2.User;
+using System.IO;
 
 namespace WindowsFormsApp2
 {
 
     public partial class User_set : Form
     {
-        string                   u_sMessage = "";
-        string                   u_sServerIp = "220.69.249.232";
-        const int                u_nServerPort = 4000;
-        private List<Aria_user>  u_listReceivedUser;
-        DataTable                u_dtUser = new DataTable();
-        ServerComm               server_comm = new ServerComm(true);
-        Aria_user                us = new Aria_user();
+        string u_sMessage = "";
+        string u_sServerIp = "220.69.249.232";
+        const int u_nServerPort = 4000;
+        public List<Aria_user> u_listReceivedUser;
+        //private List<Aria_user>  u_listReceivedUser;
+        DataTable u_dtUser = new DataTable();
+        ServerComm server_comm = new ServerComm(true);
+        Aria_user us = new Aria_user();
+        List<Aria_user> _list_user = new List<Aria_user>();
 
         // radiobox 값
-        int                      u_intCost = -1;
+        int u_intCost = -1;
 
         //txtbox clear
         public void Txtboxuser_clear()
@@ -68,11 +71,12 @@ namespace WindowsFormsApp2
         {
             try
             {
+                _list_user.Clear();
                 u_dtUser.Clear();
                 u_listReceivedUser.Clear();
 
-                if (rbtn_level_0.Checked == true)       u_intCost = 0;
-                else if (rbtn_lever_1.Checked == true)  u_intCost = 1;
+                if (rbtn_level_0.Checked == true) u_intCost = 0;
+                else if (rbtn_lever_1.Checked == true) u_intCost = 1;
 
                 if (u_intCost == -1)
                 {
@@ -81,20 +85,21 @@ namespace WindowsFormsApp2
                 }
 
                 // 텍스트 데이터
-                us.user_id     = txtbox_user_id.Text;
-                us.pass_word   = txtbox_user_pw.Text;
-                us.level       = u_intCost;
-                us.e_mail      = txtbox_email.Text;
-                us.first_name  = txtbox_first_name.Text;
-                us.last_name   = txtbox_last_text.Text;
-
-                // 데이터를 하나의 메세지로 묶는다.
-                u_sMessage = "{{#!!," + us.user_id + "," + us.pass_word + "," + us.level + "," + us.e_mail + "," + us.first_name +
-                "," + us.last_name + ",#}}";
+                us.user_id = txtbox_user_id.Text;
+                us.pass_word = txtbox_user_pw.Text;
+                us.level = u_intCost;
+                us.e_mail = txtbox_email.Text;
+                us.first_name = txtbox_first_name.Text;
+                us.last_name = txtbox_last_text.Text;
 
                 server_comm.Connect(u_sServerIp, u_nServerPort);
 
-                server_comm.req_user_list(ref u_listReceivedUser, u_sMessage);
+                // a = responseData = "kim,1234,1,chokopi@com,kim,seong,";
+                server_comm.req_user_insert(us);
+
+                
+                _list_user = ServerComm.analyze_req_user_list(server_comm.req_user_insert(us), ref _list_user);
+                ShowUserInfoToGridView(_list_user);
 
                 server_comm.Close();
 
@@ -105,7 +110,7 @@ namespace WindowsFormsApp2
             {
                 MessageBox.Show("값을 입력해주세요.");
             }
-            ShowUserInfoToGridCtrl();
+
         }
 
         // 삭제
@@ -113,28 +118,38 @@ namespace WindowsFormsApp2
         {
             try
             {
+                _list_user.Clear();
                 u_dtUser.Clear();
                 u_listReceivedUser.Clear();
 
-                if (rbtn_level_0.Checked == true)       u_intCost = 0;
-                else if (rbtn_lever_1.Checked == true)  u_intCost = 1;
+                if (rbtn_level_0.Checked == true) u_intCost = 0;
+                else if (rbtn_lever_1.Checked == true) u_intCost = 1;
 
                 // 텍스트 데이터
-                us.user_id     = txtbox_user_id.Text;
-                us.pass_word   = txtbox_user_pw.Text;
-                us.level       = u_intCost;
-                us.e_mail      = txtbox_email.Text;
-                us.first_name  = txtbox_first_name.Text;
-                us.last_name   = txtbox_last_text.Text;
+                us.user_id = txtbox_user_id.Text;
+                us.pass_word = txtbox_user_pw.Text;
+                us.level = u_intCost;
+                us.e_mail = txtbox_email.Text;
+                us.first_name = txtbox_first_name.Text;
+                us.last_name = txtbox_last_text.Text;
 
-
-                // 데이터를 하나의 메세지로 묶는다.
-                u_sMessage = "{{#!@," + us.user_id + "," + us.pass_word + "," + us.level + "," + us.e_mail + "," + us.first_name +
-                    "," + us.last_name + ",#}}";
 
                 server_comm.Connect(u_sServerIp, u_nServerPort);
 
-                server_comm.req_user_list(ref u_listReceivedUser, u_sMessage);
+                server_comm.req_user_delete(us);
+
+                _list_user = ServerComm.analyze_req_user_list(server_comm.req_user_insert(us), ref _list_user);
+                u_dtUser.Rows.Add(u_dtUser.Rows[0]);
+
+                //for (int i = 0; i < u_dtUser.Rows.Count; i++)
+                //{
+                //    //행 선택 여부
+                //    u_dtUser.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+                //    if (u_dtUser.Rows[i].Selected == true)
+                //    {
+                //        u_dtUser.Rows.Remove(u_dtUser.Rows[i]);
+                //    }
+                //}
 
                 server_comm.Close();
 
@@ -145,7 +160,7 @@ namespace WindowsFormsApp2
             {
                 MessageBox.Show("값을 입력해주세요.");
             }
-            ShowUserInfoToGridCtrl();
+
 
         }
 
@@ -157,8 +172,8 @@ namespace WindowsFormsApp2
                 u_dtUser.Clear();
                 u_listReceivedUser.Clear();
 
-                if (rbtn_level_0.Checked == true)       u_intCost = 0;
-                else if (rbtn_lever_1.Checked == true)  u_intCost = 1;
+                if (rbtn_level_0.Checked == true) u_intCost = 0;
+                else if (rbtn_lever_1.Checked == true) u_intCost = 1;
 
                 if (u_intCost == -1)
                 {
@@ -167,21 +182,16 @@ namespace WindowsFormsApp2
                 }
 
                 // 텍스트 데이터
-                us.user_id     = txtbox_user_id.Text;
-                us.pass_word   = txtbox_user_pw.Text;
-                us.level       = u_intCost;
-                us.e_mail      = txtbox_email.Text;
-                us.first_name  = txtbox_first_name.Text;
-                us.last_name   = txtbox_last_text.Text;
-
-
-                // 데이터를 하나의 메세지로 묶는다.
-                u_sMessage = "{{#!#," + us.user_id + "," + us.pass_word + "," + us.level + "," + us.e_mail + "," + us.first_name +
-                    "," + us.last_name + ",#}}";
+                us.user_id = txtbox_user_id.Text;
+                us.pass_word = txtbox_user_pw.Text;
+                us.level = u_intCost;
+                us.e_mail = txtbox_email.Text;
+                us.first_name = txtbox_first_name.Text;
+                us.last_name = txtbox_last_text.Text;
 
                 server_comm.Connect(u_sServerIp, u_nServerPort);
 
-                server_comm.req_user_list(ref u_listReceivedUser, u_sMessage);
+                server_comm.req_user_update(us);
 
                 server_comm.Close();
 
@@ -191,7 +201,7 @@ namespace WindowsFormsApp2
             {
                 MessageBox.Show("값을 입력해주세요.");
             }
-        ShowUserInfoToGridCtrl();
+
         }
 
         // 검색 %
@@ -204,12 +214,10 @@ namespace WindowsFormsApp2
                 u_listReceivedUser.Clear();
 
                 us.user_id = txtbox_id_sc.Text;
-                // 데이터를 하나의 메세지로 묶는다.
-                u_sMessage = "{{#!%," + us.user_id + ",#}}";
 
                 server_comm.Connect(u_sServerIp, u_nServerPort);
 
-                server_comm.req_user_list(ref u_listReceivedUser, u_sMessage);
+                server_comm.req_user_search(us);
 
                 server_comm.Close();
 
@@ -224,36 +232,54 @@ namespace WindowsFormsApp2
 
         }
 
-
+        //전체 검색 ??????????????
         public void ShowUserInfoToGridCtrl()
         {
             u_dtUser.Clear();
             u_listReceivedUser.Clear();
 
-            u_sMessage = "{{#!$,,#}}";
-
             server_comm.Connect(u_sServerIp, u_nServerPort);
 
-            server_comm.req_user_list(ref u_listReceivedUser, u_sMessage);
+            server_comm.req_user_all_search(us);
+
+            List<Aria_user> _list_user = new List<Aria_user>();
+            _list_user = ServerComm.analyze_req_user_list(server_comm.req_user_insert(us), ref _list_user);
+            ShowUserInfoToGridView(_list_user);
 
             server_comm.Close();
 
             Txtboxuser_clear();
 
         }
+        
+        private void ShowUserInfoToGridView(List<Aria_user> _list_user)
+        {
+            for(int i = 0; i < _list_user.Count; i++)
+            {
+                u_dtUser.Rows.Add(_list_user[i].user_id, _list_user[i].pass_word, _list_user[i].level, _list_user[i].e_mail, _list_user[i].first_name, _list_user[i].last_name);
+            }
+        }
 
         private void User_view_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtbox_user_id.Text     = this.DataGridView_user_view.CurrentRow.Cells[0].Value.ToString();
-            txtbox_user_pw.Text     = this.DataGridView_user_view.CurrentRow.Cells[1].Value.ToString();
-            txtbox_email.Text       = this.DataGridView_user_view.CurrentRow.Cells[3].Value.ToString();
-            txtbox_first_name.Text  = this.DataGridView_user_view.CurrentRow.Cells[4].Value.ToString();
-            txtbox_last_text.Text   = this.DataGridView_user_view.CurrentRow.Cells[5].Value.ToString();
+            txtbox_user_id.Text = this.DataGridView_user_view.CurrentRow.Cells[0].Value.ToString();
+            txtbox_user_pw.Text = this.DataGridView_user_view.CurrentRow.Cells[1].Value.ToString();
+            txtbox_email.Text = this.DataGridView_user_view.CurrentRow.Cells[3].Value.ToString();
+            txtbox_first_name.Text = this.DataGridView_user_view.CurrentRow.Cells[4].Value.ToString();
+            txtbox_last_text.Text = this.DataGridView_user_view.CurrentRow.Cells[5].Value.ToString();
         }
 
         private void User_view_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
+
+        private void Rtxtbox_users_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        //그리드뷰에 표시하는방법.
+
     }
 }

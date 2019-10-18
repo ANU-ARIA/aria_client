@@ -117,7 +117,7 @@ namespace WindowsFormsApp2
 
                 server_comm.Connect(m_sServerIp, m_nServerPort);
 
-                server_comm.req_model_list(ref m_listReceivedModel, m_sMessage);
+                //server_comm.req_model_list(ref m_listReceivedModel, m_sMessage);
 
                 server_comm.Close();
 
@@ -154,7 +154,7 @@ namespace WindowsFormsApp2
 
                 server_comm.Connect(m_sServerIp, m_nServerPort);
 
-                server_comm.req_model_list(ref m_listReceivedModel, m_sMessage);
+                //server_comm.req_model_list(ref m_listReceivedModel, m_sMessage);
 
                 server_comm.Close();
 
@@ -187,7 +187,7 @@ namespace WindowsFormsApp2
 
                 server_comm.Connect(m_sServerIp, m_nServerPort);
 
-                server_comm.req_model_list(ref m_listReceivedModel, md_id);
+                //server_comm.req_model_list(ref m_listReceivedModel, md_id);
 
                 server_comm.Close();
 
@@ -239,7 +239,7 @@ namespace WindowsFormsApp2
 
             server_comm.Connect(m_sServerIp, m_nServerPort);
 
-            server_comm.req_model_list(ref m_listReceivedModel, m_sMessage);
+            //server_comm.req_model_list(ref m_listReceivedModel, m_sMessage);
 
             server_comm.Close();
 

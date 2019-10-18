@@ -16,7 +16,6 @@ namespace WindowsFormsApp2
         string fail_sServerIp = "220.69.249.232";
         const int fail_nServerPort = 4000;
         const int fail_nCilentPort = 4000;
-        private List<>
 
 
         public Fail_prod()
