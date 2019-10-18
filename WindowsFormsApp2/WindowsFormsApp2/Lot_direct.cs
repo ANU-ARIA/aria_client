@@ -86,7 +86,7 @@ namespace WindowsFormsApp2
                                    + pd_cnt + "," + pd_fail + "," + temp_mag + "," + hum_mag + ",#}}";
 
 
-                server_comm.Connect(l_sServerIp, l_nServerPort);
+                server_comm.Connect();
 
                 server_comm.req_lot_list(ref l_listReceivedLot, l_sMessage);
 
@@ -128,7 +128,7 @@ namespace WindowsFormsApp2
 
             l_sMessage = "{{##%,,#}}";
 
-            server_comm.Connect(l_sServerIp, l_nServerPort);
+            server_comm.Connect();
 
             server_comm.req_lot_list(ref l_listReceivedLot, l_sMessage);
 

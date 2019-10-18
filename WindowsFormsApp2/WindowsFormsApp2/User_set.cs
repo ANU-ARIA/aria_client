@@ -21,8 +21,6 @@ namespace WindowsFormsApp2
     public partial class User_set : Form
     {
         string u_sMessage = "";
-        string u_sServerIp = "220.69.249.232";
-        const int u_nServerPort = 4000;
         public List<Aria_user> u_listReceivedUser;
         //private List<Aria_user>  u_listReceivedUser;
         DataTable u_dtUser = new DataTable();
@@ -92,13 +90,13 @@ namespace WindowsFormsApp2
                 us.first_name = txtbox_first_name.Text;
                 us.last_name = txtbox_last_text.Text;
 
-                server_comm.Connect(u_sServerIp, u_nServerPort);
+                string _btn_evnt = "!";
+
+                server_comm.Connect();
 
                 // a = responseData = "kim,1234,1,chokopi@com,kim,seong,";
-                server_comm.req_user_insert(us);
+                server_comm.req_user_send(us, _btn_evnt, ref _list_user);
 
-                
-                _list_user = ServerComm.analyze_req_user_list(server_comm.req_user_insert(us), ref _list_user);
                 ShowUserInfoToGridView(_list_user);
 
                 server_comm.Close();
@@ -133,35 +131,20 @@ namespace WindowsFormsApp2
                 us.first_name = txtbox_first_name.Text;
                 us.last_name = txtbox_last_text.Text;
 
+                string _btn_evnt = "@";
 
-                server_comm.Connect(u_sServerIp, u_nServerPort);
+                server_comm.Connect();
 
-                server_comm.req_user_delete(us);
-
-                _list_user = ServerComm.analyze_req_user_list(server_comm.req_user_insert(us), ref _list_user);
-                u_dtUser.Rows.Add(u_dtUser.Rows[0]);
-
-                //for (int i = 0; i < u_dtUser.Rows.Count; i++)
-                //{
-                //    //행 선택 여부
-                //    u_dtUser.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-                //    if (u_dtUser.Rows[i].Selected == true)
-                //    {
-                //        u_dtUser.Rows.Remove(u_dtUser.Rows[i]);
-                //    }
-                //}
+                server_comm.req_user_send(us, _btn_evnt, ref _list_user);
 
                 server_comm.Close();
 
                 MessageBox.Show("값이 삭제되었습니다.");
-
             }
             catch
             {
                 MessageBox.Show("값을 입력해주세요.");
             }
-
-
         }
 
         // 수정
@@ -189,9 +172,11 @@ namespace WindowsFormsApp2
                 us.first_name = txtbox_first_name.Text;
                 us.last_name = txtbox_last_text.Text;
 
-                server_comm.Connect(u_sServerIp, u_nServerPort);
+                server_comm.Connect();
 
-                server_comm.req_user_update(us);
+                string _btn_evnt = "#";
+
+                server_comm.req_user_send(us, _btn_evnt, ref _list_user);
 
                 server_comm.Close();
 
@@ -215,9 +200,11 @@ namespace WindowsFormsApp2
 
                 us.user_id = txtbox_id_sc.Text;
 
-                server_comm.Connect(u_sServerIp, u_nServerPort);
+                server_comm.Connect();
 
-                server_comm.req_user_search(us);
+                string _btn_evnt = "%";
+
+                server_comm.req_user_send(us, _btn_evnt, ref _list_user);
 
                 server_comm.Close();
 
@@ -238,12 +225,12 @@ namespace WindowsFormsApp2
             u_dtUser.Clear();
             u_listReceivedUser.Clear();
 
-            server_comm.Connect(u_sServerIp, u_nServerPort);
+            server_comm.Connect();
 
-            server_comm.req_user_all_search(us);
+            string _btn_evnt = "%";
 
-            List<Aria_user> _list_user = new List<Aria_user>();
-            _list_user = ServerComm.analyze_req_user_list(server_comm.req_user_insert(us), ref _list_user);
+            server_comm.req_user_send(us, _btn_evnt, ref _list_user);
+
             ShowUserInfoToGridView(_list_user);
 
             server_comm.Close();

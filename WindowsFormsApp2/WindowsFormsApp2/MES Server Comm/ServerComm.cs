@@ -50,7 +50,7 @@ namespace MESComm
         }
 
 
-        public int Connect(string sIpAddress, int nPort)
+        public int Connect()
         {
             int nRet = 0;
 
@@ -82,14 +82,34 @@ namespace MESComm
             int nRet     = Send(sMsg);
             return nRet;
         }
-
-        //Model Insert
-        public int req_model_insert(Model _md)
+        // 모델 Call By
+        public List<Aria_model> req_model_send(Aria_model _md, string _btn_evnt, List<Aria_model> _md_list)
         {
             // MES Server에 전달할 메세지를 만든다.
             string message;
-            message = "{{#@@," + _md.model_id + "," + _md.temp_margin + "," + _md.humid_margin + "," + _md.model_name + ",#}}";
+            // insert, delete, update, search, search_all 의 메세지 정의
+            if (_btn_evnt == "!")
+            {
+                message = "{{#@!," + _md.model_id + "," + _md.temp_margin + "," + _md.humid_margin + "," + _md.model_name + ",#}}";
+            }
+            else if (_btn_evnt == "@")
+            {
+                message = "{{#@@," + _md.model_id + ",#}}";
+            }
+            else if (_btn_evnt == "#")
+            {
+                message = "{{#@#," + _md.model_id + "," + _md.temp_margin + "," + _md.humid_margin + "," + _md.model_name + ",#}}";
+            }
+            else if (_btn_evnt == "$")
+            {
+                message = "{{#@$," + _md.model_id + ",#}}";
+            }
+            else
+            {
+                message = "{{#@%,,#}}";
+            }
 
+            // string 형식의 메세지를 서버 프로토콜에 byte형식으로 보내기 위한 곳
             int nErr = Send(message);
 
             // 메세지 수신
@@ -103,48 +123,45 @@ namespace MESComm
             }
             else
             {
-                responseData = "1,1,1,chokopi,";
+                responseData = "ok, ,responseData, 24, 40, chocopi";
             }
 
-            int nAck=0;
+            string nAck = "";
             string sReason = "";
+            List<Aria_model> md_list = new List<Aria_model>();
 
-            analyze_req_model_insert(responseData, ref nAck, ref sReason);
+            // 받은 responseData의 ok, 거절사유, DB값 정제
+            md_list = analyze_req_model_list(responseData, ref nAck, ref sReason, ref md_list);
 
-            return nErr;
+            return md_list;
         }
 
-        public void analyze_req_model_insert(string responseData, ref int _nAck, ref string _sReason)
-        {
-            _nAck = 0;
-            _sReason = "거절 사유";
-
-        }
-
-    
-        // 모델 responseData 리스트
-        private int analyze_req_model_list(string _responseData, ref List<Aria_model> _list_model)
+        // 모델 responseData
+        private List<Aria_model> analyze_req_model_list(string _responseData, ref string _nAck, ref string _sReason, ref List<Aria_model> _md_list)
         {
             string[] arr = _responseData.Trim().Split(',');
 
+            _nAck = arr[0];
+            _sReason = arr[1];
 
-            for (int i = 0; i < arr.Length / 4; i++)
+            for (int i = 2; i < 3; i++)
             {
                 Aria_model md = new Aria_model();
 
-                md.model_id      = arr[i * 4];
-                md.temp_margin   = Int32.Parse(arr[i * 4 + 1]);
-                md.humid_margin  = Int32.Parse(arr[i * 4 + 2]);
-                md.model_name    = arr[i * 4 + 3];
-         
-                _list_model.Add(md);
+                md.model_id = arr[i * 4 - 6];
+                md.temp_margin = float.Parse(arr[i * 4 - 5]);
+                md.humid_margin = float.Parse(arr[i * 4 - 4]);
+                md.model_name = arr[i * 4 - 3];
+
+                _md_list.Add(md);
+
+
+             }    return _md_list;
+
             }
 
-            return 0;
-        }
-
-        // 유저 Call By
-        public List<Aria_user> req_user_send(Aria_user _us, string _btn_evnt, List<Aria_user> _list_user)
+            // 유저 Call By
+            public List<Aria_user> req_user_send(Aria_user _us, string _btn_evnt, ref List<Aria_user> _list_user)
         {
             // MES Server에 전달할 메세지를 만든다.
             string message;
@@ -190,7 +207,7 @@ namespace MESComm
             }
             else
             {
-                responseData = "OK, ,Sin,1234,1,chokopi@com,Sin,su,";
+                responseData = "OK, ,Sin,1234,1,chokopi@com,Sin,su";
             }
 
             string nAck = "";
@@ -203,7 +220,7 @@ namespace MESComm
         }
 
         // 유저 responseData 리스트
-        public List<Aria_user> analyze_req_user_list(string _responseData, ref string _nAck, ref string _sReason, ref List<Aria_user> _list_user)
+        private List<Aria_user> analyze_req_user_list(string _responseData, ref string _nAck, ref string _sReason, ref List<Aria_user> _list_user)
         {
 
             string[] arr = _responseData.Trim().Split(',');
@@ -211,16 +228,16 @@ namespace MESComm
             _nAck = arr[0];
             _sReason = arr[1];
 
-            for (int i = 2; i < (arr.Length - 2) / 6; i++)
+            for (int i = 0; i < (arr.Length-2)  / 6; i++)
             {
                 Aria_user us = new Aria_user();
 
-                us.user_id = arr[i * 6 - 10];
-                us.pass_word = arr[i * 6 - 9];
-                us.level = Int32.Parse(arr[i * 6 - 8]);
-                us.e_mail = arr[i * 6 - 7];
-                us.first_name = arr[i * 6 - 6];
-                us.last_name = arr[i * 6 - 5];
+                us.user_id = arr[i +2];
+                us.pass_word = arr[i +3];
+                us.level = Int32.Parse(arr[i + 4]);
+                us.e_mail = arr[i + 5];
+                us.first_name = arr[i + 6];
+                us.last_name = arr[i + 7];
 
                 _list_user.Add(us);
             }
