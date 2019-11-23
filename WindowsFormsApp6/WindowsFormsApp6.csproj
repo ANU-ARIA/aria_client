@@ -1,0 +1,233 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{78873A3A-0F54-4D7C-A8F6-D98FA60BDE27}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>WindowsFormsApp6</RootNamespace>
+    <AssemblyName>WindowsFormsApp6</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CircularProgressBar, Version=2.7.0.7, Culture=neutral, PublicKeyToken=310fd07b25df79b3, processorArchitecture=MSIL">
+      <HintPath>..\packages\CircularProgressBar.2.7.0.7\lib\net40\CircularProgressBar.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WinFormAnimation, Version=1.6.0.4, Culture=neutral, PublicKeyToken=310fd07b25df79b3, processorArchitecture=MSIL">
+      <HintPath>..\packages\WinFormAnimation.1.6.0.4\lib\net40\WinFormAnimation.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Control_Form\Control_Form_Fail_Product.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control_Form\Control_Form_Fail_Product.Designer.cs">
+      <DependentUpon>Control_Form_Fail_Product.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control_Form\Control_Form_Finish_Product.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control_Form\Control_Form_Finish_Product.Designer.cs">
+      <DependentUpon>Control_Form_Finish_Product.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control_Form\Control_Form_Home.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control_Form\Control_Form_Home.Designer.cs">
+      <DependentUpon>Control_Form_Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control_Form\Control_Form_LOT.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control_Form\Control_Form_LOT.Designer.cs">
+      <DependentUpon>Control_Form_LOT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control_Form\Control_Form_Model.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control_Form\Control_Form_Model.Designer.cs">
+      <DependentUpon>Control_Form_Model.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control_Form\Control_Form_Monitoring.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control_Form\Control_Form_Monitoring.Designer.cs">
+      <DependentUpon>Control_Form_Monitoring.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control_Form\Control_Form_User.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control_Form\Control_Form_User.Designer.cs">
+      <DependentUpon>Control_Form_User.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ex.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ex.Designer.cs">
+      <DependentUpon>ex.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Form_main_menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Form_main_menu.Designer.cs">
+      <DependentUpon>Form_main_menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Form_login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Form_login.Designer.cs">
+      <DependentUpon>Form_login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Model.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Model.Designer.cs">
+      <DependentUpon>Form_Model.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_monitoring.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_monitoring.Designer.cs">
+      <DependentUpon>Form_monitoring.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_User.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_User.Designer.cs">
+      <DependentUpon>Form_User.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pi\CEID1.cs" />
+    <Compile Include="Pi\CEID4.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Server\Server.cs" />
+    <Compile Include="Set\Line.cs" />
+    <Compile Include="Set\Login.cs" />
+    <Compile Include="Set\Lot.cs" />
+    <Compile Include="Set\Model.cs" />
+    <Compile Include="Set\Pi.cs" />
+    <Compile Include="Set\Products.cs" />
+    <Compile Include="Set\Users.cs" />
+    <Compile Include="Thread_Class\Class1.cs" />
+    <Compile Include="Thread_Class\Class2.cs" />
+    <Compile Include="Thread_Class\Class3.cs" />
+    <Compile Include="Thread_Class\environment.cs" />
+    <Compile Include="URL.cs" />
+    <Compile Include="Control_Form\UserControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control_Form\UserControl1.Designer.cs">
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control_Form\UserControl2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control_Form\UserControl2.Designer.cs">
+      <DependentUpon>UserControl2.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Control_Form\Control_Form_Fail_Product.resx">
+      <DependentUpon>Control_Form_Fail_Product.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control_Form\Control_Form_Finish_Product.resx">
+      <DependentUpon>Control_Form_Finish_Product.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control_Form\Control_Form_Home.resx">
+      <DependentUpon>Control_Form_Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control_Form\Control_Form_LOT.resx">
+      <DependentUpon>Control_Form_LOT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control_Form\Control_Form_Model.resx">
+      <DependentUpon>Control_Form_Model.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control_Form\Control_Form_Monitoring.resx">
+      <DependentUpon>Control_Form_Monitoring.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control_Form\Control_Form_User.resx">
+      <DependentUpon>Control_Form_User.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ex.resx">
+      <DependentUpon>ex.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Form_login.resx">
+      <DependentUpon>Form_login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Form_main_menu.resx">
+      <DependentUpon>Form_main_menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Model.resx">
+      <DependentUpon>Form_Model.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_monitoring.resx">
+      <DependentUpon>Form_monitoring.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_User.resx">
+      <DependentUpon>Form_User.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Control_Form\UserControl1.resx">
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control_Form\UserControl2.resx">
+      <DependentUpon>UserControl2.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

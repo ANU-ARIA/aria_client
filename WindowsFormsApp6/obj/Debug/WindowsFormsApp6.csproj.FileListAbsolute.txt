@@ -1,0 +1,91 @@
+C:\Users\User\source\repos\WindowsFormsApp6\WindowsFormsApp6\bin\Debug\WindowsFormsApp6.exe.config
+C:\Users\User\source\repos\WindowsFormsApp6\WindowsFormsApp6\bin\Debug\WindowsFormsApp6.exe
+C:\Users\User\source\repos\WindowsFormsApp6\WindowsFormsApp6\bin\Debug\WindowsFormsApp6.pdb
+C:\Users\User\source\repos\WindowsFormsApp6\WindowsFormsApp6\obj\Debug\WindowsFormsApp6.Properties.Resources.resources
+C:\Users\User\source\repos\WindowsFormsApp6\WindowsFormsApp6\obj\Debug\WindowsFormsApp6.UserControl1.resources
+C:\Users\User\source\repos\WindowsFormsApp6\WindowsFormsApp6\obj\Debug\WindowsFormsApp6.csproj.GenerateResource.cache
+C:\Users\User\source\repos\WindowsFormsApp6\WindowsFormsApp6\obj\Debug\WindowsFormsApp6.exe
+C:\Users\User\source\repos\WindowsFormsApp6\WindowsFormsApp6\obj\Debug\WindowsFormsApp6.pdb
+C:\Users\User\source\repos\WindowsFormsApp6\WindowsFormsApp6\obj\Debug\WindowsFormsApp6.Form1.resources
+C:\Users\User\source\repos\WindowsFormsApp6\WindowsFormsApp6\obj\Debug\WindowsFormsApp6.UserControl2.resources
+C:\Users\User\source\repos\WindowsFormsApp6\WindowsFormsApp6\bin\Debug\CircularProgressBar.dll
+C:\Users\User\source\repos\WindowsFormsApp6\WindowsFormsApp6\bin\Debug\WinFormAnimation.dll
+C:\Users\User\source\repos\WindowsFormsApp6\WindowsFormsApp6\obj\Debug\WindowsFormsApp6.UserControl3.resources
+C:\Users\User\source\repos\WindowsFormsApp6\WindowsFormsApp6\obj\Debug\WindowsFormsApp6.UserControl4.resources
+C:\Users\User\source\repos\WindowsFormsApp6\WindowsFormsApp6\obj\Debug\WindowsFormsApp6.csproj.CopyComplete
+C:\Users\User\source\repos\WindowsFormsApp6\WindowsFormsApp6\obj\Debug\WindowsFormsApp6.UserControl0.resources
+C:\Users\User\Documents\카카오톡 받은 파일\WindowsFormsApp6\WindowsFormsApp6\bin\Debug\WindowsFormsApp6.exe.config
+C:\Users\User\Documents\카카오톡 받은 파일\WindowsFormsApp6\WindowsFormsApp6\bin\Debug\WindowsFormsApp6.exe
+C:\Users\User\Documents\카카오톡 받은 파일\WindowsFormsApp6\WindowsFormsApp6\bin\Debug\WindowsFormsApp6.pdb
+C:\Users\User\Documents\카카오톡 받은 파일\WindowsFormsApp6\WindowsFormsApp6\bin\Debug\CircularProgressBar.dll
+C:\Users\User\Documents\카카오톡 받은 파일\WindowsFormsApp6\WindowsFormsApp6\bin\Debug\WinFormAnimation.dll
+C:\Users\User\Documents\카카오톡 받은 파일\WindowsFormsApp6\WindowsFormsApp6\obj\Debug\WindowsFormsApp6.Control_Form.Control_Form_Home.resources
+C:\Users\User\Documents\카카오톡 받은 파일\WindowsFormsApp6\WindowsFormsApp6\obj\Debug\WindowsFormsApp6.Control_Form.Control_Form_LOT.resources
+C:\Users\User\Documents\카카오톡 받은 파일\WindowsFormsApp6\WindowsFormsApp6\obj\Debug\WindowsFormsApp6.Control_Form.Control_Form_Model.resources
+C:\Users\User\Documents\카카오톡 받은 파일\WindowsFormsApp6\WindowsFormsApp6\obj\Debug\WindowsFormsApp6.Control_Form.Control_Form_Monitoring.resources
+C:\Users\User\Documents\카카오톡 받은 파일\WindowsFormsApp6\WindowsFormsApp6\obj\Debug\WindowsFormsApp6.Control_Form.Control_Form_User.resources
+C:\Users\User\Documents\카카오톡 받은 파일\WindowsFormsApp6\WindowsFormsApp6\obj\Debug\WindowsFormsApp6.Form_login.resources
+C:\Users\User\Documents\카카오톡 받은 파일\WindowsFormsApp6\WindowsFormsApp6\obj\Debug\WindowsFormsApp6.Form_main_menu.resources
+C:\Users\User\Documents\카카오톡 받은 파일\WindowsFormsApp6\WindowsFormsApp6\obj\Debug\WindowsFormsApp6.Properties.Resources.resources
+C:\Users\User\Documents\카카오톡 받은 파일\WindowsFormsApp6\WindowsFormsApp6\obj\Debug\WindowsFormsApp6.UserControl1.resources
+C:\Users\User\Documents\카카오톡 받은 파일\WindowsFormsApp6\WindowsFormsApp6\obj\Debug\WindowsFormsApp6.UserControl2.resources
+C:\Users\User\Documents\카카오톡 받은 파일\WindowsFormsApp6\WindowsFormsApp6\obj\Debug\WindowsFormsApp6.UserControl3.resources
+C:\Users\User\Documents\카카오톡 받은 파일\WindowsFormsApp6\WindowsFormsApp6\obj\Debug\WindowsFormsApp6.UserControl4.resources
+C:\Users\User\Documents\카카오톡 받은 파일\WindowsFormsApp6\WindowsFormsApp6\obj\Debug\WindowsFormsApp6.csproj.GenerateResource.cache
+C:\Users\User\Documents\카카오톡 받은 파일\WindowsFormsApp6\WindowsFormsApp6\obj\Debug\WindowsFormsApp6.csproj.CopyComplete
+C:\Users\User\Documents\카카오톡 받은 파일\WindowsFormsApp6\WindowsFormsApp6\obj\Debug\WindowsFormsApp6.exe
+C:\Users\User\Documents\카카오톡 받은 파일\WindowsFormsApp6\WindowsFormsApp6\obj\Debug\WindowsFormsApp6.pdb
+C:\Users\User\Documents\카카오톡 받은 파일\WindowsFormsApp6\WindowsFormsApp6\obj\Debug\WindowsFormsApp6.csprojAssemblyReference.cache
+C:\Users\User\Desktop\WindowsFormsApp6 (2)\WindowsFormsApp6\WindowsFormsApp6\bin\Debug\WindowsFormsApp6.exe.config
+C:\Users\User\Desktop\WindowsFormsApp6 (2)\WindowsFormsApp6\WindowsFormsApp6\bin\Debug\WindowsFormsApp6.exe
+C:\Users\User\Desktop\WindowsFormsApp6 (2)\WindowsFormsApp6\WindowsFormsApp6\bin\Debug\WindowsFormsApp6.pdb
+C:\Users\User\Desktop\WindowsFormsApp6 (2)\WindowsFormsApp6\WindowsFormsApp6\bin\Debug\CircularProgressBar.dll
+C:\Users\User\Desktop\WindowsFormsApp6 (2)\WindowsFormsApp6\WindowsFormsApp6\bin\Debug\WinFormAnimation.dll
+C:\Users\User\Desktop\WindowsFormsApp6 (2)\WindowsFormsApp6\WindowsFormsApp6\obj\Debug\WindowsFormsApp6.Control_Form.Control_Form_Fail_Product.resources
+C:\Users\User\Desktop\WindowsFormsApp6 (2)\WindowsFormsApp6\WindowsFormsApp6\obj\Debug\WindowsFormsApp6.Control_Form.Control_Form_Finish_Product.resources
+C:\Users\User\Desktop\WindowsFormsApp6 (2)\WindowsFormsApp6\WindowsFormsApp6\obj\Debug\WindowsFormsApp6.Control_Form.Control_Form_Home.resources
+C:\Users\User\Desktop\WindowsFormsApp6 (2)\WindowsFormsApp6\WindowsFormsApp6\obj\Debug\WindowsFormsApp6.Control_Form.Control_Form_LOT.resources
+C:\Users\User\Desktop\WindowsFormsApp6 (2)\WindowsFormsApp6\WindowsFormsApp6\obj\Debug\WindowsFormsApp6.Control_Form.Control_Form_Model.resources
+C:\Users\User\Desktop\WindowsFormsApp6 (2)\WindowsFormsApp6\WindowsFormsApp6\obj\Debug\WindowsFormsApp6.Control_Form.Control_Form_Monitoring.resources
+C:\Users\User\Desktop\WindowsFormsApp6 (2)\WindowsFormsApp6\WindowsFormsApp6\obj\Debug\WindowsFormsApp6.Control_Form.Control_Form_User.resources
+C:\Users\User\Desktop\WindowsFormsApp6 (2)\WindowsFormsApp6\WindowsFormsApp6\obj\Debug\WindowsFormsApp6.Form_login.resources
+C:\Users\User\Desktop\WindowsFormsApp6 (2)\WindowsFormsApp6\WindowsFormsApp6\obj\Debug\WindowsFormsApp6.Form_main_menu.resources
+C:\Users\User\Desktop\WindowsFormsApp6 (2)\WindowsFormsApp6\WindowsFormsApp6\obj\Debug\WindowsFormsApp6.Properties.Resources.resources
+C:\Users\User\Desktop\WindowsFormsApp6 (2)\WindowsFormsApp6\WindowsFormsApp6\obj\Debug\WindowsFormsApp6.UserControl1.resources
+C:\Users\User\Desktop\WindowsFormsApp6 (2)\WindowsFormsApp6\WindowsFormsApp6\obj\Debug\WindowsFormsApp6.UserControl2.resources
+C:\Users\User\Desktop\WindowsFormsApp6 (2)\WindowsFormsApp6\WindowsFormsApp6\obj\Debug\WindowsFormsApp6.UserControl3.resources
+C:\Users\User\Desktop\WindowsFormsApp6 (2)\WindowsFormsApp6\WindowsFormsApp6\obj\Debug\WindowsFormsApp6.UserControl4.resources
+C:\Users\User\Desktop\WindowsFormsApp6 (2)\WindowsFormsApp6\WindowsFormsApp6\obj\Debug\WindowsFormsApp6.csproj.GenerateResource.cache
+C:\Users\User\Desktop\WindowsFormsApp6 (2)\WindowsFormsApp6\WindowsFormsApp6\obj\Debug\WindowsFormsApp6.csproj.CopyComplete
+C:\Users\User\Desktop\WindowsFormsApp6 (2)\WindowsFormsApp6\WindowsFormsApp6\obj\Debug\WindowsFormsApp6.exe
+C:\Users\User\Desktop\WindowsFormsApp6 (2)\WindowsFormsApp6\WindowsFormsApp6\obj\Debug\WindowsFormsApp6.pdb
+C:\Users\User\Desktop\WindowsFormsApp6 (2)\WindowsFormsApp6\WindowsFormsApp6\obj\Debug\WindowsFormsApp6.csprojAssemblyReference.cache
+C:\Users\User\Desktop\WindowsFormsApp6 (2)\WindowsFormsApp6\WindowsFormsApp6\obj\Debug\WindowsFormsApp6.Form_User.resources
+C:\Users\User\Desktop\WindowsFormsApp6 (2)\WindowsFormsApp6\WindowsFormsApp6\obj\Debug\WindowsFormsApp6.Form_Model.resources
+C:\Users\User\Desktop\WindowsFormsApp6 (2)\WindowsFormsApp6\WindowsFormsApp6\obj\Debug\WindowsFormsApp6.Form_monitoring.resources
+C:\Users\User\Desktop\꿩\WindowsFormsApp6\WindowsFormsApp6\bin\Debug\WindowsFormsApp6.exe.config
+C:\Users\User\Desktop\꿩\WindowsFormsApp6\WindowsFormsApp6\bin\Debug\WindowsFormsApp6.exe
+C:\Users\User\Desktop\꿩\WindowsFormsApp6\WindowsFormsApp6\bin\Debug\WindowsFormsApp6.pdb
+C:\Users\User\Desktop\꿩\WindowsFormsApp6\WindowsFormsApp6\bin\Debug\CircularProgressBar.dll
+C:\Users\User\Desktop\꿩\WindowsFormsApp6\WindowsFormsApp6\bin\Debug\WinFormAnimation.dll
+C:\Users\User\Desktop\꿩\WindowsFormsApp6\WindowsFormsApp6\obj\Debug\WindowsFormsApp6.Control_Form.Control_Form_Fail_Product.resources
+C:\Users\User\Desktop\꿩\WindowsFormsApp6\WindowsFormsApp6\obj\Debug\WindowsFormsApp6.Control_Form.Control_Form_Finish_Product.resources
+C:\Users\User\Desktop\꿩\WindowsFormsApp6\WindowsFormsApp6\obj\Debug\WindowsFormsApp6.Control_Form.Control_Form_Home.resources
+C:\Users\User\Desktop\꿩\WindowsFormsApp6\WindowsFormsApp6\obj\Debug\WindowsFormsApp6.Control_Form.Control_Form_LOT.resources
+C:\Users\User\Desktop\꿩\WindowsFormsApp6\WindowsFormsApp6\obj\Debug\WindowsFormsApp6.Control_Form.Control_Form_Model.resources
+C:\Users\User\Desktop\꿩\WindowsFormsApp6\WindowsFormsApp6\obj\Debug\WindowsFormsApp6.Control_Form.Control_Form_Monitoring.resources
+C:\Users\User\Desktop\꿩\WindowsFormsApp6\WindowsFormsApp6\obj\Debug\WindowsFormsApp6.Control_Form.Control_Form_User.resources
+C:\Users\User\Desktop\꿩\WindowsFormsApp6\WindowsFormsApp6\obj\Debug\WindowsFormsApp6.Form_login.resources
+C:\Users\User\Desktop\꿩\WindowsFormsApp6\WindowsFormsApp6\obj\Debug\WindowsFormsApp6.Form_main_menu.resources
+C:\Users\User\Desktop\꿩\WindowsFormsApp6\WindowsFormsApp6\obj\Debug\WindowsFormsApp6.Form_Model.resources
+C:\Users\User\Desktop\꿩\WindowsFormsApp6\WindowsFormsApp6\obj\Debug\WindowsFormsApp6.Form_monitoring.resources
+C:\Users\User\Desktop\꿩\WindowsFormsApp6\WindowsFormsApp6\obj\Debug\WindowsFormsApp6.Form_User.resources
+C:\Users\User\Desktop\꿩\WindowsFormsApp6\WindowsFormsApp6\obj\Debug\WindowsFormsApp6.Properties.Resources.resources
+C:\Users\User\Desktop\꿩\WindowsFormsApp6\WindowsFormsApp6\obj\Debug\WindowsFormsApp6.UserControl1.resources
+C:\Users\User\Desktop\꿩\WindowsFormsApp6\WindowsFormsApp6\obj\Debug\WindowsFormsApp6.UserControl2.resources
+C:\Users\User\Desktop\꿩\WindowsFormsApp6\WindowsFormsApp6\obj\Debug\WindowsFormsApp6.csproj.GenerateResource.cache
+C:\Users\User\Desktop\꿩\WindowsFormsApp6\WindowsFormsApp6\obj\Debug\WindowsFormsApp6.csproj.CopyComplete
+C:\Users\User\Desktop\꿩\WindowsFormsApp6\WindowsFormsApp6\obj\Debug\WindowsFormsApp6.exe
+C:\Users\User\Desktop\꿩\WindowsFormsApp6\WindowsFormsApp6\obj\Debug\WindowsFormsApp6.pdb
+C:\Users\User\Desktop\꿩\WindowsFormsApp6\WindowsFormsApp6\obj\Debug\WindowsFormsApp6.csprojAssemblyReference.cache
+C:\Users\User\Desktop\꿩\WindowsFormsApp6\WindowsFormsApp6\obj\Debug\WindowsFormsApp6.ex.resources
